@@ -1,5 +1,5 @@
 
-![Logo](https://1.bp.blogspot.com/-F59L2ow8zLU/XeSAK0KZRdI/AAAAAAAADLo/m4AbDXebWCMkcQyox2-8XDsiuepde4_qACLcBGAsYHQ/s1600/Politeknik%2BNegeri%2BMalang.png)
+![Logo](https://humas.polinema.ac.id/assets/img/setting/de83c149ff9b1ca36dee1a3d05345c5e.png)
 
 
 # SISTEM INFORMASI PEMINJAMAN SARANA DAN PRASARANA POLINEMA
