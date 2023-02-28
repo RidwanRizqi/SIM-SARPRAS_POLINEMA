@@ -34,12 +34,6 @@ Sistem Informasi Peminjaman Sarana dan Prasarana Polinema adalah sebuah proyek y
 
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
-
-## Support
-
-For support, email fake@fake.com or join our Slack channel.
-
-
 ## Tech Stack
 
 **Client:** 
