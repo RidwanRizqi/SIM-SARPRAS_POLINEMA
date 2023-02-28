@@ -1,5 +1,5 @@
 
-![Logo]([https://scontent.fcgk30-1.fna.fbcdn.net/v/t31.18172-8/627289_10150979683951557_1247697744_o.jpg?_nc_cat=103&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeH0k6FK9hzxBxvDrws32Bk67v05zXbf0UTu_TnNdt_RREVJfl0f75y72jqiWkgrwu966vjabjdVXH3golke1rmp&_nc_ohc=24JjfP0TjNwAX-G8zO4&_nc_ht=scontent.fcgk30-1.fna&oh=00_AfA9Fz6gPdEkPKvMvPJLoWg6WmTdukb0lOv04feL11Bt2g&oe=64251620](https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_Politeknik_Negeri_Malang.png))
+![Logo](https://1.bp.blogspot.com/-F59L2ow8zLU/XeSAK0KZRdI/AAAAAAAADLo/m4AbDXebWCMkcQyox2-8XDsiuepde4_qACLcBGAsYHQ/s1600/Politeknik%2BNegeri%2BMalang.png)
 
 
 # SISTEM INFORMASI PEMINJAMAN SARANA DAN PRASARANA POLINEMA
