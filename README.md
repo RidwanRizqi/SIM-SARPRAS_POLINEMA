@@ -14,7 +14,6 @@ Sistem Informasi Peminjaman Sarana dan Prasarana Polinema adalah sebuah proyek y
 - [@Bima ](https://github.com/BimaBayuUWUUU)
 - [@Naufal](https://github.com/NFalah25)
 - [@Dina](https://github.com/dinamrahma25)
-- [@Test](https://)
 
 
 
