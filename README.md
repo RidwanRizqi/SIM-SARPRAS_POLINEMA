@@ -1,5 +1,3 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://humas.polinema.ac.id/assets/img/setting/de83c149ff9b1ca36dee1a3d05345c5e.png" width="400" alt="Laravel Logo"></a></p>
-
 
 # SISTEM INFORMASI PEMINJAMAN SARANA DAN PRASARANA POLINEMA
 
