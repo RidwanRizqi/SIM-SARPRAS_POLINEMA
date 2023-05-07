@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
+Route::get('/home', function () {
+    if (Auth::check()) {
+        if (Auth::user()->role == 'superadmin') {
+            return view('dashboard.superadmin');
+        } elseif (Auth::user()->role == 'admin') {
+            return view('dashboard.admin');
+        } else {
+            return view('dashboard.home');
+        }
+    } else {
+        return view('auth.login');
+    }
+})->middleware(['auth', 'verified'])->name('home');
+
+
+//Route::get('edit-profile', function () {
+//    return view('dashboard.profile');
+//})->name('profile.edit');
+
+
+
+
+

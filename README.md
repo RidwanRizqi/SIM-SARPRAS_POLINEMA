@@ -1,4 +1,3 @@
-
 # SISTEM INFORMASI PEMINJAMAN SARANA DAN PRASARANA POLINEMA
 
 Sistem Informasi Peminjaman Sarana dan Prasarana Polinema adalah sebuah proyek yang bertujuan untuk memudahkan proses peminjaman sarana dan prasarana yang tersedia di Politeknik Negeri Malang (Polinema). Sistem ini akan memungkinkan pengguna untuk melakukan pemesanan, verifikasi, dan pemantauan status peminjaman secara online.
@@ -33,12 +32,11 @@ Sistem Informasi Peminjaman Sarana dan Prasarana Polinema adalah sebuah proyek y
 
 ## Tech Stack
 
-**Client:** 
+**Client:**
 
-**Server:** 
+**Server:**
 
 
 ## Feedback
 
 If you have any feedback, please reach out to us at ridwanrizqi@gmail.com
-
