@@ -9,23 +9,14 @@
         @section('sidebar')
         <li class="menu-header">Menu</li>
         <li class="nav-item dropdown">
-            <a href="#" class="nav-link has-dropdown"><i
-                    class="fas fa-poll-h"></i><span>Dashboard</span></a>
-            <ul class="dropdown-menu">
-                <li>
-                    <a class="nav-link" href="index-0.html">General Dashboard</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="index.html">Ecommerce Dashboard</a>
-                </li>
-            </ul>
-        </li>
+            <a href="{{route('home')}}" class="nav-link">
+                <i class="fas fa-poll-h"></i><span>Dashboard</span></a>
         @show
     </ul>
 
     <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
-        <a href="https://getstisla.com/docs" class="btn btn-primary btn-lg btn-block btn-icon-split">
-            <i class="fas fa-rocket"></i> Documentation
+        <a href="https://helpakademik.polinema.ac.id/" class="btn btn-primary btn-lg btn-block btn-icon-split">
+            <img src="{{ asset('assets/img/logo_polinema.png') }}" alt="logo" width="30" class=circle"> PUSKOM POLINEMA
         </a>
     </div>
 </aside>
