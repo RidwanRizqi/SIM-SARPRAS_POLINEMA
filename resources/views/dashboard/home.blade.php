@@ -100,7 +100,7 @@
                 <a class="nav-link" href="index-0.html">Validasi</a>
             </li>
             <li>
-                <a class="nav-link" href="index.html">Histori</a>
+                <a class="nav-link" href="{{route('history.user')}}">Histori</a>
             </li>
         </ul>
     </li>

@@ -68,3 +68,6 @@ Route::get('pelaporan-admin', function () {
     return view('admin.pelaporan');
 })->name('pelaporan.admin');
 
+Route::get('history-user', function () {
+    return view('user.history');
+})->name('history.user');
