@@ -19,7 +19,7 @@
                                     <i class="fas fa-database" style="font-size: xxx-large"></i>
                                     <br>
                                     <br>
-                                    <h5>Kelola Sarana Prasarana</h5>
+                                    <h5>Daftar Sarana &amp; Prasarana</h5>
                                     <div class="text-muted small">Description</div>
                                 </div>
                                 <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
@@ -37,7 +37,7 @@
                                     <i class="fas fa-file-signature" style="font-size: xxx-large"></i>
                                     <br>
                                     <br>
-                                    <h5>Pelaporan</h5>
+                                    <h5>Histori</h5>
                                     <div class="text-muted small">Description</div>
                                 </div>
                                 <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
