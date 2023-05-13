@@ -6,7 +6,9 @@
         <a href="index.html">SS</a>
     </div>
     <ul class="sidebar-menu">
+
         @section('sidebar')
+
         <li class="menu-header">Menu</li>
         <li class="nav-item dropdown">
             <a href="{{route('home')}}" class="nav-link">
