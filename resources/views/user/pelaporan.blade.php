@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Menu History User')
+@section('title', 'Menu Pelaporan Admin')
 
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>History Peminjaman</h1>
+            <h1>Pelaporan</h1>
         </div>
 
         <div class="section-body">
@@ -14,8 +14,40 @@
                     <!-- Main page content-->
                     <div class="container-xl px-4 mt-n10">
                         <div class="card mb-4">
-                            <div class="card-header bg-whitesmoke"><h4>Data History Peminjaman</h4></div>
+                            <div class="card-header bg-whitesmoke"><h4>Filter Laporan</h4></div>
                             <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <label for="startDate">Mulai Tanggal</label>
+                                        <input id="startDate" class="form-control" type="date" />
+                                        <span id="startDateSelected"></span>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label for="endDate">Sampai Tanggal</label>
+                                        <input id="endDate" class="form-control" type="date" />
+                                        <span id="endDateSelected"></span>
+                                    </div>
+                                    <div class="col-lg-3 mt-4">
+                                        <button class="btn btn-primary" type="button">Tampilkan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-xl px-4">
+                        <div class="card mb-4">
+                            <div class="card-header bg-whitesmoke"><h4>Laporan Peminjaman Ruangan</h4></div>
+                            <div class="card-body">
+                                <h6>Dari Tanggal ______</h6>
+                                <h6 class="mb-4">Sampai Tanggal ______</h6>
+
+                                <button class="btn btn-success me-2 mb-2" type="button">
+                                    <i data-feather="download"></i> Print PDF
+                                </button>
+                                <button class="btn btn-primary mb-2" type="button">
+                                    <i data-feather="printer"></i> Cetak
+                                </button>
+                                <hr>
                                 <table id="datatablesSimple">
                                     <thead>
                                     <tr>
