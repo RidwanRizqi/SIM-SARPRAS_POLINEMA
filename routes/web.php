@@ -77,3 +77,6 @@ Route::get('validasi-user', function () {
 Route::get('pelaporan-user', function () {
     return view('user.pelaporan');
 })->name('pelaporan.user');
+Route::get('daftar-user', function () {
+    return view('user.daftar');
+})->name('daftar.user');
