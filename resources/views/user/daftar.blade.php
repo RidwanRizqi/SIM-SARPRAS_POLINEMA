@@ -4,14 +4,14 @@
 
 @section('content')
     <section class="section">
-        <div class="section-header">
-            <h1>Update Sarana-Prasarana</h1>
-        </div>
+        {{-- <div class="section-header">
+            <h1>Form Pendaftaran</h1>
+        </div> --}}
 
-        <div class="section-body">
-            <div class="container-xl px-4 mt-n10">
+        <div class="section-body ">
+            <div class="container-xl px-4 mt-5">
                 <div class="card mb-4">
-                    <div class="card-header bg-whitesmoke"><h4>Tambah Sarana & Prasarana</h4></div>
+                    <div class="card-header bg-whitesmoke"><h4>Form Pendaftaran Peminjaman Sarana &amp; Prasarana</h4></div>
                     <div class="card-body ps-5 pe-15">
                         <form>
                             <div class="mb-3">
