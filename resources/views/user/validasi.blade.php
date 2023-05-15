@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Menu History User')
+@section('title', 'Menu Validasi User')
 
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>History Peminjaman</h1>
+            <h1>Validasi User</h1>
         </div>
 
         <div class="section-body">
@@ -14,7 +14,7 @@
                     <!-- Main page content-->
                     <div class="container-xl px-4 mt-n10">
                         <div class="card mb-4">
-                            <div class="card-header bg-whitesmoke"><h4>Data History Peminjaman</h4></div>
+                            <div class="card-header bg-whitesmoke"><h4>Data Pengajuan Peminjaman</h4></div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
@@ -23,6 +23,7 @@
                                         <th>Ruangan</th>
                                         <th>Tanggal Peminjaman</th>
                                         <th>Proposal</th>
+                                        <th>Actions</th>
                                     </tr>
                                     </thead>
                                     <tfoot>
@@ -31,6 +32,7 @@
                                         <th>Ruangan</th>
                                         <th>Tanggal Peminjaman</th>
                                         <th>Proposal</th>
+                                        <th>Actions</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
@@ -38,80 +40,112 @@
                                         <td>OKI 1</td>
                                         <td>Graha Polinema</td>
                                         <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
+                                        <td>
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
+                                        </td>
+                                        <td class="d-flex justify-content-center">
+                                            <button class="btn btn-success me-2" type="button">Terima</button>
+                                            <button class="btn btn-danger" type="button">Tolak</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>OKI 1</td>
                                         <td>Graha Polinema</td>
                                         <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
+                                        <td>
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
+                                        </td>
+                                        <td class="d-flex justify-content-center">
+                                            <button class="btn btn-success me-2" type="button">Terima</button>
+                                            <button class="btn btn-danger" type="button">Tolak</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>OKI 1</td>
                                         <td>Graha Polinema</td>
                                         <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
+                                        <td>
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
+                                        </td>
+                                        <td class="d-flex justify-content-center">
+                                            <button class="btn btn-success me-2" type="button">Terima</button>
+                                            <button class="btn btn-danger" type="button">Tolak</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>OKI 1</td>
                                         <td>Graha Polinema</td>
                                         <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
+                                        <td>
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
+                                        </td>
+                                        <td class="d-flex justify-content-center">
+                                            <button class="btn btn-success me-2" type="button">Terima</button>
+                                            <button class="btn btn-danger" type="button">Tolak</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>OKI 1</td>
                                         <td>Graha Polinema</td>
                                         <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
+                                        <td>
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
+                                        </td>
+                                        <td class="d-flex justify-content-center">
+                                            <button class="btn btn-success me-2" type="button">Terima</button>
+                                            <button class="btn btn-danger" type="button">Tolak</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>OKI 1</td>
                                         <td>Graha Polinema</td>
                                         <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
+                                        <td>
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
+                                        </td>
+                                        <td class="d-flex justify-content-center">
+                                            <button class="btn btn-success me-2" type="button">Terima</button>
+                                            <button class="btn btn-danger" type="button">Tolak</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>OKI 1</td>
                                         <td>Graha Polinema</td>
                                         <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
+                                        <td>
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
+                                        </td>
+                                        <td class="d-flex justify-content-center">
+                                            <button class="btn btn-success me-2" type="button">Terima</button>
+                                            <button class="btn btn-danger" type="button">Tolak</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>OKI 1</td>
                                         <td>Graha Teater</td>
                                         <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
+                                        <td>
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
+                                        </td>
+                                        <td class="d-flex justify-content-center">
+                                            <button class="btn btn-success me-2" type="button">Terima</button>
+                                            <button class="btn btn-danger" type="button">Tolak</button>
                                         </td>
                                     </tr>
                                     </tbody>

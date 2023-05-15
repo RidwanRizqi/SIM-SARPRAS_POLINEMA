@@ -97,7 +97,7 @@
                 class="fas fa-fire"></i><span>Peminjaman</span></a>
         <ul class="dropdown-menu">
             <li>
-                <a class="nav-link" href="index-0.html">Validasi</a>
+                <a class="nav-link" href="{{route('validasi.user')}}">Validasi</a>
             </li>
             <li>
                 <a class="nav-link" href="{{route('history.user')}}">Histori</a>

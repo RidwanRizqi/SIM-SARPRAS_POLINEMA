@@ -71,3 +71,12 @@ Route::get('pelaporan-admin', function () {
 Route::get('history-user', function () {
     return view('user.history');
 })->name('history.user');
+Route::get('validasi-user', function () {
+    return view('user.validasi');
+})->name('validasi.user');
+Route::get('pelaporan-user', function () {
+    return view('user.pelaporan');
+})->name('pelaporan.user');
+Route::get('daftar-user', function () {
+    return view('user.daftar');
+})->name('daftar.user');
