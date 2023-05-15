@@ -78,6 +78,6 @@ Route::get('validasi-user', function () {
 Route::get('pelaporan-user', function () {
     return view('user.pelaporan');
 })->name('pelaporan.user');
-Route::get('daftar-user', function () {
-    return view('user.daftar');
+Route::get('form-user', function () {
+    return view('user.form');
 })->name('daftar.user');

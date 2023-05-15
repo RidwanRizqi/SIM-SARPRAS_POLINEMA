@@ -4,19 +4,16 @@
 
 @section('content')
     <section class="section">
-        <div class="section-header">
-            <h1>Validasi User</h1>
-        </div>
 
         <div class="section-body">
             <div id="layoutSidenav_content">
                 <main>
                     <!-- Main page content-->
-                    <div class="container-xl px-4 mt-n10">
+                    <div class="container-xl px-4 mt-5">
                         <div class="card mb-4">
                             <div class="card-header bg-whitesmoke"><h4>Data Pengajuan Peminjaman</h4></div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
+                                <table id="datatablesSimple" class="table table-bordered">
                                     <thead>
                                     <tr>
                                         <th>Peminjam</th>
@@ -45,9 +42,10 @@
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
                                         </td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-success me-2" type="button">Terima</button>
-                                            <button class="btn btn-danger" type="button">Tolak</button>
+                                        <td class="text-center justify-content-center">
+                                            <div class="alert alert-success" role="alert">
+                                                Diterima
+                                              </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -59,9 +57,10 @@
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
                                         </td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-success me-2" type="button">Terima</button>
-                                            <button class="btn btn-danger" type="button">Tolak</button>
+                                        <td class="text-center justify-content-center">
+                                            <div class="alert alert-success" role="alert">
+                                                Diterima
+                                              </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -73,9 +72,10 @@
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
                                         </td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-success me-2" type="button">Terima</button>
-                                            <button class="btn btn-danger" type="button">Tolak</button>
+                                        <td class="text-center justify-content-center">
+                                            <div class="alert alert-success" role="alert">
+                                                Diterima
+                                              </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -87,9 +87,10 @@
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
                                         </td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-success me-2" type="button">Terima</button>
-                                            <button class="btn btn-danger" type="button">Tolak</button>
+                                        <td class="text-center justify-content-center">
+                                            <div class="alert alert-success" role="alert">
+                                                Diterima
+                                              </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -101,9 +102,10 @@
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
                                         </td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-success me-2" type="button">Terima</button>
-                                            <button class="btn btn-danger" type="button">Tolak</button>
+                                        <td class="text-center justify-content-center">
+                                            <div class="alert alert-success" role="alert">
+                                                Diterima
+                                              </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -115,9 +117,10 @@
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
                                         </td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-success me-2" type="button">Terima</button>
-                                            <button class="btn btn-danger" type="button">Tolak</button>
+                                        <td class="text-center justify-content-center">
+                                            <div class="alert alert-danger" role="alert">
+                                                Ditolak
+                                              </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -129,9 +132,10 @@
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
                                         </td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-success me-2" type="button">Terima</button>
-                                            <button class="btn btn-danger" type="button">Tolak</button>
+                                        <td class="justify-content-center ">
+                                            <div class="alert alert-danger text-center" role="alert">
+                                               Ditolak
+                                              </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -143,9 +147,10 @@
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
                                         </td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-success me-2" type="button">Terima</button>
-                                            <button class="btn btn-danger" type="button">Tolak</button>
+                                        <td class="justify-content-center">
+                                            <div class="alert alert-success text-center" role="alert">
+                                                Diterima
+                                              </div>
                                         </td>
                                     </tr>
                                     </tbody>
