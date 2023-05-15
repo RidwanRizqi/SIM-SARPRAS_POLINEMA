@@ -1,12 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Menu Kelola Sarana-Prasarana Admin')
+@section('title', 'Form Daftar')
 
 @section('content')
     <section class="section">
-        {{-- <div class="section-header">
-            <h1>Form Pendaftaran</h1>
-        </div> --}}
 
         <div class="section-body ">
             <div class="container-xl px-4 mt-5">
