@@ -59,7 +59,7 @@
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
             <!-- <a href="index.html" class="logo"> -->
-              <a class="navbar-brand text-primary logo h1" href="index.html">SIM-SARPRAS POLINEMA</a>
+              <a class="navbar-brand text-primary logo h1" href="index.html" style="font-size: xxx-large">SIM-SARPRAS POLINEMA</a>
               <!-- <img src="assets/img/logo.png" alt="Chain App Dev"> -->
             <!-- </a> -->
             <!-- ***** Logo End ***** -->
@@ -85,92 +85,6 @@
   </header>
   <!-- ***** Header Area End ***** -->
 
-  <div id="modal" class="popupContainer" style="display:none;">
-    <div class="popupHeader">
-        <span class="header_title">Login</span>
-        <span class="modal_close"><i class="fa fa-times"></i></span>
-    </div>
-
-    <section class="popupBody">
-        <!-- Social Login -->
-        <div class="social_login">
-            <div class="">
-                <a href="#" class="social_box fb">
-                    <span class="icon"><i class="fab fa-facebook"></i></span>
-                    <span class="icon_title">Connect with Facebook</span>
-
-                </a>
-
-                <a href="#" class="social_box google">
-                    <span class="icon"><i class="fab fa-google-plus"></i></span>
-                    <span class="icon_title">Connect with Google</span>
-                </a>
-            </div>
-
-            <div class="centeredText">
-                <span>Or use your Email address</span>
-            </div>
-
-            <div class="action_btns">
-                <div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
-                <div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
-            </div>
-        </div>
-
-        <!-- Username & Password Login form -->
-        <div class="user_login">
-            <form>
-                <label>Email / Username</label>
-                <input type="text" />
-                <br />
-
-                <label>Password</label>
-                <input type="password" />
-                <br />
-
-                <div class="checkbox">
-                    <input id="remember" type="checkbox" />
-                    <label for="remember">Remember me on this computer</label>
-                </div>
-
-                <div class="action_btns">
-                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-                    <div class="one_half last"><a href="#" class="btn btn_red">Login</a></div>
-                </div>
-            </form>
-
-            <a href="#" class="forgot_password">Forgot password?</a>
-        </div>
-
-        <!-- Register Form -->
-        <div class="user_register">
-            <form>
-                <label>Full Name</label>
-                <input type="text" />
-                <br />
-
-                <label>Email Address</label>
-                <input type="email" />
-                <br />
-
-                <label>Password</label>
-                <input type="password" />
-                <br />
-
-                <div class="checkbox">
-                    <input id="send_updates" type="checkbox" />
-                    <label for="send_updates">Send me occasional email updates</label>
-                </div>
-
-                <div class="action_btns">
-                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-                    <div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>
-                </div>
-            </form>
-        </div>
-    </section>
-</div>
-
   <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
     <div class="container">
       <div class="row">
@@ -184,10 +98,6 @@
                     <p>Selamat datang di Sistem Informasi Peminjaman Sarana Prasarana Polinema</p>
                   </div>
                   <div class="col-lg-12">
-                      <a class="btn btn-teal fw-500 me-2" href="#!">
-                        Login
-                        <i class="ms-2" data-feather="arrow-right"></i>
-                    </a>
                     <a class="btn btn-link fw-500" href="#!">Learn More</a>
                   </div>
                 </div>
@@ -211,7 +121,9 @@
           <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h4>Seputar <em>SIM-SARPRAS</em> Polinema</h4>
             <img src="{{asset('assets/img/heading-line-dec.png')}}" alt="">
-            <p>If you need the greatest collection of HTML templates for your business, please visit <a rel="nofollow" href="https://www.toocss.com/" target="_blank">TooCSS</a> Blog. If you need to have a contact form PHP script, go to <a href="https://templatemo.com/contact" target="_parent">our contact page</a> for more information.</p>
+            <p>Sistem Informasi Peminjaman Sarana & Prasarana Politeknik Negeri Malang dihadirkan untuk membantu mempermudah
+            kegiatan peminjam sarana dan prasarana di Politeknik Negeri Malang. Dengan adanya sistem ini, diharapkan seluruh kegiatan
+                pengajuan peminjaman sarana dan prasarana dapat dilakukan secara terstruktur dan terpadu dalam SIM-SARPRAS POLINEMA.</p>
           </div>
         </div>
       </div>
@@ -222,7 +134,7 @@
           <div class="service-item first-service">
             <div class="icon"></div>
             <h4>Seputar SIM-SARPRAS</h4>
-            <p>You are not allowed to redistribute this template ZIP file on any other website.</p>
+            <p>Dengan SIM-SARPRAS POLINEMA diharapkan digitalisasi pelayanan di POLINEMA akan segara terwujud.</p>
             <div class="text-button">
               <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
             </div>
@@ -232,7 +144,7 @@
           <div class="service-item second-service">
             <div class="icon"></div>
             <h4>Prosedur Peminjaman</h4>
-            <p>You are allowed to use the Chain App Dev HTML template. Feel free to modify or edit this layout.</p>
+            <p>Panduan Peminjaman Sarana Prasarana yang terstruktur menjadikan kegiatan peminjaman berjalan dengan baik.</p>
             <div class="text-button">
               <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
             </div>
@@ -241,8 +153,8 @@
         <div class="col-lg-4">
           <div class="service-item third-service">
             <div class="icon"></div>
-            <h4>Complete Documentation</h4>
-            <p>If this template is beneficial for your work, please support us <a rel="nofollow" href="https://paypal.me/templatemo" target="_blank">a little via PayPal</a>. Thank you.</p>
+            <h4>Hubungi Kami</h4>
+            <p>Lebih lanjut mengenai SIM-SARPRAS POLINEMA dapat diakses pada laman resmi kami</p>
             <div class="text-button">
               <a href="#">Read More <i class="fa fa-arrow-right"></i></a>
             </div>
@@ -259,31 +171,33 @@
           <div class="section-heading">
             <h4>Seputar <em>SIM-SARPRAS</em> </h4>
             <img src="{{asset('assets/img/heading-line-dec.png')}}" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut labore et dolore magna.</p>
+            <p>Sistem Informasi Peminjaman Sarana & Prasarana Politeknik Negeri Malang sebagai langkah mewujudkan digitalisi
+            pelayanan di Politeknik Negeri Malang.
+            </p>
           </div>
           <div class="row">
             <div class="col-lg-6">
               <div class="box-item">
                 <h4><a href="#">Peminjaman Sarana &amp; Prasarana</a></h4>
-                <p>Lorem Ipsum Text</p>
+                <p>Peminjaman Sarana Prasarana melalui sistem informasi yang terpadu.</p>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="box-item">
                 <h4><a href="#">Pengelolaan Data Sarana &amp; Prasarana</a></h4>
-                <p>Lorem Ipsum Text</p>
+                <p>Perubahan data Sarana Prasarana dikelola oleh admin dalam sistem.</p>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="box-item">
-                <h4><a href="#">Proses Validasi Proposal</a></h4>
-                <p>Lorem Ipsum Text</p>
+                <h4><a href="#">History Peminjaman</a></h4>
+                <p>Melihat Data Peminjaman yang telah dilakukan sebelumnya.</p>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="box-item">
                 <h4><a href="#">Pelaporan</a></h4>
-                <p>Lorem Ipsum Text</p>
+                <p>Pelaporan admin terkait peminjaman yang bisa dilakukan dengan mudah dan cepat.</p>
               </div>
             </div>
 
@@ -411,7 +325,7 @@
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading">
-            <h4>Join our mailing list to receive the news &amp; latest trends</h4>
+            <h4>PUSKOM POLINEMA - SIM SARPRAS POLINEMA</h4>
           </div>
         </div>
         <div class="col-lg-6 offset-lg-3">
@@ -424,7 +338,7 @@
               </div>
               <div class="col-lg-6 col-sm-6">
                 <fieldset>
-                  <button type="submit" class="main-button">Subscribe Now <i class="fa fa-angle-right"></i></button>
+                  <button type="submit" class="main-button">Join Us<i class="fa fa-angle-right"></i></button>
                 </fieldset>
               </div>
             </div>
@@ -445,10 +359,10 @@
             <h4>About Us</h4>
             <ul>
               <li><a href="#">Home</a></li>
-              <li><a href="#">Services</a></li>
+              <li><a href="#">Profile</a></li>
               <li><a href="#">About</a></li>
-              <li><a href="#">Testimonials</a></li>
-              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact Us</a></li>
             </ul>
           </div>
         </div>
@@ -456,16 +370,15 @@
           <div class="footer-widget">
             <h4>Useful Links</h4>
             <ul>
-              <li><a href="#">Free Apps</a></li>
-              <li><a href="#">App Engine</a></li>
-              <li><a href="#">Programming</a></li>
-              <li><a href="#">Development</a></li>
-              <li><a href="#">App News</a></li>
+              <li><a href="#">Web Polinema</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Web Helpdesk</a></li>
             </ul>
             <ul>
-              <li><a href="#">App Dev Team</a></li>
-              <li><a href="#">Digital Web</a></li>
-              <li><a href="#">Normal Apps</a></li>
+              <li><a href="#">PUSKOM</a></li>
+              <li><a href="#">Icikiwir Techno Houses</a></li>
             </ul>
           </div>
         </div>
@@ -475,13 +388,14 @@
             <div class="logo">
               <img src="{{asset('assets/img/polinema-logo.png')}}" alt="">
             </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+            <p>
+                SIM-SARPRAS merupakan sistem informasi yang dibuat untuk mempermudah dalam peminjaman sarana dan prasarana di Politeknik Negeri Malang.
+            </p>
           </div>
         </div>
         <div class="col-lg-12">
           <div class="copyright-text">
-            <p>Copyright © 2022 Chain App Dev Company. All Rights Reserved.
-          <br>Design: <a href="https://templatemo.com/" target="_blank" title="css templates">TemplateMo</a></p>
+            <p>Copyright &copy; 2023, Developed By <a href="https://nauval.in/">Icikiwir Technology House</a></p>
           </div>
         </div>
       </div>
