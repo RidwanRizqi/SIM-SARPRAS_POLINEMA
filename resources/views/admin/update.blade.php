@@ -39,9 +39,11 @@
                                         <td>JTI</td>
                                         <td>meja 10 kursi 10</td>
                                         <td class="d-flex justify-content-center">
-                                            <button class="btn btn-success" type="button">
-                                                <i class="fas fa-edit"></i> Edit
-                                            </button>
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-success" type="button">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </button>
+                                            </a>
                                             <button class="btn btn-danger" type="button">
                                                 <i class="fas fa-trash"></i> Delete
                                             </button>
@@ -52,9 +54,11 @@
                                         <td>JTI</td>
                                         <td>meja 10 kursi 10</td>
                                         <td class="d-flex justify-content-center">
+                                            <a href="{{route('edit.admin')}}">
                                             <button class="btn btn-success" type="button">
                                                 <i class="fas fa-edit"></i> Edit
                                             </button>
+                                            </a>
                                             <button class="btn btn-danger" type="button">
                                                 <i class="fas fa-trash"></i> Delete
                                             </button>
@@ -65,9 +69,11 @@
                                         <td>JTI</td>
                                         <td>meja 10 kursi 10</td>
                                         <td class="d-flex justify-content-center">
-                                            <button class="btn btn-success" type="button">
-                                                <i class="fas fa-edit"></i> Edit
-                                            </button>
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-success" type="button">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </button>
+                                            </a>
                                             <button class="btn btn-danger" type="button">
                                                 <i class="fas fa-trash"></i> Delete
                                             </button>
@@ -78,9 +84,11 @@
                                         <td>JTI</td>
                                         <td>meja 10 kursi 10</td>
                                         <td class="d-flex justify-content-center">
-                                            <button class="btn btn-success" type="button">
-                                                <i class="fas fa-edit"></i> Edit
-                                            </button>
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-success" type="button">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </button>
+                                            </a>
                                             <button class="btn btn-danger" type="button">
                                                 <i class="fas fa-trash"></i> Delete
                                             </button>
@@ -91,9 +99,11 @@
                                         <td>JTI</td>
                                         <td>meja 10 kursi 10</td>
                                         <td class="d-flex justify-content-center">
-                                            <button class="btn btn-success" type="button">
-                                                <i class="fas fa-edit"></i> Edit
-                                            </button>
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-success" type="button">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </button>
+                                            </a>
                                             <button class="btn btn-danger" type="button">
                                                 <i class="fas fa-trash"></i> Delete
                                             </button>
