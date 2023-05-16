@@ -48,7 +48,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Fasilitas</label>
-                                <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
+                                <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input" readonly>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>

@@ -11,7 +11,7 @@
                     <!-- Main page content-->
                     <div class="container-xl px-4 mt-5">
                         <div class="card mb-4">
-                            <div class="card-header bg-whitesmoke"><h4>Data Pengajuan Peminjaman</h4></div>
+                            <div class="card-header bg-whitesmoke"><h4>Data Peminjaman yang Sedang Berlangsung</h4></div>
                             <div class="card-body">
                                 <table id="datatablesSimple" class="table table-bordered">
                                     <thead>
@@ -150,6 +150,110 @@
                                         <td class="justify-content-center">
                                             <div class="alert alert-success text-center" role="alert">
                                                 Diterima
+                                              </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-xl px-4 mt-5">
+                        <div class="card mb-4">
+                            <div class="card-header bg-whitesmoke"><h4>Data Peminjaman Lama</h4></div>
+                            <div class="card-body">
+                                <table id="datatablesSimple" class="table table-bordered">
+                                    <thead>
+                                    <tr>
+                                        <th>Peminjam</th>
+                                        <th>Ruangan</th>
+                                        <th>Tanggal Peminjaman</th>
+                                        <th>Proposal</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    </thead>
+                                    <tfoot>
+                                    <tr>
+                                        <th>Peminjam</th>
+                                        <th>Ruangan</th>
+                                        <th>Tanggal Peminjaman</th>
+                                        <th>Proposal</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    <tr>
+                                        <td>OKI 1</td>
+                                        <td>Graha Polinema</td>
+                                        <td>2022-12-12</td>
+                                        <td>
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-file-alt"></i>
+                                            </button>
+                                        </td>
+                                        <td class="text-center justify-content-center">
+                                            <div class="alert alert-secondary" role="alert">
+                                                Selesai
+                                              </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>OKI 1</td>
+                                        <td>Graha Polinema</td>
+                                        <td>2022-12-12</td>
+                                        <td>
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-file-alt"></i>
+                                            </button>
+                                        </td>
+                                        <td class="text-center justify-content-center">
+                                            <div class="alert alert-secondary" role="alert">
+                                                Selesai
+                                              </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>OKI 1</td>
+                                        <td>Graha Polinema</td>
+                                        <td>2022-12-12</td>
+                                        <td>
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-file-alt"></i>
+                                            </button>
+                                        </td>
+                                        <td class="text-center justify-content-center">
+                                            <div class="alert alert-secondary" role="alert">
+                                                Selesai
+                                              </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>OKI 1</td>
+                                        <td>Graha Polinema</td>
+                                        <td>2022-12-12</td>
+                                        <td>
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-file-alt"></i>
+                                            </button>
+                                        </td>
+                                        <td class="text-center justify-content-center">
+                                            <div class="alert alert-secondary" role="alert">
+                                                Selesai
+                                              </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>OKI 1</td>
+                                        <td>Graha Polinema</td>
+                                        <td>2022-12-12</td>
+                                        <td>
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-file-alt"></i>
+                                            </button>
+                                        </td>
+                                        <td class="text-center justify-content-center">
+                                            <div class="alert alert-secondary" role="alert">
+                                                Selesai
                                               </div>
                                         </td>
                                     </tr>
