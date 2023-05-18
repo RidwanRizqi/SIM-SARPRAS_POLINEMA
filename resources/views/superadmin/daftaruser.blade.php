@@ -4,17 +4,14 @@
 
 @section('content')
     <section class="section">
-        <div class="section-header">
-            <h1>Kelola User</h1>
-        </div>
 
         <div class="section-body">
             <div id="layoutSidenav_content">
                 <main>
                     <!-- Main page content-->
-                    <div class="container-xl px-4 mt-n10">
+                    <div class="container-xl px-4 mt-5">
                         <div class="card mb-4">
-                            <div class="card-header bg-whitesmoke"><h4>Data User</h4></div>
+                            <div class="card-header bg-whitesmoke"><h4>Data Pengguna</h4></div>
                             <div class="card-body">
                                 <table id="datatablesSimple" class="table table-bordered">
                                     <thead>
@@ -22,22 +19,18 @@
                                         <th>Nama User</th>
                                         <th>Email</th>
                                         <th>Password</th>
+                                        <th>Role</th>
+                                        <th>Telepon</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
-                                    <tfoot>
-                                    <tr>
-                                        <th>Nama User</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    </tfoot>
                                     <tbody>
                                     <tr>
                                         <td>RISPOL</td>
                                         <td>rispol@gmail.com</td>
                                         <td>rispol</td>
+                                        <td>User</td>
+                                        <td>+62-813-2131-8942</td>
                                         <td class="d-flex justify-content-center">
                                             <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
@@ -55,6 +48,8 @@
                                         <td>PP</td>
                                         <td>pppolinema@gmail.com</td>
                                         <td>pendidikan_penalaran</td>
+                                        <td>User</td>
+                                        <td>+62-813-2131-8942</td>
                                         <td class="d-flex justify-content-center">
                                             <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
@@ -72,6 +67,8 @@
                                         <td>Theatrisic</td>
                                         <td>theatrisicpolinema@gmail.com</td>
                                         <td>theatrisicpolinema</td>
+                                        <td>User</td>
+                                        <td>+62-813-2131-8942</td>
                                         <td class="d-flex justify-content-center">
                                             <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
@@ -89,6 +86,8 @@
                                         <td>OR</td>
                                         <td>orpolinema@gmail.com</td>
                                         <td>orpol</td>
+                                        <td>User</td>
+                                        <td>+62-813-2131-8942</td>
                                         <td class="d-flex justify-content-center">
                                             <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
@@ -106,6 +105,8 @@
                                         <td>Menwa</td>
                                         <td>menwapolinema@gmail.com</td>
                                         <td>menwapol</td>
+                                        <td>User</td>
+                                        <td>+62-813-2131-8942</td>
                                         <td class="d-flex justify-content-center">
                                             <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
@@ -123,6 +124,8 @@
                                         <td>PASTI</td>
                                         <td>pastipolinema@gmail.com</td>
                                         <td>pastipol</td>
+                                        <td>User</td>
+                                        <td>+62-813-2131-8942</td>
                                     <td class="d-flex justify-content-center">
                                         <a href="{{route('update.superadmin')}}">
                                             <button class="btn btn-success" type="button">
@@ -136,7 +139,6 @@
                                         </a>
                                     </td>
                                     </tr>
-
                                     </tbody>
                                 </table>
                             </div>
