@@ -14,17 +14,5 @@
 
 @section('sidebar')
     @parent
-    <li class="menu-header">Dashboard</li>
-    <li class="nav-item dropdown">
-        <a href="#" class="nav-link has-dropdown"><i
-                class="fas fa-fire"></i><span>Dashboard</span></a>
-        <ul class="dropdown-menu">
-            <li>
-                <a class="nav-link" href="index-0.html">General Dashboard</a>
-            </li>
-            <li>
-                <a class="nav-link" href="index.html">Ecommerce Dashboard</a>
-            </li>
-        </ul>
-    </li>
+    <li><a href="{{route('daftaruser.superadmin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Pengguna</span></a></li>
 @endsection

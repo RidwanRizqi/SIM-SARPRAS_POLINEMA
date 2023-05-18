@@ -67,8 +67,8 @@
 
 @section('sidebar')
     @parent
+    <li><a href="{{route('kelola.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Sarana Prasarana</span></a></li>
     <li class="nav-item dropdown">
-        <a href="{{route('kelola.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Sarana Prasarana</span></a>
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i><span>Peminjaman</span></a>
         <ul class="dropdown-menu">
             <li>
@@ -78,7 +78,7 @@
                 <a class="nav-link" href="{{route('validasi.admin')}}">Validasi User</a>
             </li>
         </ul>
-        <a href="{{route('pelaporan.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Pelaporan</span></a>
     </li>
+    <li><a href="{{route('pelaporan.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Pelaporan</span></a></li>
 @endsection
 

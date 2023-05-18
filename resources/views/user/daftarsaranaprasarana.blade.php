@@ -4,6 +4,9 @@
 
 @section('content')
     <section class="section">
+        <div class="section-header">
+            <h1>Peminjaman User</h1>
+        </div>
 
         <div class="section-body">
             <div id="layoutSidenav_content">
@@ -11,7 +14,7 @@
                     <!-- Main page content-->
                     <div class="container-xl px-4 mt-5">
                         <div class="card mb-4">
-                            <div class="card-header bg-whitesmoke"><h4>Data Pengajuan Peminjaman</h4></div>
+                            <div class="card-header bg-whitesmoke"><h4>Data Sarana Prasarana</h4></div>
                             <div class="card-body">
                                 <table id="datatablesSimple" class="table table-bordered">
                                     <thead>
@@ -22,14 +25,14 @@
                                         <th>Actions</th>
                                     </tr>
                                     </thead>
-{{--                                    <tfoot>--}}
-{{--                                    <tr>--}}
-{{--                                        <th>Gedung</th>--}}
-{{--                                        <th>Ruangan</th>--}}
-{{--                                        <th>Pengurus</th>--}}
-{{--                                        <th>Actions</th>--}}
-{{--                                    </tr>--}}
-{{--                                    </tfoot>--}}
+                                    <tfoot>
+                                    <tr>
+                                        <th>Gedung</th>
+                                        <th>Ruangan</th>
+                                        <th>Pengurus</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                    </tfoot>
                                     <tbody>
                                     <tr>
                                         <td>Graha Polinema</td>

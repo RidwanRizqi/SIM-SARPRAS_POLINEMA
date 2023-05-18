@@ -39,6 +39,13 @@ Route::get('edit-profile', function () {
     return view('dashboard.profile');
 })->name('profile.edit');
 
+Route::get('daftar-user', function () {
+    return view('superadmin.daftaruser');
+})->name('daftaruser.superadmin');
+
+Route::get('update-superadmin', function () {
+    return view('superadmin.update');
+})->name('update.superadmin');
 
 Route::get('kelola-ruang', function () {
     return view('admin.kelola');

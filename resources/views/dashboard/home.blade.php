@@ -16,7 +16,7 @@
                         <div class="card-body d-flex justify-content-center flex-column">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="me-3">
-                                    <i class="fas fa-database" style="font-size: xxx-large"></i>
+                                    <i class="fas fa-building" style="font-size: xxx-large"></i>
                                     <br>
                                     <br>
                                     <h5>Daftar Sarana &amp; Prasarana</h5>
@@ -34,7 +34,7 @@
                         <div class="card-body d-flex justify-content-center flex-column">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="me-3">
-                                    <i class="fas fa-file-signature" style="font-size: xxx-large"></i>
+                                    <i class="fas fa-history" style="font-size: xxx-large"></i>
                                     <br>
                                     <br>
                                     <h5>Histori</h5>
@@ -48,7 +48,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6 col-xl-6 mb-6">
+                <div class="col-lg-6 col-xl-4 mb-4">
                     <div class="card bg-success text-white">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 col-xl-6 mb-6">
+                <div class="col-lg-6 col-xl-4 mb-4">
                     <div class="card bg-danger text-white">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -74,6 +74,23 @@
                                     <div class="display-4 text-white">17</div>
                                 </div>
                                 <i class="fas fa-envelope-open-text" style="font-size:xx-large"></i>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between small shadow-dark">
+                            <a class="text-white stretched-link" href="#!"><h6>Detail</h6></a>
+                            <div class="text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-4 mb-4">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="me-3">
+                                    <div><h5>Peminjaman Selesai</h5></div>
+                                    <div class="display-4 text-white">6</div>
+                                </div>
+                                <i class="fas fa-handshake" style="font-size:xx-large"></i>
                             </div>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between small shadow-dark">

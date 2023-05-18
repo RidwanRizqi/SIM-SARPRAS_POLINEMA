@@ -4,6 +4,9 @@
 
 @section('content')
     <section class="section">
+        <div class="section-header">
+            <h1>Pengajuan Peminjaman</h1>
+        </div>
 
         <div class="section-body ">
             <div id="layoutSidenav_content">
