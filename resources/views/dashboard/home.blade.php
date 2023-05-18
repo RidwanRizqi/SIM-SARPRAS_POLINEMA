@@ -89,7 +89,6 @@
 
 @section('sidebar')
     @parent
-    {{-- <li class="menu-header">Dashboard</li> --}}
     <li class="nav-item dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i><span>Peminjaman</span></a>
         <ul class="dropdown-menu">
