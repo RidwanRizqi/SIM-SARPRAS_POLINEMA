@@ -16,7 +16,7 @@
                         <div class="card mb-4">
                             <div class="card-header bg-whitesmoke"><h4>Data User</h4></div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
+                                <table id="datatablesSimple" class="table table-bordered">
                                     <thead>
                                     <tr>
                                         <th>Nama User</th>
@@ -39,14 +39,14 @@
                                         <td>rispol@gmail.com</td>
                                         <td>rispol</td>
                                         <td class="d-flex justify-content-center">
-                                            <a href="{{route('edit.admin')}}">
+                                            <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </button>
                                             </a>
-                                            <a href="{{route('edit.admin')}}">
-                                                <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-edit"></i> Delete
+                                            <a href="#">
+                                                <button class="btn btn-danger" type="button">
+                                                    <i class="fas fa-trash"></i> Delete
                                                 </button>
                                             </a>
                                         </td>
@@ -56,14 +56,14 @@
                                         <td>pppolinema@gmail.com</td>
                                         <td>pendidikan_penalaran</td>
                                         <td class="d-flex justify-content-center">
-                                            <a href="{{route('edit.admin')}}">
+                                            <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </button>
                                             </a>
-                                            <a href="{{route('edit.admin')}}">
-                                                <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-edit"></i> Delete
+                                            <a href="#">
+                                                <button class="btn btn-danger" type="button">
+                                                    <i class="fas fa-trash"></i> Delete
                                                 </button>
                                             </a>
                                         </td>
@@ -73,14 +73,14 @@
                                         <td>theatrisicpolinema@gmail.com</td>
                                         <td>theatrisicpolinema</td>
                                         <td class="d-flex justify-content-center">
-                                            <a href="{{route('edit.admin')}}">
+                                            <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </button>
                                             </a>
-                                            <a href="{{route('edit.admin')}}">
-                                                <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-edit"></i> Delete
+                                            <a href="#">
+                                                <button class="btn btn-danger" type="button">
+                                                    <i class="fas fa-trash"></i> Delete
                                                 </button>
                                             </a>
                                         </td>
@@ -90,14 +90,14 @@
                                         <td>orpolinema@gmail.com</td>
                                         <td>orpol</td>
                                         <td class="d-flex justify-content-center">
-                                            <a href="{{route('edit.admin')}}">
+                                            <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </button>
                                             </a>
-                                            <a href="{{route('edit.admin')}}">
-                                                <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-edit"></i> Delete
+                                            <a href="#">
+                                                <button class="btn btn-danger" type="button">
+                                                    <i class="fas fa-trash"></i> Delete
                                                 </button>
                                             </a>
                                         </td>
@@ -107,14 +107,14 @@
                                         <td>menwapolinema@gmail.com</td>
                                         <td>menwapol</td>
                                         <td class="d-flex justify-content-center">
-                                            <a href="{{route('edit.admin')}}">
+                                            <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </button>
                                             </a>
-                                            <a href="{{route('edit.admin')}}">
-                                                <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-edit"></i> Delete
+                                            <a href="#">
+                                                <button class="btn btn-danger" type="button">
+                                                    <i class="fas fa-trash"></i> Delete
                                                 </button>
                                             </a>
                                         </td>
@@ -124,14 +124,14 @@
                                         <td>pastipolinema@gmail.com</td>
                                         <td>pastipol</td>
                                     <td class="d-flex justify-content-center">
-                                        <a href="{{route('edit.admin')}}">
+                                        <a href="{{route('update.superadmin')}}">
                                             <button class="btn btn-success" type="button">
                                                 <i class="fas fa-edit"></i> Edit
                                             </button>
                                         </a>
-                                        <a href="{{route('edit.admin')}}">
-                                            <button class="btn btn-success" type="button">
-                                                <i class="fas fa-edit"></i> Delete
+                                        <a href="#">
+                                            <button class="btn btn-danger" type="button">
+                                                <i class="fas fa-trash"></i> Delete
                                             </button>
                                         </a>
                                     </td>
@@ -151,17 +151,5 @@
 
 @section('sidebar')
     @parent
-    <li class="nav-item dropdown">
-        <a href="{{route('kelola.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Sarana Prasarana</span></a>
-        <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i><span>Peminjaman</span></a>
-        <ul class="dropdown-menu">
-            <li>
-                <a class="nav-link" href="{{route('history.admin')}}">History User</a>
-            </li>
-            <li>
-                <a class="nav-link" href="{{route('validasi.admin')}}">Validasi User</a>
-            </li>
-        </ul>
-        <a href="{{route('pelaporan.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Pelaporan</span></a>
-    </li>
+    <li><a href="{{route('daftaruser.superadmin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Pengguna</span></a></li>
 @endsection

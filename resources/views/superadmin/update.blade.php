@@ -5,7 +5,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>User</h1>
+            <h1>Update User</h1>
         </div>
 
         <div class="section-body">
@@ -16,7 +16,7 @@
                         <div class="card mb-4">
                             <div class="card-header bg-whitesmoke"><h4>Data Sarana & Prasarana</h4></div>
                             <div class="card-body">
-                                <table id="datatablesSimple">
+                                <table id="datatablesSimple" class="table table-bordered">
                                     <thead>
                                     <tr>
                                         <th>Nama User</th>
@@ -45,8 +45,8 @@
                                                 </button>
                                             </a>
                                             <a href="{{route('edit.admin')}}">
-                                                <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-edit"></i> Delete
+                                                <button class="btn btn-danger" type="button">
+                                                    <i class="fas fa-trash"></i> Delete
                                                 </button>
                                             </a>
                                         </td>
@@ -61,9 +61,11 @@
                                                 <i class="fas fa-edit"></i> Edit
                                             </button>
                                             </a>
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </button>
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-danger" type="button">
+                                                    <i class="fas fa-trash"></i> Delete
+                                                </button>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -76,9 +78,11 @@
                                                     <i class="fas fa-edit"></i> Edit
                                                 </button>
                                             </a>
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </button>
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-danger" type="button">
+                                                    <i class="fas fa-trash"></i> Delete
+                                                </button>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -91,9 +95,11 @@
                                                     <i class="fas fa-edit"></i> Edit
                                                 </button>
                                             </a>
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </button>
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-danger" type="button">
+                                                    <i class="fas fa-trash"></i> Delete
+                                                </button>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -106,9 +112,11 @@
                                                     <i class="fas fa-edit"></i> Edit
                                                 </button>
                                             </a>
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </button>
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-danger" type="button">
+                                                    <i class="fas fa-trash"></i> Delete
+                                                </button>
+                                            </a>
                                         </td>
                                     </tr>
 
@@ -126,17 +134,5 @@
 
 @section('sidebar')
     @parent
-    <li class="nav-item dropdown">
-        <a href="{{route('kelola.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Sarana Prasarana</span></a>
-        <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i><span>Peminjaman</span></a>
-        <ul class="dropdown-menu">
-            <li>
-                <a class="nav-link" href="{{route('history.admin')}}">History User</a>
-            </li>
-            <li>
-                <a class="nav-link" href="{{route('validasi.admin')}}">Validasi User</a>
-            </li>
-        </ul>
-        <a href="{{route('pelaporan.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Pelaporan</span></a>
-    </li>
+    <li><a href="{{route('daftaruser.superadmin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Pengguna</span></a></li>
 @endsection

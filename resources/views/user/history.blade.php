@@ -4,6 +4,9 @@
 
 @section('content')
     <section class="section">
+        <div class="section-header">
+            <h1>History Peminjaman</h1>
+        </div>
 
         <div class="section-body">
             <div id="layoutSidenav_content">
@@ -160,7 +163,7 @@
                     </div>
                     <div class="container-xl px-4 mt-5">
                         <div class="card mb-4">
-                            <div class="card-header bg-whitesmoke"><h4>Data Peminjaman Lama</h4></div>
+                            <div class="card-header bg-whitesmoke"><h4>Data Peminjaman Selesai</h4></div>
                             <div class="card-body">
                                 <table id="datatablesSimple" class="table table-bordered">
                                     <thead>
@@ -191,8 +194,8 @@
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
                                         </td>
-                                        <td class="text-center justify-content-center">
-                                            <div class="alert alert-secondary" role="alert">
+                                        <td class="justify-content-center">
+                                            <div class="alert alert-primary text-center" role="alert">
                                                 Selesai
                                               </div>
                                         </td>
@@ -206,10 +209,10 @@
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
                                         </td>
-                                        <td class="text-center justify-content-center">
-                                            <div class="alert alert-secondary" role="alert">
+                                        <td class="justify-content-center">
+                                            <div class="alert alert-primary text-center" role="alert">
                                                 Selesai
-                                              </div>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -221,10 +224,10 @@
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
                                         </td>
-                                        <td class="text-center justify-content-center">
-                                            <div class="alert alert-secondary" role="alert">
+                                        <td class="justify-content-center">
+                                            <div class="alert alert-primary text-center" role="alert">
                                                 Selesai
-                                              </div>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -236,10 +239,10 @@
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
                                         </td>
-                                        <td class="text-center justify-content-center">
-                                            <div class="alert alert-secondary" role="alert">
+                                        <td class="justify-content-center">
+                                            <div class="alert alert-primary text-center" role="alert">
                                                 Selesai
-                                              </div>
+                                            </div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -251,10 +254,10 @@
                                                 <i class="fas fa-file-alt"></i>
                                             </button>
                                         </td>
-                                        <td class="text-center justify-content-center">
-                                            <div class="alert alert-secondary" role="alert">
+                                        <td class="justify-content-center">
+                                            <div class="alert alert-primary text-center" role="alert">
                                                 Selesai
-                                              </div>
+                                            </div>
                                         </td>
                                     </tr>
                                     </tbody>
