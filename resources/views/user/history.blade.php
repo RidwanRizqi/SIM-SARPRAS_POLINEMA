@@ -271,16 +271,14 @@
 @section('sidebar')
     @parent
     <li class="nav-item dropdown">
-        <a href="{{route('daftar.user')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Daftar Sarana &amp; Prasarana</span></a>
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i><span>Peminjaman</span></a>
         <ul class="dropdown-menu">
             <li>
-                <a class="nav-link" href="{{route('history.user')}}">History User</a>
+                <a class="nav-link" href="{{route('daftarsaranaprasarana.user')}}">Daftar Sarana Prasarana</a>
             </li>
             <li>
-                <a class="nav-link" href="{{route('validasi.user')}}">Validasi User</a>
+                <a class="nav-link" href="{{route('history.user')}}">History User</a>
             </li>
         </ul>
-        <a href="{{route('pelaporan.user')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Pelaporan</span></a>
     </li>
 @endsection

@@ -90,17 +90,14 @@
 @section('sidebar')
     @parent
     {{-- <li class="menu-header">Dashboard</li> --}}
-    <li><a href="#" class="nav-link "><i
-        class="fas fa-fire"></i><span>Daftar Sarana &amp; Prasarana</span></a></li>
     <li class="nav-item dropdown">
-        <a href="#" class="nav-link has-dropdown"><i
-                class="fas fa-fire"></i><span>Peminjaman</span></a>
+        <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i><span>Peminjaman</span></a>
         <ul class="dropdown-menu">
             <li>
-                <a class="nav-link" href="{{route('validasi.user')}}">Validasi</a>
+                <a class="nav-link" href="{{route('daftarsaranaprasarana.user')}}">Daftar Sarana Prasarana</a>
             </li>
             <li>
-                <a class="nav-link" href="{{route('history.user')}}">Histori</a>
+                <a class="nav-link" href="{{route('history.user')}}">History User</a>
             </li>
         </ul>
     </li>
