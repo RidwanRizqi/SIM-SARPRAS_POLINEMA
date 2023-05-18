@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Menu Kelola Sarana-Prasarana Admin')
+@section('title', 'Menu Kelola User SuperAdmin')
 
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Super Admin Sarana-Prasarana</h1>
+            <h1>Kelola User</h1>
         </div>
 
         <div class="section-body">
@@ -14,100 +14,127 @@
                     <!-- Main page content-->
                     <div class="container-xl px-4 mt-n10">
                         <div class="card mb-4">
-                            <div class="card-header bg-whitesmoke"><h4>Data Sarana & Prasarana</h4></div>
+                            <div class="card-header bg-whitesmoke"><h4>Data User</h4></div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
                                     <thead>
                                     <tr>
-                                        <th>Nama Ruangan</th>
-                                        <th>Kategori</th>
-                                        <th>Fasilitas</th>
+                                        <th>Nama User</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tfoot>
                                     <tr>
-                                        <th>Nama Ruangan</th>
-                                        <th>Kategori</th>
-                                        <th>Fasilitas</th>
+                                        <th>Nama User</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
                                         <th>Action</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
                                     <tr>
-                                        <td>Graha Polinema</td>
-                                        <td>JTI</td>
-                                        <td>meja 10 kursi 10</td>
+                                        <td>RISPOL</td>
+                                        <td>rispol@gmail.com</td>
+                                        <td>rispol</td>
                                         <td class="d-flex justify-content-center">
                                             <a href="{{route('edit.admin')}}">
                                                 <button class="btn btn-success" type="button">
                                                     <i class="fas fa-edit"></i> Edit
                                                 </button>
                                             </a>
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </button>
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-success" type="button">
+                                                    <i class="fas fa-edit"></i> Delete
+                                                </button>
+                                            </a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Graha Polinema</td>
-                                        <td>JTI</td>
-                                        <td>meja 10 kursi 10</td>
+                                        <td>PP</td>
+                                        <td>pppolinema@gmail.com</td>
+                                        <td>pendidikan_penalaran</td>
                                         <td class="d-flex justify-content-center">
                                             <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-success" type="button">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </button>
+                                            </a>
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-success" type="button">
+                                                    <i class="fas fa-edit"></i> Delete
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Theatrisic</td>
+                                        <td>theatrisicpolinema@gmail.com</td>
+                                        <td>theatrisicpolinema</td>
+                                        <td class="d-flex justify-content-center">
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-success" type="button">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </button>
+                                            </a>
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-success" type="button">
+                                                    <i class="fas fa-edit"></i> Delete
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>OR</td>
+                                        <td>orpolinema@gmail.com</td>
+                                        <td>orpol</td>
+                                        <td class="d-flex justify-content-center">
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-success" type="button">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </button>
+                                            </a>
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-success" type="button">
+                                                    <i class="fas fa-edit"></i> Delete
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Menwa</td>
+                                        <td>menwapolinema@gmail.com</td>
+                                        <td>menwapol</td>
+                                        <td class="d-flex justify-content-center">
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-success" type="button">
+                                                    <i class="fas fa-edit"></i> Edit
+                                                </button>
+                                            </a>
+                                            <a href="{{route('edit.admin')}}">
+                                                <button class="btn btn-success" type="button">
+                                                    <i class="fas fa-edit"></i> Delete
+                                                </button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>PASTI</td>
+                                        <td>pastipolinema@gmail.com</td>
+                                        <td>pastipol</td>
+                                    <td class="d-flex justify-content-center">
+                                        <a href="{{route('edit.admin')}}">
                                             <button class="btn btn-success" type="button">
                                                 <i class="fas fa-edit"></i> Edit
                                             </button>
-                                            </a>
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
+                                        </a>
+                                        <a href="{{route('edit.admin')}}">
+                                            <button class="btn btn-success" type="button">
+                                                <i class="fas fa-edit"></i> Delete
                                             </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Graha Polinema</td>
-                                        <td>JTI</td>
-                                        <td>meja 10 kursi 10</td>
-                                        <td class="d-flex justify-content-center">
-                                            <a href="{{route('edit.admin')}}">
-                                                <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-edit"></i> Edit
-                                                </button>
-                                            </a>
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Graha Polinema</td>
-                                        <td>JTI</td>
-                                        <td>meja 10 kursi 10</td>
-                                        <td class="d-flex justify-content-center">
-                                            <a href="{{route('edit.admin')}}">
-                                                <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-edit"></i> Edit
-                                                </button>
-                                            </a>
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Graha Polinema</td>
-                                        <td>JTI</td>
-                                        <td>meja 10 kursi 10</td>
-                                        <td class="d-flex justify-content-center">
-                                            <a href="{{route('edit.admin')}}">
-                                                <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-edit"></i> Edit
-                                                </button>
-                                            </a>
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </button>
-                                        </td>
+                                        </a>
+                                    </td>
                                     </tr>
 
                                     </tbody>
