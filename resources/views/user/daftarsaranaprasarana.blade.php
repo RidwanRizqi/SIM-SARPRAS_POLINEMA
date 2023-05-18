@@ -45,8 +45,8 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Graha Polinema</td>
-                                        <td>Graha Polinema</td>
+                                        <td>Aula Pertamina</td>
+                                        <td>Aula Pertamina</td>
                                         <td>Admin Pusat</td>
                                         <td class="text-center justify-content-center">
                                             <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
@@ -58,13 +58,78 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Graha Polinema</td>
-                                        <td>Graha Polinema</td>
-                                        <td>Admin Pusat</td>
+                                        <td>JTI</td>
+                                        <td>RT01</td>
+                                        <td>Admin Jurusan</td>
                                         <td class="text-center justify-content-center">
                                             <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
                                                 Pinjam
                                             </button></a>
+                                            <button class="btn btn-info" type="button">
+                                                Fasilitas
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>JTI</td>
+                                        <td>RT02</td>
+                                        <td>Admin Jurusan</td>
+                                        <td class="text-center justify-content-center">
+                                            <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
+                                                    Pinjam
+                                                </button></a>
+                                            <button class="btn btn-info" type="button">
+                                                Fasilitas
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>JTI</td>
+                                        <td>RT03</td>
+                                        <td>Admin Jurusan</td>
+                                        <td class="text-center justify-content-center">
+                                            <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
+                                                    Pinjam
+                                                </button></a>
+                                            <button class="btn btn-info" type="button">
+                                                Fasilitas
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>JTI</td>
+                                        <td>RT04</td>
+                                        <td>Admin Jurusan</td>
+                                        <td class="text-center justify-content-center">
+                                            <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
+                                                    Pinjam
+                                                </button></a>
+                                            <button class="btn btn-info" type="button">
+                                                Fasilitas
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>JTI</td>
+                                        <td>RT05</td>
+                                        <td>Admin Jurusan</td>
+                                        <td class="text-center justify-content-center">
+                                            <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
+                                                    Pinjam
+                                                </button></a>
+                                            <button class="btn btn-info" type="button">
+                                                Fasilitas
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>JTI</td>
+                                        <td>RT06</td>
+                                        <td>Admin Jurusan</td>
+                                        <td class="text-center justify-content-center">
+                                            <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
+                                                    Pinjam
+                                                </button></a>
                                             <button class="btn btn-info" type="button">
                                                 Fasilitas
                                             </button>
