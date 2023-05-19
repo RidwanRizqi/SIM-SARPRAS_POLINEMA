@@ -5,14 +5,88 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Dashboard Super Admin</h1>
+            <h1>Welcome User</h1>
         </div>
 
-        <div class="section-body"></div>
+        <div class="section-body">
+            <div class="row">
+                <div class="col-xl-6 mb-4">
+                    <!-- Dashboard example card 1-->
+                    <a class="card lift h-100" href="#!">
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="me-3">
+                                    <i class="fas fa-users" style="font-size: xxx-large"></i>
+                                    <br>
+                                    <br>
+                                    <h5>Daftar User</h5>
+                                    <div class="text-muted small">Description</div>
+                                </div>
+                                <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
+                                     alt="..." style="width: 8rem"/>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xl-6 mb-4">
+                    <a class="card lift h-100" href="#!">
+                    <div class="card-body d-flex justify-content-center flex-column">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="me-3">
+                                <i class="fas fa-user-lock" style="font-size: xxx-large"></i>
+                                <br>
+                                <br>
+                                <h4>PUSAT KOMPUTER POLINEMA</h4>
+                                <div class="text-muted small">Description</div>
+                            </div>
+                            <img src="{{ asset('assets/img/logo_polinema.png') }}"
+                                 alt="..." style="width: 8rem"/>
+                        </div>
+                </div>
+                    </a>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-xl-6 mb-4">
+                    <div class="card bg-success text-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="me-3">
+                                    <div><h5>User OKI</h5></div>
+                                    <div class="display-4 text-white">24</div>
+                                </div>
+                                <i class="fas fa-user-alt" style="font-size:xx-large"></i>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between small shadow-dark">
+                            <a class="text-white stretched-link" href="#!"><h6>Detail</h6></a>
+                            <div class="text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-xl-6 mb-4">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="me-3">
+                                    <div><h5>User Admin</h5></div>
+                                    <div class="display-4 text-white">8</div>
+                                </div>
+                                <i class="fas fa-user-shield" style="font-size:xx-large"></i>
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between small shadow-dark">
+                            <a class="text-white stretched-link" href="#!"><h6>Detail</h6></a>
+                            <div class="text-white"><i class="fas fa-angle-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 @endsection
 
 @section('sidebar')
     @parent
-    <li><a href="{{route('daftaruser.superadmin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Pengguna</span></a></li>
+    <li><a href="{{route('kelola.superadmin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Pengguna</span></a></li>
 @endsection

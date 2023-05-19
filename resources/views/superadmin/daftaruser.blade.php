@@ -34,12 +34,12 @@
                                         <td class="d-flex justify-content-center">
                                             <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-edit"></i> Edit
+                                                    <i class="fas fa-user-cog"></i> Edit
                                                 </button>
                                             </a>
                                             <a href="#">
                                                 <button class="btn btn-danger" type="button">
-                                                    <i class="fas fa-trash"></i> Delete
+                                                    <i class="fas fa-user-times"></i> Delete
                                                 </button>
                                             </a>
                                         </td>
@@ -53,12 +53,12 @@
                                         <td class="d-flex justify-content-center">
                                             <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-edit"></i> Edit
+                                                    <i class="fas fa-user-cog"></i> Edit
                                                 </button>
                                             </a>
                                             <a href="#">
                                                 <button class="btn btn-danger" type="button">
-                                                    <i class="fas fa-trash"></i> Delete
+                                                    <i class="fas fa-user-times"></i> Delete
                                                 </button>
                                             </a>
                                         </td>
@@ -72,12 +72,12 @@
                                         <td class="d-flex justify-content-center">
                                             <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-edit"></i> Edit
+                                                    <i class="fas fa-user-cog"></i> Edit
                                                 </button>
                                             </a>
                                             <a href="#">
                                                 <button class="btn btn-danger" type="button">
-                                                    <i class="fas fa-trash"></i> Delete
+                                                    <i class="fas fa-user-times"></i> Delete
                                                 </button>
                                             </a>
                                         </td>
@@ -91,12 +91,12 @@
                                         <td class="d-flex justify-content-center">
                                             <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-edit"></i> Edit
+                                                    <i class="fas fa-user-cog"></i> Edit
                                                 </button>
                                             </a>
                                             <a href="#">
                                                 <button class="btn btn-danger" type="button">
-                                                    <i class="fas fa-trash"></i> Delete
+                                                    <i class="fas fa-user-times"></i> Delete
                                                 </button>
                                             </a>
                                         </td>
@@ -110,12 +110,12 @@
                                         <td class="d-flex justify-content-center">
                                             <a href="{{route('update.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-edit"></i> Edit
+                                                    <i class="fas fa-user-cog"></i> Edit
                                                 </button>
                                             </a>
                                             <a href="#">
                                                 <button class="btn btn-danger" type="button">
-                                                    <i class="fas fa-trash"></i> Delete
+                                                    <i class="fas fa-user-times"></i> Delete
                                                 </button>
                                             </a>
                                         </td>
@@ -129,12 +129,12 @@
                                     <td class="d-flex justify-content-center">
                                         <a href="{{route('update.superadmin')}}">
                                             <button class="btn btn-success" type="button">
-                                                <i class="fas fa-edit"></i> Edit
+                                                <i class="fas fa-user-cog"></i> Edit
                                             </button>
                                         </a>
                                         <a href="#">
                                             <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
+                                                <i class="fas fa-user-times"></i> Delete
                                             </button>
                                         </a>
                                     </td>
@@ -153,5 +153,5 @@
 
 @section('sidebar')
     @parent
-    <li><a href="{{route('daftaruser.superadmin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Pengguna</span></a></li>
+    <li><a href="{{route('kelola.superadmin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Pengguna</span></a></li>
 @endsection
