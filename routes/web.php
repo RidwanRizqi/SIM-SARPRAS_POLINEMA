@@ -43,10 +43,6 @@ Route::get('daftar-user', function () {
     return view('superadmin.daftaruser');
 })->name('daftaruser.superadmin');
 
-//Route::get('update-superadmin', function () {
-//    return view('superadmin.update');
-//})->name('update.superadmin');
-
 Route::get('superadmin-tambah-user', function () {
     return view('superadmin.formtambahuser');
 })->name('formtambahuser.superadmin');
