@@ -32,7 +32,7 @@
                                         <td>User</td>
                                         <td>+62-813-2131-8942</td>
                                         <td class="d-flex justify-content-center">
-                                            <a href="{{route('update.superadmin')}}">
+                                            <a href="{{route('formedituser.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
                                                     <i class="fas fa-user-cog"></i> Edit
                                                 </button>
@@ -51,7 +51,7 @@
                                         <td>User</td>
                                         <td>+62-813-2131-8942</td>
                                         <td class="d-flex justify-content-center">
-                                            <a href="{{route('update.superadmin')}}">
+                                            <a href="{{route('formedituser.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
                                                     <i class="fas fa-user-cog"></i> Edit
                                                 </button>
@@ -70,7 +70,7 @@
                                         <td>User</td>
                                         <td>+62-813-2131-8942</td>
                                         <td class="d-flex justify-content-center">
-                                            <a href="{{route('update.superadmin')}}">
+                                            <a href="{{route('formedituser.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
                                                     <i class="fas fa-user-cog"></i> Edit
                                                 </button>
@@ -89,7 +89,7 @@
                                         <td>User</td>
                                         <td>+62-813-2131-8942</td>
                                         <td class="d-flex justify-content-center">
-                                            <a href="{{route('update.superadmin')}}">
+                                            <a href="{{route('formedituser.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
                                                     <i class="fas fa-user-cog"></i> Edit
                                                 </button>
@@ -108,7 +108,7 @@
                                         <td>User</td>
                                         <td>+62-813-2131-8942</td>
                                         <td class="d-flex justify-content-center">
-                                            <a href="{{route('update.superadmin')}}">
+                                            <a href="{{route('formedituser.superadmin')}}">
                                                 <button class="btn btn-success" type="button">
                                                     <i class="fas fa-user-cog"></i> Edit
                                                 </button>
@@ -127,7 +127,7 @@
                                         <td>User</td>
                                         <td>+62-813-2131-8942</td>
                                     <td class="d-flex justify-content-center">
-                                        <a href="{{route('update.superadmin')}}">
+                                        <a href="{{route('formedituser.superadmin')}}">
                                             <button class="btn btn-success" type="button">
                                                 <i class="fas fa-user-cog"></i> Edit
                                             </button>

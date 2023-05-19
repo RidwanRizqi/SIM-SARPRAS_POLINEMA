@@ -43,9 +43,17 @@ Route::get('daftar-user', function () {
     return view('superadmin.daftaruser');
 })->name('daftaruser.superadmin');
 
-Route::get('update-superadmin', function () {
-    return view('superadmin.update');
-})->name('update.superadmin');
+//Route::get('update-superadmin', function () {
+//    return view('superadmin.update');
+//})->name('update.superadmin');
+
+Route::get('superadmin-tambah-user', function () {
+    return view('superadmin.formtambahuser');
+})->name('formtambahuser.superadmin');
+
+Route::get('superadmin-edit-user', function () {
+    return view('superadmin.formedituser');
+})->name('formedituser.superadmin');
 
 Route::get('kelola-superadmin', function () {
     return view('superadmin.kelola');
