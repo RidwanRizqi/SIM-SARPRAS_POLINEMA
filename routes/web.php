@@ -47,6 +47,11 @@ Route::get('update-superadmin', function () {
     return view('superadmin.update');
 })->name('update.superadmin');
 
+Route::get('kelola-superadmin', function () {
+    return view('superadmin.kelola');
+})->name('kelola.superadmin');
+
+
 Route::get('kelola-ruang', function () {
     return view('admin.kelola');
 })->name('kelola.admin');
