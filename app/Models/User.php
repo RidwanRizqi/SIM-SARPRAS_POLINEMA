@@ -48,4 +48,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Peminjaman::class, 'id_user');
     }
+
+    public function wewenang(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Wewenang::class, 'id_wewenang');
+    }
 }
