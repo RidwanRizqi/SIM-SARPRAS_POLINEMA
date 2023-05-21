@@ -21,4 +21,9 @@ class SaranaPrasarana extends Model
     {
         return $this->hasMany(Peminjaman::class, 'id_sarana_prasarana');
     }
+
+    public function wewenang(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Wewenang::class, 'id_wewenang');
+    }
 }
