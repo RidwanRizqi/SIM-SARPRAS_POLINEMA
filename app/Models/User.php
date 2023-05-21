@@ -43,4 +43,14 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function peminjaman(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Peminjaman::class, 'id_user');
+    }
+
+    public function wewenang(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Wewenang::class, 'id_wewenang');
+    }
 }
