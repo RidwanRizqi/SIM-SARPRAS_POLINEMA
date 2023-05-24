@@ -36,6 +36,24 @@ Route::middleware(['auth', 'verified'])->group(function () {
         }
     })->name('home');
 
+//    Route::get('edit-profile', function () {
+//        return view('dashboard.profile');
+//    })->name('profile.edit');
+
+    Route::get('edit-profile', function () {
+        if (Auth::check()) {
+            if (Auth::user()->role == 'superadmin') {
+                return view('superadmin.profile_Sadmin');
+            } elseif (Auth::user()->role == 'admin') {
+                return view('admin.profile_admin');
+            } else {
+                return view('user.profile_user');
+            }
+        } else {
+            return view('auth.login');
+        }
+    })->name('profile');
+
     Route::middleware('can:superadmin')->group(function () {
         Route::get('kelola-superadmin', function () {
             return view('superadmin.kelola');
@@ -101,10 +119,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return view('user.form');
         })->name('form.user');
     });
-
-    Route::get('edit-profile', function () {
-        return view('dashboard.profile');
-    })->name('profile.edit');
 });
 
 //Route::get('/home', function () {
