@@ -37,7 +37,9 @@
                 Don't have an account? <a href="{{ route('register') }}">Create One</a>
             </div>
             <div class="simple-footer">
-                Copyright &copy; Stisla 2018
+                Copyright &copy; 2023
+                <div class="bullet"></div>
+                Developed By <a href="https://nauval.in/">Icikiwir Technology House</a>
             </div>
         </div>
     </div>
