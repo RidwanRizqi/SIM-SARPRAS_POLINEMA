@@ -5,7 +5,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Update Sarana-Prasarana</h1>
+            <h1>Tambah Sarana-Prasarana</h1>
         </div>
 
         <div class="section-body">
