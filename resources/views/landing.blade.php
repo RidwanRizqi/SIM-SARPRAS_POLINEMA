@@ -322,29 +322,14 @@
 
   <footer id="newsletter">
     <div class="container">
-      <div class="row">
+      <div class="row mb-5">
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading">
             <h4>PUSKOM POLINEMA - SIM SARPRAS POLINEMA</h4>
+              <h4>Polinema Jujur Optimis Semangat Sukses</h4>
           </div>
         </div>
-        <div class="col-lg-6 offset-lg-3">
-          <form id="search" action="#" method="GET">
-            <div class="row">
-              <div class="col-lg-6 col-sm-6">
-                <fieldset>
-                  <input type="address" name="address" class="email" placeholder="Email Address..." autocomplete="on" required>
-                </fieldset>
-              </div>
-              <div class="col-lg-6 col-sm-6">
-                <fieldset>
-                  <button type="submit" class="main-button">Join Us<i class="fa fa-angle-right"></i></button>
-                </fieldset>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+          </div>
       <div class="row">
         <div class="col-lg-3">
           <div class="footer-widget">
