@@ -19,6 +19,7 @@ class UserSeeder extends Seeder
             'name' => 'Super Admin',
             'email' => 'superadmin@gmail.com',
             'role' => 'superadmin',
+            'id_wewenang' => '1',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
@@ -26,6 +27,7 @@ class UserSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'role' => 'admin',
+            'id_wewenang' => '1',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
@@ -33,6 +35,7 @@ class UserSeeder extends Seeder
             'name' => 'User',
             'email' => 'user@gmail.com',
             'role' => 'user',
+            'id_wewenang' => '1',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);

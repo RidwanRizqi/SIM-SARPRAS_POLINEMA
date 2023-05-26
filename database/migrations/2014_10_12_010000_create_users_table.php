@@ -26,7 +26,7 @@ return new class extends Migration
                     'user',
                 ]
             )->default('user');
-            $table->string('wewenang')->default('1');
+            $table->foreignId('id_wewenang')->constrained('wewenang');
             $table->rememberToken();
             $table->timestamps();
         });
