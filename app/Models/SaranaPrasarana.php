@@ -12,9 +12,9 @@ class SaranaPrasarana extends Model
     protected $table = 'sarana_prasarana';
 
     protected $fillable = [
-        'name',
-        'capacity',
-        'facility',
+        'nama',
+        'kapasiats',
+        'fasilitas',
     ];
 
     public function peminjaman(): \Illuminate\Database\Eloquent\Relations\HasMany

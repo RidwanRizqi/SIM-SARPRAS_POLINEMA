@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('sarana_prasarana', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_wewenang')->constrained('wewenang');
-            $table->string('name');
-            $table->integer('capacity');
-            $table->text('facility');
+            $table->string('nama');
+            $table->integer('kapasitas');
+            $table->text('fasilitas');
             $table->timestamps();
         });
     }
