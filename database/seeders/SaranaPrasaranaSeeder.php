@@ -148,7 +148,7 @@ class SaranaPrasaranaSeeder extends Seeder
         SaranaPrasarana::create(
             [
                 'id_wewenang' => '5',
-                'nama' => 'AB 01',
+                'nama' => 'Ruang Kuliah 01',
                 'kapasitas' => '30',
                 'fasilitas' => '1 Papan Tulis, 30 Kursi, 1 Proyektor, 1 AC',
             ]
@@ -156,7 +156,7 @@ class SaranaPrasaranaSeeder extends Seeder
         SaranaPrasarana::create(
             [
                 'id_wewenang' => '5',
-                'nama' => 'AB 02',
+                'nama' => 'Ruang Kuliah 12',
                 'kapasitas' => '30',
                 'fasilitas' => '1 Papan Tulis, 30 Kursi, 1 Proyektor, 1 AC',
             ]
