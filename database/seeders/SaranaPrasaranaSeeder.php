@@ -45,6 +45,7 @@ class SaranaPrasaranaSeeder extends Seeder
                 'fasilitas' => '100 Kursi, 2 Proyektor, 4 AC, 6 Speaker, Set Sound System',
             ]
         );
+
         SaranaPrasarana::create(
             [
                 'id_wewenang' => '2',
@@ -69,6 +70,7 @@ class SaranaPrasaranaSeeder extends Seeder
                 'fasilitas' => '50 Kursi, 1 Proyektor, Speaker, 2 AC, Set Sound System',
             ]
         );
+
         SaranaPrasarana::create(
             [
                 'id_wewenang' => '3',
@@ -101,6 +103,7 @@ class SaranaPrasaranaSeeder extends Seeder
                 'fasilitas' => '60 Kursi, 2 Proyektor, 4 AC, 4 Speaker, Set Sound System',
             ]
         );
+
         SaranaPrasarana::create(
             [
                 'id_wewenang' => '8',
@@ -130,7 +133,7 @@ class SaranaPrasaranaSeeder extends Seeder
                 'id_wewenang' => '8',
                 'nama' => 'Masjid Raya An-Nur',
                 'kapasitas' => '300',
-                'fasilitas' => 'Karpet, Mimbar,4 Speaker, Set Sound System',
+                'fasilitas' => 'Karpet, Mimbar, 4 Speaker, Set Sound System, 4 Toilet, Tempat Wudhu',
             ]
         );
         SaranaPrasarana::create(
