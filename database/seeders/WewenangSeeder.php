@@ -21,6 +21,7 @@ class WewenangSeeder extends Seeder
             'Jurusan Teknologi Informasi',
             'Jurusan Administrasi Bisnis',
             'Jurusan Teknik Kimia',
+            'Sarana Prasarana Pusat',
         ];
 
         foreach ($jurusan as $key => $value) {
