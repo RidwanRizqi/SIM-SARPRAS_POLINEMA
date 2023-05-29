@@ -17,6 +17,24 @@ return new class extends Migration
             $table->foreignId('id_sarana_prasarana')->constrained('sarana_prasarana');
             $table->foreignId('id_dokumen')->constrained('dokumen');
             $table->string('kegiatan');
+            $table->string('penanggung_jawab');
+            $table->enum(
+                'status',
+                [
+                    'Proses',
+                    'Valid',
+                    'Ditolak',
+                ]
+            )->default('Proses');
+            $table->text('pinjam_fasilitas');
+            $table->enum(
+                'daya_listrik',
+                [
+                    'Ya',
+                    'Tidak',
+                ]
+            )->default('Ya');
+            $table->text('catatan_admin')->nullable();
             $table->date('tanggal_mulai');
             $table->date('tanggal_selesai');
             $table->timestamps();

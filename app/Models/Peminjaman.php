@@ -14,6 +14,11 @@ class Peminjaman extends Model
         'id_sarana_prasarana',
         'id_dokumen',
         'kegiatan',
+        'penanggung_jawab',
+        'status',
+        'pinjam_fasilitas',
+        'daya_listrik',
+        'catatan_admin',
         'tanggal_mulai',
         'tanggal_selesai',
     ];
