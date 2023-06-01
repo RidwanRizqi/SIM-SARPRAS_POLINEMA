@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Wewenang;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -27,7 +29,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('superadmin.formtambahuser', [
+            'wewenangs' => Wewenang::all(),
+        ]);
     }
 
     /**
@@ -35,7 +39,19 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:50|min:3',
+            'email' => 'required|unique:users|max:50|min:3',
+            'password' => 'required|max:50|min:3',
+            'role' => 'required|max:50|min:4',
+            'phone' =>'required|max:50|min:1',
+            'id_wewenang' => 'required|max:50|min:1',
+        ]);
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        User::create($validatedData);
+
+        return redirect('kelola-superadmin')->with('success', 'New user has been added!');
     }
 
     /**

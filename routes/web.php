@@ -60,15 +60,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return view('superadmin.kelola');
         })->name('kelola.superadmin');
 
-        Route::get('superadmin-tambah-user', function () {
-            return view('superadmin.formtambahuser');
-        })->name('formtambahuser.superadmin');
+//        Route::get('superadmin-tambah-user', function () {
+//            return view('superadmin.formtambahuser');
+//        })->name('formtambahuser.superadmin');
 
 //        Route::get('daftar-user', function () {
 //            return view('superadmin.daftaruser');
 //        })->name('daftaruser.superadmin');
 
-        Route::resource('daftar-user', UserController::class);
+        Route::resource('users', UserController::class);
 
         Route::get('superadmin-edit-user', function () {
             return view('superadmin.formedituser');

@@ -7,6 +7,12 @@
         <div class="section-header">
             <h1>Kelola User</h1>
         </div>
+        @if(session()->has('success'))
+            <div class="alert alert-success col-lg-8" role="alert">
+                {{ session('success') }}
+            </div>
+
+        @endif
 
         <div class="section-body">
             <div id="layoutSidenav_content">
@@ -16,7 +22,7 @@
                         <div class="row">
                             <div class="col-xl-6 mb-4">
                                 <!-- Dashboard example card 1-->
-                                <a class="card lift h-100" href="{{route('formtambahuser.superadmin')}}">
+                                <a class="card lift h-100" href="{{route('users.create')}}">
                                     <div class="card-body d-flex justify-content-center flex-column">
                                         <div class="d-flex align-items-center justify-content-between">
                                             <div class="me-3">
@@ -33,7 +39,7 @@
                             </div>
                             <div class="col-xl-6 mb-4">
                                 <!-- Dashboard example card 2-->
-                                <a class="card lift h-100" href="{{route('daftar-user.index')}}">
+                                <a class="card lift h-100" href="{{route('users.index')}}">
                                     <div class="card-body d-flex justify-content-center flex-column">
                                         <div class="d-flex align-items-center justify-content-between">
                                             <div class="me-3">
