@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -52,7 +53,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         } else {
             return view('auth.login');
         }
-    })->name('profile');
+    })->name('profile.edit');
 
     Route::middleware('can:superadmin')->group(function () {
         Route::get('kelola-superadmin', function () {
@@ -63,9 +64,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return view('superadmin.formtambahuser');
         })->name('formtambahuser.superadmin');
 
-        Route::get('daftar-user', function () {
-            return view('superadmin.daftaruser');
-        })->name('daftaruser.superadmin');
+//        Route::get('daftar-user', function () {
+//            return view('superadmin.daftaruser');
+//        })->name('daftaruser.superadmin');
+
+        Route::resource('daftar-user', UserController::class);
 
         Route::get('superadmin-edit-user', function () {
             return view('superadmin.formedituser');

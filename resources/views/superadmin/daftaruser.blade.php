@@ -5,150 +5,75 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Daftar Pengguna</h1>
+            <h1>Kelola Data Pengguna</h1>
         </div>
 
         <div class="section-body">
-            <div id="layoutSidenav_content">
-                <main>
-                    <!-- Main page content-->
-                    <div class="container-xl px-4 mt-5">
-                        <div class="card mb-4">
-                            <div class="card-header bg-whitesmoke"><h4>Detail Data Pengguna</h4></div>
-                            <div class="card-body">
-                                <table id="datatablesSimple" class="table table-bordered">
-                                    <thead>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Daftar Pengguna</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="float-right">
+                                <form method="GET">
+                                    <div class="input-group">
+                                        <input name="search" type="text" class="form-control" placeholder="Search">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="clearfix mb-3"></div>
+
+                            <div class="table-responsive">
+                                <table class="table table-striped">
                                     <tr>
                                         <th>Nama User</th>
                                         <th>Email</th>
-                                        <th>Password</th>
                                         <th>Role</th>
                                         <th>Telepon</th>
                                         <th>Action</th>
                                     </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>RISPOL</td>
-                                        <td>rispol@gmail.com</td>
-                                        <td>rispol</td>
-                                        <td>User</td>
-                                        <td>+62-813-2131-8942</td>
-                                        <td class="d-flex justify-content-center">
-                                            <a href="{{route('formedituser.superadmin')}}">
-                                                <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-user-cog"></i> Edit
-                                                </button>
-                                            </a>
-                                            <a href="#">
-                                                <button class="btn btn-danger" type="button">
-                                                    <i class="fas fa-user-times"></i> Delete
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>PP</td>
-                                        <td>pppolinema@gmail.com</td>
-                                        <td>pendidikan_penalaran</td>
-                                        <td>User</td>
-                                        <td>+62-813-2131-8942</td>
-                                        <td class="d-flex justify-content-center">
-                                            <a href="{{route('formedituser.superadmin')}}">
-                                                <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-user-cog"></i> Edit
-                                                </button>
-                                            </a>
-                                            <a href="#">
-                                                <button class="btn btn-danger" type="button">
-                                                    <i class="fas fa-user-times"></i> Delete
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Theatrisic</td>
-                                        <td>theatrisicpolinema@gmail.com</td>
-                                        <td>theatrisicpolinema</td>
-                                        <td>User</td>
-                                        <td>+62-813-2131-8942</td>
-                                        <td class="d-flex justify-content-center">
-                                            <a href="{{route('formedituser.superadmin')}}">
-                                                <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-user-cog"></i> Edit
-                                                </button>
-                                            </a>
-                                            <a href="#">
-                                                <button class="btn btn-danger" type="button">
-                                                    <i class="fas fa-user-times"></i> Delete
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>OR</td>
-                                        <td>orpolinema@gmail.com</td>
-                                        <td>orpol</td>
-                                        <td>User</td>
-                                        <td>+62-813-2131-8942</td>
-                                        <td class="d-flex justify-content-center">
-                                            <a href="{{route('formedituser.superadmin')}}">
-                                                <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-user-cog"></i> Edit
-                                                </button>
-                                            </a>
-                                            <a href="#">
-                                                <button class="btn btn-danger" type="button">
-                                                    <i class="fas fa-user-times"></i> Delete
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Menwa</td>
-                                        <td>menwapolinema@gmail.com</td>
-                                        <td>menwapol</td>
-                                        <td>User</td>
-                                        <td>+62-813-2131-8942</td>
-                                        <td class="d-flex justify-content-center">
-                                            <a href="{{route('formedituser.superadmin')}}">
-                                                <button class="btn btn-success" type="button">
-                                                    <i class="fas fa-user-cog"></i> Edit
-                                                </button>
-                                            </a>
-                                            <a href="#">
-                                                <button class="btn btn-danger" type="button">
-                                                    <i class="fas fa-user-times"></i> Delete
-                                                </button>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>PASTI</td>
-                                        <td>pastipolinema@gmail.com</td>
-                                        <td>pastipol</td>
-                                        <td>User</td>
-                                        <td>+62-813-2131-8942</td>
-                                    <td class="d-flex justify-content-center">
-                                        <a href="{{route('formedituser.superadmin')}}">
-                                            <button class="btn btn-success" type="button">
-                                                <i class="fas fa-user-cog"></i> Edit
-                                            </button>
-                                        </a>
-                                        <a href="#">
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-user-times"></i> Delete
-                                            </button>
-                                        </a>
-                                    </td>
-                                    </tr>
-                                    </tbody>
+                                    @forelse($users as $user)
+                                        <tr>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>{{ $user->role }}</td>
+                                            <td>{{ $user->phone }}</td>
+                                            <td class="d-flex justify-content-center">
+                                                <a href="{{route('formedituser.superadmin')}}">
+                                                    <button class="btn btn-success mt-2 mr-2" type="button">
+                                                        <i class="fas fa-user-cog"></i> Edit
+                                                    </button>
+                                                </a>
+                                                <a href="#">
+                                                    <button class="btn btn-danger mt-2" type="button">
+                                                        <i class="fas fa-user-times"></i> Delete
+                                                    </button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="5" class="text-center">Tidak ada data</td>
+                                        </tr>
+                                    @endforelse
                                 </table>
+                            </div>
+                            <div class="float-right">
+                                <nav>
+                                    <ul class="pagination">
+                                        {{ $users->withQueryString()->links() }}
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                     </div>
-
-                </main>
+                </div>
             </div>
         </div>
     </section>
@@ -156,5 +81,6 @@
 
 @section('sidebar')
     @parent
-    <li><a href="{{route('kelola.superadmin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Pengguna</span></a></li>
+    <li><a href="{{route('kelola.superadmin')}}" class="nav-link"><i
+                class="fas fa-file-alt"></i><span>Kelola Pengguna</span></a></li>
 @endsection
