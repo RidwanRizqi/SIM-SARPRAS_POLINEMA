@@ -51,7 +51,7 @@
                                             <td>{{ $user->role }}</td>
                                             <td>{{ $user->phone }}</td>
                                             <td class="d-flex justify-content-center">
-                                                <a href="{{route('formedituser.superadmin')}}">
+                                                <a href="{{route('users.edit', ['user' => $user->id]) }}">
                                                     <button class="btn btn-success mt-2 mr-2" type="button">
                                                         <i class="fas fa-user-cog"></i> Edit
                                                     </button>
