@@ -15,11 +15,10 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $users = DB::table('users')
-            ->when($request->input('search'), function ($query, $search) {
-                $query->where('name', 'like', '%' . $search . '%')
-                    ->orWhere('email', 'like', '%' . $search . '%');
-            })
+        $users = User::when($request->input('search'), function ($query, $search) {
+            $query->where('name', 'like', '%' . $search . '%')
+                ->orWhere('email', 'like', '%' . $search . '%');
+        })
             ->paginate(5);
         return view('superadmin.daftaruser', compact('users'));
     }

@@ -41,6 +41,7 @@
                                         <th>Nama User</th>
                                         <th>Email</th>
                                         <th>Role</th>
+                                        <th>Jurusan</th>
                                         <th>Telepon</th>
                                         <th>Action</th>
                                     </tr>
@@ -49,17 +50,22 @@
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->role }}</td>
+                                            <td>{{ $user->wewenang->name }}</td>
                                             <td>{{ $user->phone }}</td>
                                             <td class="d-flex justify-content-center">
                                                 <a href="{{route('users.edit', ['user' => $user->id]) }}">
-                                                    <button class="btn btn-success mt-2 mr-2" type="button">
+                                                    <button class="badge bg-success border-0 mt-3 mr-2 text-white" type="button">
                                                         <i class="fas fa-user-cog"></i> Edit
                                                     </button>
                                                 </a>
-                                                <form action="{{ route('users.destroy', ['user' => $user->id]) }}" method="POST" class="d-inline">
+                                                <form action="{{ route('users.destroy', ['user' => $user->id]) }}"
+                                                      method="POST" class="d-inline">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button class="btn btn-danger border-0 mt-2" onclick="return confirm('Yakin Menghapus User?')"><i class="fas fa-user-times"></i> Delete</button>
+                                                    <button class="badge bg-danger border-0 mt-3 text-white"
+                                                            onclick="return confirm('Yakin Menghapus User?')"><i
+                                                            class="fas fa-user-times"></i> Delete
+                                                    </button>
                                                 </form>
                                             </td>
                                         </tr>
