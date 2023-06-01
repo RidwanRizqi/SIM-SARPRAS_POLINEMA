@@ -52,7 +52,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         } else {
             return view('auth.login');
         }
-    })->name('profile');
+    })->name('profile.edit');
 
     Route::middleware('can:superadmin')->group(function () {
         Route::get('kelola-superadmin', function () {
