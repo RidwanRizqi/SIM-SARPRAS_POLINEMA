@@ -12,44 +12,81 @@
                         <div class="card mb-4">
                             <div class="card-header bg-whitesmoke"><h4>Form Edit User</h4></div>
                             <div class="card-body ps-5 pe-15">
-                                <form>
+                                <form method="POST" action="{{ route('users.update', ['user' => $user->id]) }}">
+                                    @method('PUT')
+                                    @csrf
                                     <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Nama User</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <label for="name" class="form-label">Nama User</label>
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                               id="name" name="name" value="{{ old('name', $user->name) }}">
+                                        @error('name')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
 
                                     <div class="row mb-3">
                                         <div class="col-lg-6 col-sm-6">
-                                            <label for="exampleInputEmail1" class="form-label">Email User</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                            <label for="email" class="form-label">Email User</label>
+                                            <input type="email"
+                                                   class="form-control @error('email') is-invalid @enderror" id="email"
+                                                   name="email" value="{{ old('email', $user->email) }}">
+                                            @error('email')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
                                         <div class="col-lg-6 col-sm-6">
-                                            <label for="exampleInputEmail1" class="form-label">Password</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password"
+                                                   class="form-control @error('password') is-invalid @enderror"
+                                                   id="password"
+                                                   name="password">
+                                            @error('password')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
-                                        <div class="col-lg-6 col-sm-6">
-                                            <label for="exampleInputEmail1" class="form-label">Nomor Telepon</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <div class="col-lg-4 col-sm-4">
+                                            <label for="phone" class="form-label">Nomor Telepon</label>
+                                            <input type="text" class="form-control @error('phone') is-invalid @enderror"
+                                                   id="phone" name="phone" value="{{ old('phone', $user->phone) }}">
+                                            @error('phone')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                         </div>
-                                        <div class="col-lg-6 col-sm-6">
-                                            <label for="exampleInputEmail1" class="form-label">Role</label>
-                                            <select class="form-control">
-                                                <option>Default select</option>
-                                                <option>Admin</option>
+                                        <div class="col-lg-4 col-sn-4">
+                                            <label for="jurusan" class="form-label">Jurusan</label>
+                                            <select class="form-control" name="id_wewenang">
+                                                @foreach($wewenangs as $wewenang)
+                                                    @if(old('wewenang_id', $user->id_wewenang) == $wewenang->id)
+                                                        <option value="{{$wewenang->id}}"
+                                                                selected>{{$wewenang->name}}</option>
+                                                    @endif
+                                                    <option value="{{$wewenang->id}}">{{$wewenang->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-4 col-sm-4">
+                                            <label for="Role" class="form-label">Role</label>
+                                            <select class="form-control" name="role">
                                                 <option>User</option>
+                                                <option>Super Admin</option>
+                                                <option>Admin</option>
                                             </select>
                                         </div>
                                     </div>
 
-                                    <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Bio</label>
-                                        <textarea type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" rows="3"></textarea>
-                                    </div>
 
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary mt-5">Update</button>
                                 </form>
                             </div>
                         </div>
