@@ -15,10 +15,10 @@
                                 <form method="POST" action="{{ route('users.store') }}">
                                     @csrf
                                     <div class="mb-3">
-                                        <label for="nama" class="form-label">Nama User</label>
-                                        <input type="text" class="form-control @error('nama') is-invalid @enderror"
-                                               id="nama" name="nama" value="{{ old('nama') }}">
-                                        @error('nama')
+                                        <label for="name" class="form-label">Nama User</label>
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                               id="name" name="name" value="{{ old('name') }}">
+                                        @error('name')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -63,7 +63,7 @@
                                         </div>
                                         <div class="col-lg-4 col-sn-4">
                                             <label for="jurusan" class="form-label">Jurusan</label>
-                                            <select class="form-control" name="wewenang_id">
+                                            <select class="form-control" name="id_wewenang">
                                                 @foreach($wewenangs as $wewenang)
                                                     @if(old('wewenang_id') == $wewenang->id)
                                                         <option value="{{$wewenang->id}}" selected>{{$wewenang->name}}</option>
