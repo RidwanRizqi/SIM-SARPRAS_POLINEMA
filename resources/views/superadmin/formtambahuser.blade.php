@@ -29,7 +29,8 @@
                                         <div class="col-lg-6 col-sm-6">
                                             <label for="email" class="form-label">Email User</label>
                                             <input type="email"
-                                                   class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}">
+                                                   class="form-control @error('email') is-invalid @enderror" id="email"
+                                                   name="email" value="{{ old('email') }}">
                                             @error('email')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -66,7 +67,8 @@
                                             <select class="form-control" name="id_wewenang">
                                                 @foreach($wewenangs as $wewenang)
                                                     @if(old('wewenang_id') == $wewenang->id)
-                                                        <option value="{{$wewenang->id}}" selected>{{$wewenang->name}}</option>
+                                                        <option value="{{$wewenang->id}}"
+                                                                selected>{{$wewenang->name}}</option>
                                                     @endif
                                                     <option value="{{$wewenang->id}}">{{$wewenang->name}}</option>
                                                 @endforeach
@@ -81,7 +83,6 @@
                                             </select>
                                         </div>
                                     </div>
-
 
 
                                     <button type="submit" class="btn btn-primary mt-5">Submit</button>

@@ -70,9 +70,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
         Route::resource('users', UserController::class);
 
-        Route::get('superadmin-edit-user', function () {
-            return view('superadmin.formedituser');
-        })->name('formedituser.superadmin');
+//        Route::get('superadmin-edit-user', function () {
+//            return view('superadmin.formedituser');
+//        })->name('formedituser.superadmin');
     });
 
     Route::middleware('can:admin')->group(function () {

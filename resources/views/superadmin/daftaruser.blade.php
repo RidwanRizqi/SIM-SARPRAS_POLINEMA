@@ -7,6 +7,12 @@
         <div class="section-header">
             <h1>Kelola Data Pengguna</h1>
         </div>
+        @if(session()->has('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div
+
+        @endif
 
         <div class="section-body">
             <div class="row">
@@ -45,16 +51,16 @@
                                             <td>{{ $user->role }}</td>
                                             <td>{{ $user->phone }}</td>
                                             <td class="d-flex justify-content-center">
-                                                <a href="{{route('formedituser.superadmin')}}">
+                                                <a href="{{route('users.edit', ['user' => $user->id]) }}">
                                                     <button class="btn btn-success mt-2 mr-2" type="button">
                                                         <i class="fas fa-user-cog"></i> Edit
                                                     </button>
                                                 </a>
-                                                <a href="#">
-                                                    <button class="btn btn-danger mt-2" type="button">
-                                                        <i class="fas fa-user-times"></i> Delete
-                                                    </button>
-                                                </a>
+                                                <form action="{{ route('users.destroy', ['user' => $user->id]) }}" method="POST" class="d-inline">
+                                                    @method('DELETE')
+                                                    @csrf
+                                                    <button class="btn btn-danger border-0 mt-2" onclick="return confirm('Yakin Menghapus User?')"><i class="fas fa-user-times"></i> Delete</button>
+                                                </form>
                                             </td>
                                         </tr>
                                     @empty

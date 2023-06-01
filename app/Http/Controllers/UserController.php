@@ -51,7 +51,7 @@ class UserController extends Controller
 
         User::create($validatedData);
 
-        return redirect('kelola-superadmin')->with('success', 'New user has been added!');
+        return redirect('kelola-superadmin')->with('success', 'User berhasil ditambahkan!');
     }
 
     /**
@@ -65,9 +65,12 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(User $user)
     {
-        //
+        return view('superadmin.formedituser', [
+            'user' => $user,
+            'wewenangs' => Wewenang::all(),
+        ]);
     }
 
     /**
@@ -75,14 +78,36 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $rules = [
+            'name' => 'required|max:50|min:3',
+            'password' => 'required|max:50|min:3',
+            'role' => 'required|max:50|min:4',
+            'phone' =>'required|max:50|min:1',
+            'id_wewenang' => 'required|max:50|min:1',
+        ];
+
+//        check if email not same as before
+        if ($request->email != User::findOrFail($id)->email) {
+            $rules['email'] = 'required|unique:users|max:50|min:3';
+        }
+
+        $validatedData = $request->validate($rules);
+        $validatedData['password'] = Hash::make($validatedData['password']);
+
+        User::where('id', $id)
+            ->update($validatedData);
+
+        return redirect(route('users.index'))->with('success', 'User berhasil diupdate!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        return redirect()->back()->with('success', 'User berhasil dihapus.');
     }
 }

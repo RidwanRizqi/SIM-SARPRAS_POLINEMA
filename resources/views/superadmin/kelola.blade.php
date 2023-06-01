@@ -7,18 +7,19 @@
         <div class="section-header">
             <h1>Kelola User</h1>
         </div>
-        @if(session()->has('success'))
-            <div class="alert alert-success col-lg-8" role="alert">
-                {{ session('success') }}
-            </div>
 
-        @endif
 
         <div class="section-body">
             <div id="layoutSidenav_content">
                 <main>
                     <!-- Main page content-->
                     <div class="container-xl px-4 mt-n10">
+                        @if(session()->has('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('success') }}
+                            </div>
+
+                        @endif
                         <div class="row">
                             <div class="col-xl-6 mb-4">
                                 <!-- Dashboard example card 1-->
