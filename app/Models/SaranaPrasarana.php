@@ -13,7 +13,8 @@ class SaranaPrasarana extends Model
 
     protected $fillable = [
         'nama',
-        'kapasiats',
+        'kapasitas',
+        'id_wewenang',
         'fasilitas',
     ];
 
