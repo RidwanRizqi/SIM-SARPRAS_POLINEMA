@@ -11,11 +11,14 @@ class SarprasController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $sarpras = SaranaPrasarana::when(request('search'), function ($query) {
-            $query->where('nama', 'like', '%' . request('search') . '%');
-        })->paginate(5);
+        $sarpras = SaranaPrasarana::when($request->input('search'), function ($query, $search) {
+            $query->where('nama', 'like', '%' . $search . '%')
+                ->orWhere('kapasitas', 'like', '%' . $search . '%')
+                ->orWhere('fasilitas', 'like', '%' . $search . '%');
+        })
+            ->paginate(5);
 
         return view('admin.update', compact('sarpras'));
     }
@@ -58,9 +61,14 @@ class SarprasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
+        $sarpras = SaranaPrasarana::findOrFail($id);
 
+        return view('admin.edit', [
+            'sarpras' => $sarpras,
+            'wewenangs' => Wewenang::all(),
+        ]);
     }
 
     /**
@@ -68,7 +76,16 @@ class SarprasController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => 'required|max:50|min:3',
+            'kapasitas' => 'required',
+            'id_wewenang' => 'required',
+            'fasilitas' => 'required'
+        ]);
+
+        SaranaPrasarana::whereId($id)->update($validatedData);
+
+        return redirect(route('sarpras.index'))->with('success', 'Sarana Prasarana berhasil diubah!');
     }
 
     /**
@@ -76,6 +93,9 @@ class SarprasController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $sarpras = SaranaPrasarana::findOrFail($id);
+        $sarpras->delete();
+
+        return redirect()->back()->with('success', 'Sarana Prasarana berhasil dihapus!');
     }
 }
