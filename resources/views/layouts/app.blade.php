@@ -53,9 +53,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 <script src="{{ asset('assets/js/stisla.js') }}"></script>
-<script>
-    let datatables = new DataTable('#datatablesSimple');
-</script>
 
 
 <!-- JS Libraies -->

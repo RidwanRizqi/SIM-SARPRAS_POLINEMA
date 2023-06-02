@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\peminjaman;
+use App\Models\SaranaPrasarana;
 use Illuminate\Http\Request;
 
 class PeminjamanUserController extends Controller
@@ -18,9 +19,16 @@ class PeminjamanUserController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('user.form');
+        $sarprasId = $request->query('sarpras');
+        $sarpras = SaranaPrasarana::find($sarprasId);
+        $peminjaman = Peminjaman::select('id', 'tanggal_mulai', 'tanggal_selesai', 'kegiatan')
+            ->where('id_sarana_prasarana', $sarpras->id)
+            ->where('status', '!=', 'Ditolak')
+            ->get();
+
+        return view('user.form', compact('sarpras', 'peminjaman'));
     }
 
     /**

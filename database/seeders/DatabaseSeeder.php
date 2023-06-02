@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             WewenangSeeder::class,
             UserSeeder::class,
             SaranaPrasaranaSeeder::class,
+            DokumenSeeder::class,
+            PeminjamanSeeder::class,
         ]);
     }
 }
