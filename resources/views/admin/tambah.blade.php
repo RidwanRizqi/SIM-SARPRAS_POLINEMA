@@ -16,123 +16,59 @@
                         <div class="card mb-4">
                             <div class="card-header bg-whitesmoke"><h4>Tambah Sarana & Prasarana</h4></div>
                             <div class="card-body ps-5 pe-15">
-                                <form>
+                                <form method="POST" action="{{ route('sarpras.store') }}">
+                                    @csrf
                                     <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Nama Ruangan</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <label for="nama" class="form-label">Nama Ruangan</label>
+                                        <input type="text" class="form-control @error('nama') is-invalid @enderror"
+                                               id="nama" name="nama" value="{{ old('nama') }}">
+                                        @error('nama')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-lg-6 col-sm-6">
+                                            <label for="kapasitas" class="form-label">Kapasitas</label>
+                                            <input type="text"
+                                                   class="form-control @error('kapasitas') is-invalid @enderror"
+                                                   id="kapasitas" name="kapasitas" value="{{ old('kapasitas') }}">
+                                            @error('kapasitas')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <label for="id_wewenang" class="form-label">Kategori</label>
+                                            <select class="form-control select2 select2-hidden-accessible"
+                                                    name="id_wewenang">
+                                                @foreach($wewenangs as $wewenang)
+                                                    @if(old('wewenang_id') == $wewenang->id)
+                                                        <option value="{{$wewenang->id}}"
+                                                                selected>{{$wewenang->name}}</option>
+                                                    @endif
+                                                    <option value="{{$wewenang->id}}">{{$wewenang->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="" class="form-label">Kategori</label>
-                                        <select class="form-control select2 select2-hidden-accessible" aria-label="Default select example">
-                                            <option selected>Pilih Kategori</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="exampleInputPassword1" class="form-label">Fasilitas</label>
-                                        <textarea type="password" class="form-control" id="exampleInputPassword1"></textarea>
+                                        <label for="fasilitas" class="form-label">Fasilitas</label>
+                                        <textarea type="text" class="form-control @error('fasilitas') is-invalid @enderror"
+                                                  id="fasilitas" name="fasilitas" style="height: 72px"></textarea>
+                                        @error('fasilitas')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
                             </div>
                         </div>
                     </div>
-                    <div class="container-xl px-4">
-                        <div class="card mb-4">
-                            <div class="card-header bg-whitesmoke"> <h4>Data Sarana & Prasarana</h4></div>
-                            <div class="card-body">
-                                <table id="datatablesSimple" class="table table-bordered">
-                                    <thead>
-                                    <tr>
-                                        <th>Nama Ruangan</th>
-                                        <th>Kategori</th>
-                                        <th>Fasilitas</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    </thead>
-                                    <tfoot>
-                                    <tr>
-                                        <th>Nama Ruangan</th>
-                                        <th>Kategori</th>
-                                        <th>Fasilitas</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    </tfoot>
-                                    <tbody>
-                                    <tr>
-                                        <td>Graha Polinema</td>
-                                        <td>JTI</td>
-                                        <td>meja 10 kursi 10</td>
-                                        <td>
-                                            <button class="btn btn-success" type="button">
-                                                <i class="fas fa-edit"></i> Edit
-                                            </button>
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Graha Polinema</td>
-                                        <td>JTI</td>
-                                        <td>meja 10 kursi 10</td>
-                                        <td>
-                                            <button class="btn btn-success" type="button">
-                                                <i class="fas fa-edit"></i> Edit
-                                            </button>
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Graha Polinema</td>
-                                        <td>JTI</td>
-                                        <td>meja 10 kursi 10</td>
-                                        <td>
-                                            <button class="btn btn-success" type="button">
-                                                <i class="fas fa-edit"></i> Edit
-                                            </button>
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Graha Polinema</td>
-                                        <td>JTI</td>
-                                        <td>meja 10 kursi 10</td>
-                                        <td>
-                                            <button class="btn btn-success" type="button">
-                                                <i class="fas fa-edit"></i> Edit
-                                            </button>
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Graha Polinema</td>
-                                        <td>JTI</td>
-                                        <td>meja 10 kursi 10</td>
-                                        <td>
-                                            <button class="btn btn-success" type="button">
-                                                <i class="fas fa-edit"></i> Edit
-                                            </button>
-                                            <button class="btn btn-danger" type="button">
-                                                <i class="fas fa-trash"></i> Delete
-                                            </button>
-                                        </td>
-                                    </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
                 </main>
             </div>
         </div>
@@ -141,7 +77,8 @@
 
 @section('sidebar')
     @parent
-    <li><a href="{{route('kelola.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Sarana Prasarana</span></a></li>
+    <li><a href="{{route('kelola.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Sarana Prasarana</span></a>
+    </li>
     <li class="nav-item dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i><span>Peminjaman</span></a>
         <ul class="dropdown-menu">
@@ -153,5 +90,6 @@
             </li>
         </ul>
     </li>
-    <li><a href="{{route('pelaporan.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Pelaporan</span></a></li>
+    <li><a href="{{route('pelaporan.admin')}}" class="nav-link"><i
+                class="fas fa-file-alt"></i><span>Pelaporan</span></a></li>
 @endsection
