@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SaranaPrasarana;
+use App\Models\Wewenang;
 use Illuminate\Http\Request;
 
 class SarprasController extends Controller
@@ -24,7 +25,9 @@ class SarprasController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.tambah', [
+            'wewenangs' => Wewenang::all(),
+        ]);
     }
 
     /**
@@ -32,7 +35,16 @@ class SarprasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama' => 'required|max:50|min:3',
+            'kapasitas' => 'required',
+            'id_wewenang' => 'required',
+            'fasilitas' => 'required'
+        ]);
+
+        SaranaPrasarana::create($validatedData);
+
+        return redirect('kelola-ruang')->with('success', 'Sarana Prasarana berhasil ditambahkan!');
     }
 
     /**
@@ -48,7 +60,7 @@ class SarprasController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
     }
 
     /**
