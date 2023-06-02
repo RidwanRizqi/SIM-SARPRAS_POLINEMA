@@ -9,141 +9,65 @@
         </div>
 
         <div class="section-body">
-            <div id="layoutSidenav_content">
-                <main>
-                    <!-- Main page content-->
-                    <div class="container-xl px-4 mt-5">
-                        <div class="card mb-4">
-                            <div class="card-header bg-whitesmoke"><h4>Data Sarana Prasarana</h4></div>
-                            <div class="card-body">
-                                <table id="datatablesSimple" class="table table-bordered">
-                                    <thead>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Data Sarana & Prasarana</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="float-right">
+                                <form method="GET">
+                                    <div class="input-group">
+                                        <input name="search" type="text" class="form-control" placeholder="Search">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="clearfix mb-3"></div>
+
+                            <div class="table-responsive">
+                                <table class="table table-striped">
                                     <tr>
-                                        <th>Gedung</th>
-                                        <th>Ruangan</th>
+                                        <th>Nama Ruangan</th>
                                         <th>Pengurus</th>
-                                        <th>Actions</th>
+                                        <th>Fasilitas</th>
+                                        <th>Action</th>
                                     </tr>
-                                    </thead>
-                                    <tfoot>
-                                    <tr>
-                                        <th>Gedung</th>
-                                        <th>Ruangan</th>
-                                        <th>Pengurus</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                    </tfoot>
-                                    <tbody>
-                                    <tr>
-                                        <td>Graha Polinema</td>
-                                        <td>Graha Polinema</td>
-                                        <td>Admin Pusat</td>
-                                        <td class="text-center justify-content-center">
-                                            <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
-                                                Pinjam
-                                            </button></a>
-                                            <button class="btn btn-info" type="button">
-                                                Fasilitas
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Aula Pertamina</td>
-                                        <td>Aula Pertamina</td>
-                                        <td>Admin Pusat</td>
-                                        <td class="text-center justify-content-center">
-                                            <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
-                                                Pinjam
-                                            </button></a>
-                                            <button class="btn btn-info" type="button">
-                                                Fasilitas
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>JTI</td>
-                                        <td>RT01</td>
-                                        <td>Admin Jurusan</td>
-                                        <td class="text-center justify-content-center">
-                                            <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
-                                                Pinjam
-                                            </button></a>
-                                            <button class="btn btn-info" type="button">
-                                                Fasilitas
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>JTI</td>
-                                        <td>RT02</td>
-                                        <td>Admin Jurusan</td>
-                                        <td class="text-center justify-content-center">
-                                            <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
-                                                    Pinjam
-                                                </button></a>
-                                            <button class="btn btn-info" type="button">
-                                                Fasilitas
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>JTI</td>
-                                        <td>RT03</td>
-                                        <td>Admin Jurusan</td>
-                                        <td class="text-center justify-content-center">
-                                            <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
-                                                    Pinjam
-                                                </button></a>
-                                            <button class="btn btn-info" type="button">
-                                                Fasilitas
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>JTI</td>
-                                        <td>RT04</td>
-                                        <td>Admin Jurusan</td>
-                                        <td class="text-center justify-content-center">
-                                            <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
-                                                    Pinjam
-                                                </button></a>
-                                            <button class="btn btn-info" type="button">
-                                                Fasilitas
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>JTI</td>
-                                        <td>RT05</td>
-                                        <td>Admin Jurusan</td>
-                                        <td class="text-center justify-content-center">
-                                            <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
-                                                    Pinjam
-                                                </button></a>
-                                            <button class="btn btn-info" type="button">
-                                                Fasilitas
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>JTI</td>
-                                        <td>RT06</td>
-                                        <td>Admin Jurusan</td>
-                                        <td class="text-center justify-content-center">
-                                            <a href="{{route('form.user')}}"><button class="btn btn-primary" type="button">
-                                                    Pinjam
-                                                </button></a>
-                                            <button class="btn btn-info" type="button">
-                                                Fasilitas
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    </tbody>
+                                    @forelse($sarpras as $sarpra)
+                                        <tr>
+                                            <td>{{ $sarpra->nama }}</td>
+                                            <td>{{ $sarpra->wewenang->name }}</td>
+                                            <td>{{ $sarpra->fasilitas }}</td>
+                                            <td class="d-flex justify-content-center">
+                                                <a href="{{route('peminjaman-user.create') }}">
+                                                    <button class="badge bg-success border-0 mt-3 mr-2 text-white"
+                                                            type="button">
+                                                        <i class="fas fa-user-cog"></i> Pinjam
+                                                    </button>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="5" class="text-center">Tidak ada data</td>
+                                        </tr>
+                                    @endforelse
                                 </table>
+                            </div>
+                            <div class="float-right">
+                                <nav>
+                                    <ul class="pagination">
+                                        {{ $sarpras->withQueryString()->links() }}
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                     </div>
-                </main>
+                </div>
             </div>
         </div>
     </section>
