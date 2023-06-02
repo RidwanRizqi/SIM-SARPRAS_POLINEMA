@@ -17,7 +17,7 @@ class PeminjamanSeeder extends Seeder
             [
                 'id_user' => '1',
                 'id_sarana_prasarana' => '1',
-                'id_dokumen' => '1',
+                'dokumen' => 'test1',
                 'kegiatan' => 'Kegiatan 1',
                 'penanggung_jawab' => 'Penanggung Jawab 1',
                 'status' => 'Proses',
@@ -33,7 +33,7 @@ class PeminjamanSeeder extends Seeder
             [
                 'id_user' => '2',
                 'id_sarana_prasarana' => '1',
-                'id_dokumen' => '2',
+                'dokumen' => 'test2',
                 'kegiatan' => 'Kegiatan 2',
                 'penanggung_jawab' => 'Penanggung Jawab 2',
                 'status' => 'Valid',
@@ -49,7 +49,7 @@ class PeminjamanSeeder extends Seeder
             [
                 'id_user' => '2',
                 'id_sarana_prasarana' => '1',
-                'id_dokumen' => '2',
+                'dokumen' => 'test3',
                 'kegiatan' => 'Kegiatan 3',
                 'penanggung_jawab' => 'Penanggung Jawab 2',
                 'status' => 'Valid',
@@ -65,7 +65,7 @@ class PeminjamanSeeder extends Seeder
             [
                 'id_user' => '2',
                 'id_sarana_prasarana' => '2',
-                'id_dokumen' => '2',
+                'dokumen' => 'test4',
                 'kegiatan' => 'Kegiatan 4',
                 'penanggung_jawab' => 'Penanggung Jawab 2',
                 'status' => 'Valid',

@@ -30,7 +30,7 @@
                                             {
                                                 title: '{{ $item->kegiatan }}',
                                                 start: '{{ $item->tanggal_mulai }}',
-                                                end: '{{ $item->tanggal_selesai }}',
+                                                end: '{{ date('Y-m-d', strtotime($item->tanggal_selesai.' +1 day')) }}',
                                                 color: 'green', // Ganti dengan warna blok yang diinginkan
                                                 textColor: 'white' // Ganti dengan warna font yang diinginkan
                                             },
