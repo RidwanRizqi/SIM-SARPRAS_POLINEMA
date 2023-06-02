@@ -16,23 +16,54 @@
                         <div class="card mb-4">
                             <div class="card-header bg-whitesmoke"><h4>Edit Sarana & Prasarana</h4></div>
                             <div class="card-body ps-5 pe-15">
-                                <form>
+                                <form method="POST" action="{{ route('sarpras.update', ['sarpra' => $sarpras->id]) }}">
+                                    @method('PUT')
+                                    @csrf
                                     <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Nama Ruangan</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                        <label for="nama" class="form-label">Nama Ruangan</label>
+                                        <input type="text" class="form-control @error('nama') is-invalid @enderror"
+                                               id="nama" name="nama" value="{{ old('nama', $sarpras->nama) }}">
+                                        @error('nama')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
-                                        <div class="mb-3">
-                                            <label for="" class="form-label">Kategori</label>
-                                            <select class="form-control select2 select2-hidden-accessible" aria-label="Default select example">
-                                                <option selected>Pilih Kategori</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
+                                    <div class="row mb-3">
+                                        <div class="col-lg-6 col-sm-6">
+                                            <label for="kapasitas" class="form-label">Kapasitas</label>
+                                            <input type="text"
+                                                   class="form-control @error('kapasitas') is-invalid @enderror"
+                                                   id="kapasitas" name="kapasitas" value="{{ old('kapasitas', $sarpras->kapasitas) }}">
+                                            @error('kapasitas')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <label for="id_wewenang" class="form-label">Kategori</label>
+                                            <select class="form-control select2 select2-hidden-accessible"
+                                                    name="id_wewenang">
+                                                @foreach($wewenangs as $wewenang)
+                                                    @if(old('wewenang_id', $sarpras->id_wewenang) == $wewenang->id)
+                                                        <option value="{{$wewenang->id}}"
+                                                                selected>{{$wewenang->name}}</option>
+                                                    @endif
+                                                    <option value="{{$wewenang->id}}">{{$wewenang->name}}</option>
+                                                @endforeach
                                             </select>
                                         </div>
+                                    </div>
                                     <div class="mb-3">
-                                        <label for="exampleInputPassword1" class="form-label">Fasilitas</label>
-                                        <textarea type="password" class="form-control" id="exampleInputPassword1"></textarea>
+                                        <label for="fasilitas" class="form-label">Fasilitas</label>
+                                        <textarea type="text" class="form-control @error('fasilitas') is-invalid @enderror"
+                                                  id="fasilitas" name="fasilitas" style="height: 72px">{{ $sarpras->fasilitas }}</textarea>
+                                        @error('fasilitas')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
