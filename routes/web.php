@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SarprasController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -60,19 +61,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return view('superadmin.kelola');
         })->name('kelola.superadmin');
 
-//        Route::get('superadmin-tambah-user', function () {
-//            return view('superadmin.formtambahuser');
-//        })->name('formtambahuser.superadmin');
-
-//        Route::get('daftar-user', function () {
-//            return view('superadmin.daftaruser');
-//        })->name('daftaruser.superadmin');
-
         Route::resource('users', UserController::class);
-
-//        Route::get('superadmin-edit-user', function () {
-//            return view('superadmin.formedituser');
-//        })->name('formedituser.superadmin');
     });
 
     Route::middleware('can:admin')->group(function () {
@@ -100,13 +89,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return view('admin.pinjam');
         })->name('pinjam.admin');
 
-        Route::get('update-admin', function () {
-            return view('admin.update');
-        })->name('update.admin');
+//        Route::get('update-admin', function () {
+//            return view('admin.update');
+//        })->name('update.admin');
 
         Route::get('edit-admin', function () {
             return view('admin.edit');
         })->name('edit.admin');
+
+        Route::resource('sarpras', SarprasController::class);
     });
 
     Route::middleware('can:user')->group(function () {
