@@ -12,7 +12,7 @@ class Peminjaman extends Model
     protected $fillable = [
         'id_user',
         'id_sarana_prasarana',
-        'id_dokumen',
+        'dokumen',
         'kegiatan',
         'penanggung_jawab',
         'status',
@@ -32,13 +32,5 @@ class Peminjaman extends Model
     {
         return $this->belongsTo(User::class, 'id_user');
     }
-
-    public function dokumen()
-    {
-        return $this->belongsTo(Dokumen::class, 'id_dokumen');
-    }
-
-
-
 
 }
