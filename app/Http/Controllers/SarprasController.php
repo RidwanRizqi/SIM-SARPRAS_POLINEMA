@@ -58,9 +58,12 @@ class SarprasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(SaranaPrasarana $sarpras)
     {
-
+        return view('admin.edit', [
+            'sarpras' => $sarpras,
+            'wewenangs' => Wewenang::all(),
+        ]);
     }
 
     /**
@@ -76,6 +79,9 @@ class SarprasController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $sarpras = SaranaPrasarana::findOrFail($id);
+        $sarpras->delete();
+
+        return redirect()->back()->with('success', 'Sarana Prasarana berhasil dihapus!');
     }
 }
