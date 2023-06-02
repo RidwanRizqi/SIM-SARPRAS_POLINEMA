@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PeminjamanUserController;
 use App\Http\Controllers\SarprasController;
+use App\Http\Controllers\UserSarprasController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -81,29 +83,21 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return view('admin.pelaporan');
         })->name('pelaporan.admin');
 
-//        Route::get('tambah-admin', function () {
-//            return view('admin.tambah');
-//        })->name('tambah.admin');
-
         Route::get('pinjam-admin', function () {
             return view('admin.pinjam');
         })->name('pinjam.admin');
-
-//        Route::get('update-admin', function () {
-//            return view('admin.update');
-//        })->name('update.admin');
-
-//        Route::get('edit-admin', function () {
-//            return view('admin.edit');
-//        })->name('edit.admin');
 
         Route::resource('sarpras', SarprasController::class);
     });
 
     Route::middleware('can:user')->group(function () {
-        Route::get('daftar-sarana-prasarana-user', function () {
-            return view('user.daftarsaranaprasarana');
-        })->name('daftarsaranaprasarana.user');
+        Route::get('daftar-sarana-prasarana-user', [UserSarprasController::class, 'index'])->name('daftarsaranaprasarana.user');
+
+//        Route::get('daftar-sarana-prasarana-user', function () {
+//            return view('user.daftarsaranaprasarana');
+//        })->name('daftarsaranaprasarana.user');
+
+        Route::resource('peminjaman-user', PeminjamanUserController::class);
 
         Route::get('history-user', function () {
             return view('user.history');
