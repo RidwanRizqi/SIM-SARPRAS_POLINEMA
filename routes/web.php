@@ -81,9 +81,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
             return view('admin.pelaporan');
         })->name('pelaporan.admin');
 
-        Route::get('tambah-admin', function () {
-            return view('admin.tambah');
-        })->name('tambah.admin');
+//        Route::get('tambah-admin', function () {
+//            return view('admin.tambah');
+//        })->name('tambah.admin');
 
         Route::get('pinjam-admin', function () {
             return view('admin.pinjam');
@@ -93,9 +93,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
 //            return view('admin.update');
 //        })->name('update.admin');
 
-        Route::get('edit-admin', function () {
-            return view('admin.edit');
-        })->name('edit.admin');
+//        Route::get('edit-admin', function () {
+//            return view('admin.edit');
+//        })->name('edit.admin');
 
         Route::resource('sarpras', SarprasController::class);
     });
