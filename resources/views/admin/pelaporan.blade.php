@@ -40,13 +40,11 @@
                             <div class="card-body">
                                 <h6>Dari Tanggal ______</h6>
                                 <h6 class="mb-4">Sampai Tanggal ______</h6>
-
+                                <a href="{{route('laporan.pdf') }}">
                                 <button class="btn btn-success me-2 mb-2" type="button">
-                                    <i data-feather="download"></i> Print PDF
+                                    <i class="fas fa-file-download"></i> Print PDF
                                 </button>
-                                <button class="btn btn-primary mb-2" type="button">
-                                    <i data-feather="printer"></i> Cetak
-                                </button>
+                                </a>
                                 <hr>
                                 <table id="datatablesSimple" class="table table-bordered">
                                     <thead>
