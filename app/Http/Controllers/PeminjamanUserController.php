@@ -40,6 +40,7 @@ class PeminjamanUserController extends Controller
         $validatedData = $request->validate([
             'id_user' => 'required',
             'id_sarana_prasarana' => 'required',
+            'id_wewenang' => 'required',
             'dokumen' => 'required|file|max:1024',
             'kegiatan' => 'required',
             'penanggung_jawab' => 'required',
