@@ -25,4 +25,9 @@ class Wewenang extends Model
         return $this->hasMany(User::class, 'id_wewenang');
 
     }
+
+    public function peminjaman(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Peminjaman::class, 'id_wewenang');
+    }
 }
