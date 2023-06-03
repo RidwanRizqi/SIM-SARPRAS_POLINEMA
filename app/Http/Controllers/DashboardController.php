@@ -31,6 +31,11 @@ class DashboardController extends Controller
 
     public function user()
     {
-        return view('dashboard.home');
+        $countPeminjamanValid = Peminjaman::where('id_user', auth()->user()->id)->where('status', 'valid')->count();
+        $countPeminjamanProses = Peminjaman::where('id_user', auth()->user()->id)->where('status', 'proses')->count();
+        return view('dashboard.home', [
+            'countPeminjamanValid' => $countPeminjamanValid,
+            'countPeminjamanProses' => $countPeminjamanProses,
+        ]);
     }
 }
