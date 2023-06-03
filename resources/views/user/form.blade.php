@@ -138,9 +138,14 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Fasilitas</label>
-                                    <input type="text" id="disabledTextInput" class="form-control"
-                                           value="{{ $sarpras->fasilitas }}" readonly>
+                                    <label for="fasilitas" class="form-label">Fasilitas</label>
+                                    <textarea type="text" class="form-control @error('fasilitas') is-invalid @enderror"
+                                              id="fasilitas" readonly style="height: 72px">{{ $sarpras->fasilitas }}</textarea>
+                                    @error('fasilitas')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">Submit</button>
