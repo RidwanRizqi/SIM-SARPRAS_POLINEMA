@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PeminjamanAdminController;
 use App\Http\Controllers\PeminjamanUserController;
 use App\Http\Controllers\SarprasController;
 use App\Http\Controllers\UserSarprasController;
@@ -71,6 +72,7 @@ Route::middleware('can:superadmin')->group(function () {
 Route::middleware('can:admin')->group(function () {
     Route::get('daftar-sarana-prasarana-admin', [SarprasController::class, 'admin'])->name('daftarsaranaprasarana.admin');
 
+    Route::resource('peminjaman-admin', PeminjamanAdminController::class);
 
     Route::get('kelola-ruang', function () {
         return view('admin.kelola');
@@ -87,10 +89,6 @@ Route::middleware('can:admin')->group(function () {
     Route::get('pelaporan-admin', function () {
         return view('admin.pelaporan');
     })->name('pelaporan.admin');
-
-    Route::get('pinjam-admin', function () {
-        return view('admin.pinjam');
-    })->name('pinjam.admin');
 
     Route::resource('sarpras', SarprasController::class);
 });
