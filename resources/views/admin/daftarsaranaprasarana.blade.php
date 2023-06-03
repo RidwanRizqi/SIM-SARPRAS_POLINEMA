@@ -1,19 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'Menu Kelola Sarana-Prasarana Admin')
+@section('title', 'Daftar Sarana Prasarana')
 
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Kelola Sarana-Prasarana</h1>
+            <h1>Peminjaman Admin</h1>
         </div>
-
-        @if(session()->has('success'))
-            <div class="alert alert-success" role="alert">
-                {{ session('success') }}
-            </div
-
-        @endif
 
         <div class="section-body">
             <div class="row">
@@ -40,7 +33,7 @@
                                 <table class="table table-striped">
                                     <tr>
                                         <th>Nama Ruangan</th>
-                                        <th>Kategori</th>
+                                        <th>Pengurus</th>
                                         <th>Fasilitas</th>
                                         <th>Action</th>
                                     </tr>
@@ -50,21 +43,12 @@
                                             <td>{{ $sarpra->wewenang->name }}</td>
                                             <td>{{ $sarpra->fasilitas }}</td>
                                             <td class="d-flex justify-content-center">
-                                                <a href="{{route('sarpras.edit', ['sarpra' => $sarpra->id]) }}">
+                                                <a href="{{route('peminjaman-user.create', ['sarpras' => $sarpra->id]) }}">
                                                     <button class="badge bg-success border-0 mt-3 mr-2 text-white"
                                                             type="button">
-                                                        <i class="fas fa-user-cog"></i> Edit
+                                                        <i class="fas fa-user-cog"></i> Pinjam
                                                     </button>
                                                 </a>
-                                                <form action="{{ route('sarpras.destroy', ['sarpra' => $sarpra->id]) }}"
-                                                      method="POST" class="d-inline">
-                                                    @method('DELETE')
-                                                    @csrf
-                                                    <button class="badge bg-danger border-0 mt-3 text-white"
-                                                            onclick="return confirm('Yakin Menghapus Sarana Prasarana?')"><i
-                                                            class="fas fa-user-times"></i> Delete
-                                                    </button>
-                                                </form>
                                             </td>
                                         </tr>
                                     @empty
