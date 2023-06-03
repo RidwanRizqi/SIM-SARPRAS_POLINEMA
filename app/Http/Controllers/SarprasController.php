@@ -98,4 +98,24 @@ class SarprasController extends Controller
 
         return redirect()->back()->with('success', 'Sarana Prasarana berhasil dihapus!');
     }
+
+    public function user(Request $request)
+    {
+        $sarpras = SaranaPrasarana::when($request->input('search'), function ($query, $search) {
+            $query->where('nama', 'like', '%' . $search . '%');
+        })
+            ->paginate(5);
+
+        return view('user.daftarsaranaprasarana', compact('sarpras'));
+    }
+
+    public function admin(Request $request)
+    {
+        $sarpras = SaranaPrasarana::where('id_wewenang', auth()->user()->id_wewenang)->when($request->input('search'), function ($query, $search) {
+            $query->where('nama', 'like', '%' . $search . '%');
+        })
+            ->paginate(5);
+
+        return view('admin.daftarsaranaprasarana', compact('sarpras'));
+    }
 }

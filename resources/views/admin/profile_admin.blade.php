@@ -77,6 +77,9 @@
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i><span>Peminjaman</span></a>
         <ul class="dropdown-menu">
             <li>
+                <a class="nav-link" href="{{ route('daftarsaranaprasarana.admin') }}">Pinjam Sarpras</a>
+            </li>
+            <li>
                 <a class="nav-link" href="{{route('history.admin')}}">History User</a>
             </li>
             <li>
