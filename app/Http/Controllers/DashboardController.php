@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Peminjaman;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -20,11 +21,21 @@ class DashboardController extends Controller
 
     public function admin()
     {
-        return view('dashboard.admin');
+        $countPeminjamanValid = Peminjaman::where('status', 'valid')->count();
+        $countPeminjamanProses = Peminjaman::where('status', 'proses')->count();
+        return view('dashboard.admin', [
+            'countPeminjamanValid' => $countPeminjamanValid,
+            'countPeminjamanProses' => $countPeminjamanProses,
+        ]);
     }
 
     public function user()
     {
-        return view('dashboard.home');
+        $countPeminjamanValid = Peminjaman::where('id_user', auth()->user()->id)->where('status', 'valid')->count();
+        $countPeminjamanProses = Peminjaman::where('id_user', auth()->user()->id)->where('status', 'proses')->count();
+        return view('dashboard.home', [
+            'countPeminjamanValid' => $countPeminjamanValid,
+            'countPeminjamanProses' => $countPeminjamanProses,
+        ]);
     }
 }
