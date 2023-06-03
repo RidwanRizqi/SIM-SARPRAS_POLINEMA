@@ -12,6 +12,7 @@ class Peminjaman extends Model
     protected $fillable = [
         'id_user',
         'id_sarana_prasarana',
+        'id_wewenang',
         'dokumen',
         'kegiatan',
         'penanggung_jawab',
@@ -30,6 +31,11 @@ class Peminjaman extends Model
     public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class, 'id_user');
+    }
+
+    public function wewenang(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(Wewenang::class, 'id_wewenang');
     }
 
 }
