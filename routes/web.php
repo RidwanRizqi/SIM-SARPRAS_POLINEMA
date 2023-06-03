@@ -4,7 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PeminjamanAdminController;
 use App\Http\Controllers\PeminjamanUserController;
 use App\Http\Controllers\SarprasController;
-use App\Http\Controllers\UserSarprasController;
+use App\Http\Controllers\LaporanAdminController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -73,6 +73,8 @@ Route::middleware('can:admin')->group(function () {
     Route::get('daftar-sarana-prasarana-admin', [SarprasController::class, 'admin'])->name('daftarsaranaprasarana.admin');
 
     Route::resource('peminjaman-admin', PeminjamanAdminController::class);
+
+    Route::get('laporan-pdf',[LaporanAdminController::class, 'generatePDF'])->name('laporan.pdf');
 
     Route::get('kelola-ruang', function () {
         return view('admin.kelola');
