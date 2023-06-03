@@ -69,6 +69,9 @@ Route::middleware('can:superadmin')->group(function () {
 });
 
 Route::middleware('can:admin')->group(function () {
+    Route::get('daftar-sarana-prasarana-admin', [SarprasController::class, 'admin'])->name('daftarsaranaprasarana.admin');
+
+
     Route::get('kelola-ruang', function () {
         return view('admin.kelola');
     })->name('kelola.admin');
@@ -93,7 +96,7 @@ Route::middleware('can:admin')->group(function () {
 });
 
 Route::middleware('can:user')->group(function () {
-    Route::get('daftar-sarana-prasarana-user', [UserSarprasController::class, 'index'])->name('daftarsaranaprasarana.user');
+    Route::get('daftar-sarana-prasarana-user', [SarprasController::class, 'user'])->name('daftarsaranaprasarana.user');
 
 //        Route::get('daftar-sarana-prasarana-user', function () {
 //            return view('user.daftarsaranaprasarana');
@@ -110,18 +113,5 @@ Route::middleware('can:user')->group(function () {
     })->name('form.user');
 });
 
-//Route::get('/home', function () {
-//    if (Auth::check()) {
-//        if (Auth::user()->role == 'superadmin') {
-//            return view('dashboard.superadmin');
-//        } elseif (Auth::user()->role == 'admin') {
-//            return view('dashboard.admin');
-//        } else {
-//            return view('dashboard.home');
-//        }
-//    } else {
-//        return view('auth.login');
-//    }
-//})->middleware(['auth', 'verified'])->name('home');
 
 
