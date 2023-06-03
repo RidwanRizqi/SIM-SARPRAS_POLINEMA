@@ -26,7 +26,6 @@ return new class extends Migration
                     'Ditolak',
                 ]
             )->default('Proses');
-            $table->text('pinjam_fasilitas');
             $table->enum(
                 'daya_listrik',
                 [

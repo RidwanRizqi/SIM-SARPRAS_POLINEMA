@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\peminjaman;
 use App\Models\SaranaPrasarana;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class PeminjamanUserController extends Controller
 {
@@ -36,7 +37,35 @@ class PeminjamanUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'id_user' => 'required',
+            'id_sarana_prasarana' => 'required',
+            'dokumen' => 'required|file|max:1024',
+            'kegiatan' => 'required',
+            'penanggung_jawab' => 'required',
+            'tanggal_mulai' => [
+                'required',
+                'date',
+                Rule::unique('peminjaman')->where(function ($query) use ($request) {
+                    return $query->where('id_sarana_prasarana', $request->id_sarana_prasarana)
+                        ->where('tanggal_selesai', '>=', $request->tanggal_mulai);
+                })
+            ],
+            'tanggal_selesai' => [
+                'required',
+                'date',
+                'after_or_equal:tanggal_mulai'
+            ],
+        ]);
+
+        $validatedData['status'] = 'Proses';
+
+        if ($request->file('dokumen')) {
+            $validatedData['dokumen'] = $request->file('dokumen')->store('dokumen');
+        }
+
+        Peminjaman::create($validatedData);
+        return redirect('history-user')->with('success', 'Peminjaman berhasil ditambahkan!');
     }
 
     /**

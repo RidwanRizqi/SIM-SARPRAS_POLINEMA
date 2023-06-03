@@ -16,7 +16,6 @@ class Peminjaman extends Model
         'kegiatan',
         'penanggung_jawab',
         'status',
-        'pinjam_fasilitas',
         'daya_listrik',
         'catatan_admin',
         'tanggal_mulai',
