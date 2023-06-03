@@ -57,10 +57,15 @@
                                     <input type="text" class="form-control" id="namaRuang" value="{{ $sarpras->nama }}"
                                            readonly>
                                 </div>
+                                <input type="text" class="form-control" id="id_user" value="{{ Auth::user()->id }}"
+                                       name="id_user" readonly hidden>
+                                <input type="text" class="form-control" id="id_sarana_prasarana"
+                                       value="{{ $sarpras->id }}"
+                                       name="id_sarana_prasarana" readonly hidden>
                                 <div class="mb-3">
                                     <label for="kegiatan" class="form-label">Nama Kegiatan</label>
                                     <input type="text" class="form-control @error('kegiatan') is-invalid @enderror"
-                                           id="kegiatan" name="kegiatan">
+                                           id="kegiatan" name="kegiatan" value="{{ old('kegiatan') }}">
                                     @error('kegiatan')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -72,7 +77,7 @@
                                         <label for="penanggung_jawab" class="form-label">Penanggung Jawab</label>
                                         <input type="text"
                                                class="form-control @error('penanggung_jawab') is-invalid @enderror"
-                                               id="penanggung_jawab" name="penanggung_jawab">
+                                               id="penanggung_jawab" name="penanggung_jawab" value="{{ old('penanggung_jawab') }}">
                                         @error('penanggung_jawab')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -90,7 +95,9 @@
                                 <div class="row mb-3">
                                     <div class="col-lg-6 col-sm-6">
                                         <label for="tanggal_mulai" class="form-label">Mulai Tanggal</label>
-                                        <input id="tanggal_mulai" class="form-control @error('tanggal_mulai') is-invalid @enderror" type="date" name="tanggal_mulai">
+                                        <input id="tanggal_mulai"
+                                               class="form-control @error('tanggal_mulai') is-invalid @enderror"
+                                               type="date" name="tanggal_mulai">
                                         @error('tanggal_mulai')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -100,7 +107,9 @@
                                     </div>
                                     <div class="col-lg-6 col-sm-6">
                                         <label for="tanggal_selesai" class="form-label">Sampai Tanggal</label>
-                                        <input id="tanggal_selesai" class="form-control @error('tanggal_selesai') is-invalid @enderror" type="date"
+                                        <input id="tanggal_selesai"
+                                               class="form-control @error('tanggal_selesai') is-invalid @enderror"
+                                               type="date"
                                                name="tanggal_selesai">
                                         @error('tanggal_selesai')
                                         <div class="invalid-feedback">
@@ -110,19 +119,20 @@
                                         <span id="endDateSelected"></span>
                                     </div>
                                 </div>
-{{--                                <div class="mb-3">--}}
-{{--                                    <label for="dokumen" class="form-label">Upload Proposal</label>--}}
-{{--                                    <div class="custom-file">--}}
-{{--                                        <input type="file" class="custom-file-input @error('dokumen') is-invalid @enderror" id="dokumen" name="dokumen">--}}
-{{--                                        <label class="custom-file-label" for="dokumen">Choose file</label>--}}
-{{--                                        @error('dokumen')--}}
-{{--                                        <div class="invalid-feedback">{{ $message }}</div>--}}
-{{--                                        @enderror--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
+                                {{--                                <div class="mb-3">--}}
+                                {{--                                    <label for="dokumen" class="form-label">Upload Proposal</label>--}}
+                                {{--                                    <div class="custom-file">--}}
+                                {{--                                        <input type="file" class="custom-file-input @error('dokumen') is-invalid @enderror" id="dokumen" name="dokumen">--}}
+                                {{--                                        <label class="custom-file-label" for="dokumen">Choose file</label>--}}
+                                {{--                                        @error('dokumen')--}}
+                                {{--                                        <div class="invalid-feedback">{{ $message }}</div>--}}
+                                {{--                                        @enderror--}}
+                                {{--                                    </div>--}}
+                                {{--                                </div>--}}
                                 <div class="mb-3">
                                     <label for="dokumen" class="form-label">Upload Proposal</label>
-                                    <input class="form-control @error('dokumen') is-invalid @enderror" type="file" id="dokumen" name="dokumen">
+                                    <input class="form-control @error('dokumen') is-invalid @enderror" type="file"
+                                           id="dokumen" name="dokumen">
                                     @error('dokumen')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
