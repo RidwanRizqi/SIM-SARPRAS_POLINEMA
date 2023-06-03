@@ -53,13 +53,13 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="me-3">
                                     <div><h5>User OKI</h5></div>
-                                    <div class="display-4 text-white">24</div>
+                                    <div class="display-4 text-white">{{ $countUser }}</div>
                                 </div>
                                 <i class="fas fa-user-alt" style="font-size:xx-large"></i>
                             </div>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between small shadow-dark">
-                            <a class="text-white stretched-link" href="#!"><h6>Detail</h6></a>
+                            <a class="text-white stretched-link" href="{{ route('users.index') }}"><h6>Detail</h6></a>
                             <div class="text-white"><i class="fas fa-angle-right"></i></div>
                         </div>
                     </div>
@@ -70,13 +70,13 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="me-3">
                                     <div><h5>User Admin</h5></div>
-                                    <div class="display-4 text-white">8</div>
+                                    <div class="display-4 text-white">{{ $countAdmin }}</div>
                                 </div>
                                 <i class="fas fa-user-shield" style="font-size:xx-large"></i>
                             </div>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between small shadow-dark">
-                            <a class="text-white stretched-link" href="#!"><h6>Detail</h6></a>
+                            <a class="text-white stretched-link" href="{{ route('users.index') }}"><h6>Detail</h6></a>
                             <div class="text-white"><i class="fas fa-angle-right"></i></div>
                         </div>
                     </div>
