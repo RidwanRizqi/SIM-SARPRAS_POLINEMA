@@ -21,7 +21,6 @@ class PeminjamanSeeder extends Seeder
                 'kegiatan' => 'Kegiatan 1',
                 'penanggung_jawab' => 'Penanggung Jawab 1',
                 'status' => 'Proses',
-                'pinjam_fasilitas' => '1 kursi',
                 'daya_listrik' => 'Ya',
                 'catatan_admin' => 'Catatan Admin 1',
                 'tanggal_mulai' => '2023-06-01',
@@ -37,11 +36,10 @@ class PeminjamanSeeder extends Seeder
                 'kegiatan' => 'Kegiatan 2',
                 'penanggung_jawab' => 'Penanggung Jawab 2',
                 'status' => 'Valid',
-                'pinjam_fasilitas' => '1 kursi',
                 'daya_listrik' => 'Tidak',
                 'catatan_admin' => 'Catatan Admin 1',
-                'tanggal_mulai' => '2023-06-02',
-                'tanggal_selesai' => '2023-06-03'
+                'tanggal_mulai' => '2023-06-03',
+                'tanggal_selesai' => '2023-06-04'
             ]
         );
 
@@ -53,10 +51,9 @@ class PeminjamanSeeder extends Seeder
                 'kegiatan' => 'Kegiatan 3',
                 'penanggung_jawab' => 'Penanggung Jawab 2',
                 'status' => 'Valid',
-                'pinjam_fasilitas' => '1 kursi',
                 'daya_listrik' => 'Tidak',
                 'catatan_admin' => 'Catatan Admin 1',
-                'tanggal_mulai' => '2023-06-03',
+                'tanggal_mulai' => '2023-06-05',
                 'tanggal_selesai' => '2023-06-06'
             ]
         );
@@ -69,11 +66,10 @@ class PeminjamanSeeder extends Seeder
                 'kegiatan' => 'Kegiatan 4',
                 'penanggung_jawab' => 'Penanggung Jawab 2',
                 'status' => 'Valid',
-                'pinjam_fasilitas' => '1 kursi',
                 'daya_listrik' => 'Tidak',
                 'catatan_admin' => 'Catatan Admin 1',
-                'tanggal_mulai' => '2023-06-04',
-                'tanggal_selesai' => '2023-06-06'
+                'tanggal_mulai' => '2023-06-07',
+                'tanggal_selesai' => '2023-06-08'
             ]
         );
     }
