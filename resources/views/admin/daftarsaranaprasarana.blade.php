@@ -43,7 +43,7 @@
                                             <td>{{ $sarpra->wewenang->name }}</td>
                                             <td>{{ $sarpra->fasilitas }}</td>
                                             <td class="d-flex justify-content-center">
-                                                <a href="{{route('peminjaman-user.create', ['sarpras' => $sarpra->id]) }}">
+                                                <a href="{{route('peminjaman-admin.create', ['sarpras' => $sarpra->id]) }}">
                                                     <button class="badge bg-success border-0 mt-3 mr-2 text-white"
                                                             type="button">
                                                         <i class="fas fa-user-cog"></i> Pinjam
