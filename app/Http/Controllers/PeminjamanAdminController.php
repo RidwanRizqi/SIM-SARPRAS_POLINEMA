@@ -40,6 +40,7 @@ class PeminjamanAdminController extends Controller
         $validatedData = $request->validate([
             'id_user' => 'required',
             'id_sarana_prasarana' => 'required',
+            'id_wewenang' => 'required',
             'dokumen' => 'required|file|max:1024',
             'kegiatan' => 'required',
             'penanggung_jawab' => 'required',
@@ -65,7 +66,7 @@ class PeminjamanAdminController extends Controller
         }
 
         Peminjaman::create($validatedData);
-        return redirect('admin.history')->with('success', 'Peminjaman berhasil ditambahkan!');
+        return redirect('history.admin')->with('success', 'Peminjaman berhasil ditambahkan!');
     }
 
     /**

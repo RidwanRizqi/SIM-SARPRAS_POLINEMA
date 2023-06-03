@@ -62,6 +62,9 @@
                                 <input type="text" class="form-control" id="id_sarana_prasarana"
                                        value="{{ $sarpras->id }}"
                                        name="id_sarana_prasarana" readonly hidden>
+                                <input type="text" class="form-control" id="id_wewenang"
+                                       value="{{ $sarpras->id_wewenang }}"
+                                       name="id_wewenang" readonly hidden>
                                 <div class="mb-3">
                                     <label for="kegiatan" class="form-label">Nama Kegiatan</label>
                                     <input type="text" class="form-control @error('kegiatan') is-invalid @enderror"
