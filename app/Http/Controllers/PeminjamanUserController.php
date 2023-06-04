@@ -12,9 +12,13 @@ class PeminjamanUserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $peminjamans = Peminjaman::where('id_user', auth()->user()->id)->when($request->input('search'), function ($query, $search) {
+            $query->where('nama', 'like', '%' . $search . '%');
+        })
+            ->paginate(5);
+        return view('user.history', compact('peminjamans'));
     }
 
     /**
@@ -55,7 +59,17 @@ class PeminjamanUserController extends Controller
             'tanggal_selesai' => [
                 'required',
                 'date',
-                'after_or_equal:tanggal_mulai'
+                'after_or_equal:tanggal_mulai',
+                function ($attribute, $value, $fail) use ($request) {
+                    $existingPeminjaman = Peminjaman::where('id_sarana_prasarana', $request->id_sarana_prasarana)
+                        ->where('tanggal_mulai', '<=', $value)
+                        ->where('tanggal_selesai', '>=', $request->tanggal_mulai)
+                        ->exists();
+
+                    if ($existingPeminjaman) {
+                        $fail('Tanggal selesai telah digunakan pada rentang tanggal yang ada dalam database.');
+                    }
+                }
             ],
         ]);
 
@@ -66,7 +80,7 @@ class PeminjamanUserController extends Controller
         }
 
         Peminjaman::create($validatedData);
-        return redirect('history-user')->with('success', 'Peminjaman berhasil ditambahkan!');
+        return redirect(route('peminjaman-user.index'))->with('success', 'Peminjaman berhasil diajukan!');
     }
 
     /**
