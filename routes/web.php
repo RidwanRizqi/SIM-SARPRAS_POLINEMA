@@ -104,13 +104,13 @@ Route::middleware('can:user')->group(function () {
 
     Route::resource('peminjaman-user', PeminjamanUserController::class);
 
-    Route::get('history-user', function () {
-        return view('user.history');
-    })->name('history.user');
+//    Route::get('history-user', function () {
+//        return view('user.history');
+//    })->name('history.user');
 
-    Route::get('form-user', function () {
-        return view('user.form');
-    })->name('form.user');
+//    Route::get('form-user', function () {
+//        return view('user.form');
+//    })->name('form.user');
 });
 
 
