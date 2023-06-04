@@ -167,8 +167,14 @@ class PeminjamanUserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(peminjaman $peminjaman)
+    public function destroy(peminjaman $peminjaman_user)
     {
-        //
+        if ($peminjaman_user->dokumen) {
+            Storage::delete($peminjaman_user->dokumen);
+        }
+
+        Peminjaman::destroy($peminjaman_user->id);
+
+        return redirect()->route('peminjaman-user.index')->with('success', 'Peminjaman berhasil dihapus');
     }
 }
