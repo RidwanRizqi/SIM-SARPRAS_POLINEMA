@@ -26,6 +26,12 @@
         <div class="section-header">
             <h1>History Peminjaman</h1>
         </div>
+        @if(session()->has('success'))
+            <div class="alert alert-success col-lg-12" role="alert">
+                {{ session('success') }}
+            </div>
+
+        @endif
 
         <div class="section-body">
             <div class="row">
@@ -51,7 +57,7 @@
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <tr>
-                                        <th>Peminjam</th>
+                                        <th>Kegiatan</th>
                                         <th>Ruangan</th>
                                         <th>Tanggal Peminjaman</th>
                                         <th>Proposal</th>
@@ -60,7 +66,7 @@
                                     </tr>
                                     @forelse($peminjamans as $peminjaman)
                                         <tr>
-                                            <td>{{ $peminjaman->user->name }}</td>
+                                            <td>{{ $peminjaman->kegiatan }}</td>
                                             <td>{{ $peminjaman->saranaPrasarana->nama }}</td>
                                             <td>{{ $peminjaman->tanggal_mulai }}
                                                 sampai {{ $peminjaman->tanggal_selesai }}</td>
@@ -74,19 +80,22 @@
                                             <td class="d-flex justify-content-center">
                                                 @if($peminjaman->status == 'Proses')
                                                     <a href="{{route('peminjaman-user.edit', ['peminjaman_user' => $peminjaman->id]) }}">
-                                                        <button class="badge bg-warning border-0 my-3 mx-2 text-white"
+                                                        <button class="badge bg-warning border-0 my-3 mx-3 text-white"
                                                                 type="button">
                                                             <i class="fas fa-user-cog"></i> Edit
                                                         </button>
                                                     </a>
-                                                    <a href="{{route('peminjaman-user.destroy', ['peminjaman_user' => $peminjaman->id]) }}">
+                                                    <form action="{{ route('peminjaman-user.destroy', ['peminjaman_user' => $peminjaman->id]) }}"
+                                                          method="POST" class="d-inline">
+                                                        @method('DELETE')
+                                                        @csrf
                                                         <button class="badge bg-danger border-0 my-3 mx-3 text-white"
-                                                                type="button">
-                                                            <i class="fas fa-user-cog"></i> Hapus
+                                                                onclick="return confirm('Yakin Menghapus Peminjaman ?')"><i
+                                                                class="fas fa-user-times"></i> Delete
                                                         </button>
-                                                    </a>
+                                                    </form>
                                                 @else
-                                                    <a href="{{route('peminjaman-user.destroy', ['peminjaman_user' => $peminjaman->id]) }}">
+                                                    <a href="#">
                                                         <button class="badge bg-success border-0 mt-3 mr-2 text-white"
                                                                 type="button">
                                                             <i class="fas fa-user-cog"></i> Cetak Bukti Peminjaman

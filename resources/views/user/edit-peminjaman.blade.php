@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Form Daftar')
+@section('title', 'Form Edit Peminjaman')
 @push('customCSS')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -10,7 +10,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Pengajuan Peminjaman</h1>
+            <h1>Edit Peminjaman</h1>
         </div>
 
         <div class="section-body ">
@@ -19,7 +19,7 @@
                     <!-- Dashboard example card 1-->
                     <a class="card lift">
                         <div class="card-header bg-whitesmoke"><h4>Daftar Peminjaman Pada
-                                Ruang {{ $sarpras->nama }}</h4></div>
+                                Ruang {{ $peminjaman_user->saranaPrasarana->nama }}</h4></div>
                         <div class="card-body">
                             <div id='calendar'></div>
                             <script>
@@ -27,7 +27,7 @@
                                     $('#calendar').fullCalendar({
                                         defaultView: 'month',
                                         events: [
-                                                @foreach ($peminjaman as $item)
+                                                @foreach ($tanggalPeminjaman as $item)
                                             {
                                                 title: '{{ $item->kegiatan }}',
                                                 start: '{{ $item->tanggal_mulai }}',
@@ -49,26 +49,27 @@
                         <div class="card-header bg-whitesmoke"><h4>Form Pendaftaran Peminjaman Sarana &amp;
                                 Prasarana</h4></div>
                         <div class="card-body d-flex justify-content-center flex-column">
-                            <form method="POST" action="{{ route('peminjaman-user.store') }}"
+                            <form method="POST" action="{{ route('peminjaman-user.update' , ['peminjaman_user' => $peminjaman_user->id]) }}"
                                   enctype="multipart/form-data">
+                                @method('PUT')
                                 @csrf
                                 <div class="mb-3">
                                     <label for="namaRuang" class="form-label">Nama Ruangan</label>
-                                    <input type="text" class="form-control" id="namaRuang" value="{{ $sarpras->nama }}"
+                                    <input type="text" class="form-control" id="namaRuang" value="{{ $peminjaman_user->saranaPrasarana->nama }}"
                                            readonly>
                                 </div>
                                 <input type="text" class="form-control" id="id_user" value="{{ Auth::user()->id }}"
                                        name="id_user" readonly hidden>
                                 <input type="text" class="form-control" id="id_sarana_prasarana"
-                                       value="{{ $sarpras->id }}"
+                                       value="{{ $peminjaman_user->id_sarana_prasarana }}"
                                        name="id_sarana_prasarana" readonly hidden>
                                 <input type="text" class="form-control" id="id_wewenang"
-                                       value="{{ $sarpras->id_wewenang }}"
+                                       value="{{ $peminjaman_user->id_wewenang }}"
                                        name="id_wewenang" readonly hidden>
                                 <div class="mb-3">
                                     <label for="kegiatan" class="form-label">Nama Kegiatan</label>
                                     <input type="text" class="form-control @error('kegiatan') is-invalid @enderror"
-                                           id="kegiatan" name="kegiatan" value="{{ old('kegiatan') }}">
+                                           id="kegiatan" name="kegiatan" value="{{ old('kegiatan', $peminjaman_user->kegiatan) }}">
                                     @error('kegiatan')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -80,7 +81,7 @@
                                         <label for="penanggung_jawab" class="form-label">Penanggung Jawab</label>
                                         <input type="text"
                                                class="form-control @error('penanggung_jawab') is-invalid @enderror"
-                                               id="penanggung_jawab" name="penanggung_jawab" value="{{ old('penanggung_jawab') }}">
+                                               id="penanggung_jawab" name="penanggung_jawab" value="{{ old('penanggung_jawab', $peminjaman_user->penanggung_jawab) }}">
                                         @error('penanggung_jawab')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -90,8 +91,13 @@
                                     <div class="col-lg-6 col-sm-6">
                                         <label for="daya_listrik" class="form-label">Daya Listrik</label>
                                         <select class="form-control" name="daya_listrik">
-                                            <option>Ya</option>
-                                            <option>Tidak</option>
+                                            @if($peminjaman_user->daya_listrik == 'Ya')
+                                                <option selected>Ya</option>
+                                                <option>Tidak</option>
+                                            @else
+                                                <option>Ya</option>
+                                                <option selected>Tidak</option>
+                                            @endif
                                         </select>
                                     </div>
                                 </div>
@@ -100,7 +106,7 @@
                                         <label for="tanggal_mulai" class="form-label">Mulai Tanggal</label>
                                         <input id="tanggal_mulai"
                                                class="form-control @error('tanggal_selesai') is-invalid @enderror"
-                                               type="date" name="tanggal_mulai">
+                                               type="date" name="tanggal_mulai" value="{{ old('tanggal_mulai', $peminjaman_user->tanggal_mulai) }}">
                                         @error('tanggal_mulai')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -113,12 +119,12 @@
                                         <input id="tanggal_selesai"
                                                class="form-control @error('tanggal_selesai') is-invalid @enderror"
                                                type="date"
-                                               name="tanggal_selesai">
-                                        @error('tanggal_selesai')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
+                                               name="tanggal_selesai" value="{{ old('tanggal_selesai', $peminjaman_user->tanggal_selesai) }}">
+{{--                                        @error('tanggal_selesai')--}}
+{{--                                        <div class="invalid-feedback">--}}
+{{--                                            {{ $message }}--}}
+{{--                                        </div>--}}
+{{--                                        @enderror--}}
                                         <span id="endDateSelected"></span>
                                     </div>
                                     @if($errors->has(['tanggal_selesai']))
@@ -139,6 +145,7 @@
                                 {{--                                        @enderror--}}
                                 {{--                                    </div>--}}
                                 {{--                                </div>--}}
+                                <input type="hidden" name="oldDokumen" value="{{ $peminjaman_user->dokumen }}">
                                 <div class="mb-3">
                                     <label for="dokumen" class="form-label">Upload Proposal</label>
                                     <input class="form-control @error('dokumen') is-invalid @enderror" type="file"
@@ -150,7 +157,7 @@
                                 <div class="mb-3">
                                     <label for="fasilitas" class="form-label">Fasilitas</label>
                                     <textarea type="text" class="form-control @error('fasilitas') is-invalid @enderror"
-                                              id="fasilitas" readonly style="height: 72px">{{ $sarpras->fasilitas }}</textarea>
+                                              id="fasilitas" readonly style="height: 72px">{{ $peminjaman_user->saranaPrasarana->fasilitas }}</textarea>
                                     @error('fasilitas')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -250,7 +257,6 @@
     </section>
 @endsection
 @push('customJS')
-{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>--}}
 {{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>--}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
 @endpush
