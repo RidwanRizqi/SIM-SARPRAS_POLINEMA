@@ -4,8 +4,8 @@
 @push('customCSS')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>--}}
+{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>--}}
 @endpush
 @section('content')
     <section class="section">
@@ -99,7 +99,7 @@
                                     <div class="col-lg-6 col-sm-6">
                                         <label for="tanggal_mulai" class="form-label">Mulai Tanggal</label>
                                         <input id="tanggal_mulai"
-                                               class="form-control @error('tanggal_mulai') is-invalid @enderror"
+                                               class="form-control @error('tanggal_selesai') is-invalid @enderror"
                                                type="date" name="tanggal_mulai">
                                         @error('tanggal_mulai')
                                         <div class="invalid-feedback">
@@ -121,6 +121,13 @@
                                         @enderror
                                         <span id="endDateSelected"></span>
                                     </div>
+                                    @if($errors->has(['tanggal_selesai']))
+                                        <div class="col-lg-12">
+                                            <div class="alert alert-danger mt-3">
+                                                Tanggal mulai dan tanggal selesai telah digunakan!.
+                                            </div>
+                                        </div>
+                                    @endif
                                 </div>
                                 {{--                                <div class="mb-3">--}}
                                 {{--                                    <label for="dokumen" class="form-label">Upload Proposal</label>--}}
@@ -243,8 +250,8 @@
     </section>
 @endsection
 @push('customJS')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>--}}
+{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>--}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
 @endpush
 
