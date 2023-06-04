@@ -10,9 +10,13 @@ class ValidationController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $peminjamans = Peminjaman::where('id_wewenang', auth()->user()->id_wewenang)->when($request->input('search'), function ($query, $search) {
+            $query->where('nama', 'like', '%' . $search . '%');
+        })
+            ->paginate(5);
+        return view('admin.validasi', compact('peminjamans'));
     }
 
     /**
@@ -50,9 +54,20 @@ class ValidationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, peminjaman $peminjaman)
+    public function update(Request $request, peminjaman $validasi)
     {
-        //
+        $peminjaman = Peminjaman::findOrFail($validasi->id);
+
+        if ($request->has('catatan_admin')) {
+            $peminjaman->catatan_admin = $request->input('catatan_admin');
+            $peminjaman->status = 'Ditolak';
+            $peminjaman->save();
+            return redirect()->back()->with('success', 'Peminjaman ditolak');
+        } else {
+            $peminjaman->status = 'Valid';
+            $peminjaman->save();
+            return redirect()->back()->with('success', 'Peminjaman diterima');
+        }
     }
 
     /**
