@@ -38,9 +38,9 @@ class ValidationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(peminjaman $peminjaman)
+    public function show(peminjaman $validasi)
     {
-        //
+        return view('admin.detail-peminjaman', compact('validasi'));
     }
 
     /**

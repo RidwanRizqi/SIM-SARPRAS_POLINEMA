@@ -6,7 +6,7 @@
     <div class="modal fade" id="exampleModal_{{ $peminjaman->id }}" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-content modal-xl">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Preview Proposal</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -20,7 +20,8 @@
         </div>
     </div>
 
-    <div class="modal fade" id="tolakModal{{$peminjaman->id}}" tabindex="-1" role="dialog" aria-labelledby="tolakModalLabel{{$peminjaman->id}}" aria-hidden="true">
+    <div class="modal fade" id="tolakModal{{$peminjaman->id}}" tabindex="-1" role="dialog"
+         aria-labelledby="tolakModalLabel{{$peminjaman->id}}" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -44,7 +45,8 @@
         </div>
     </div>
 
-    <div class="modal fade" id="terimaModal{{$peminjaman->id}}" tabindex="-1" role="dialog" aria-labelledby="terimaModalLabel{{$peminjaman->id}}" aria-hidden="true">
+    <div class="modal fade" id="terimaModal{{$peminjaman->id}}" tabindex="-1" role="dialog"
+         aria-labelledby="terimaModalLabel{{$peminjaman->id}}" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -117,37 +119,48 @@
                                             <td>{{ $peminjaman->tanggal_mulai }}
                                                 sampai {{ $peminjaman->tanggal_selesai }}</td>
                                             <td class="d-flex justify-content-center">
-                                                <button class="btn btn-primary border-0 my-3 mr-2" type="button" data-toggle="modal"
+                                                <button class="btn btn-primary border-0 my-3" type="button"
+                                                        data-toggle="modal"
                                                         data-target="#exampleModal_{{ $peminjaman->id }}">
                                                     <i class="fas fa-file-alt"></i>
                                                 </button>
                                             </td>
                                             <td>{{ $peminjaman->status }}</td>
-                                            <td class="d-flex justify-content-center">
-                                                @if($peminjaman->status == 'Proses')
-                                                    <a href="#" data-toggle="modal" data-target="#tolakModal{{$peminjaman->id}}">
-                                                        <button class="badge bg-danger border-0 my-3 mx-3 text-white" type="button">
-                                                            <i class="fas fa-user-times"></i> Tolak
-                                                        </button>
-                                                    </a>
-                                                    <a href="#" data-toggle="modal" data-target="#terimaModal{{$peminjaman->id}}">
-                                                        <button class="badge bg-success border-0 my-3 mx-3 text-white" type="button">
-                                                            <i class="fas fa-user-cog"></i> Terima
-                                                        </button>
-                                                    </a>
-                                                @else
-{{--                                                    <a href="{{route('peminjaman-admin.edit', ['peminjaman_admin' => $peminjaman->id]) }}">--}}
-{{--                                                        <button class="badge bg-warning border-0 my-3 mx-3 text-white"--}}
-{{--                                                                type="button">--}}
-{{--                                                            <i class="fas fa-user-cog"></i> Edit--}}
-{{--                                                        </button>--}}
-{{--                                                    </a>--}}
-                                                @endif
+                                            <td class="">
+                                                <div class="btn-group-vertical my-3">
+                                                    @if($peminjaman->status == 'Proses')
+                                                        <a href="#" data-toggle="modal"
+                                                           data-target="#tolakModal{{$peminjaman->id}}">
+                                                            <button style="min-width: 100px"
+                                                                class="badge bg-danger border-0 my-1 text-white w-100"
+                                                                type="button">
+                                                                <i class="fas fa-user-times"></i> Tolak
+                                                            </button>
+                                                        </a>
+                                                        <a href="#" data-toggle="modal"
+                                                           data-target="#terimaModal{{$peminjaman->id}}">
+                                                            <button style="min-width: 100px"
+                                                                class="badge bg-success border-0 my-1 text-white w-100"
+                                                                type="button">
+                                                                <i class="fas fa-user-cog"></i> Terima
+                                                            </button>
+                                                        </a>
+                                                    @else
+                                                        {{-- <a href="{{route('peminjaman-admin.edit', ['peminjaman_admin' => $peminjaman->id]) }}">
+                                                            <button class="badge bg-warning border-0 my-3 mx-3 text-white"
+                                                                    type="button">
+                                                                <i class="fas fa-user-cog"></i> Edit
+                                                            </button>
+                                                        </a> --}}
+                                                    @endif
                                                     <a href="{{ route('validasi.show', ['validasi' => $peminjaman->id]) }}">
-                                                        <button class="badge bg-info border-0 my-3 mx-3 text-white" type="button">
+                                                        <button style="min-width: 100px" class="badge bg-info border-0 my-1 text-white w-100"
+                                                                type="button">
                                                             <i class="fas fa-user-cog"></i> Detail
                                                         </button>
                                                     </a>
+                                                </div>
+
                                             </td>
                                         </tr>
                                     @empty
@@ -174,7 +187,8 @@
 
 @section('sidebar')
     @parent
-    <li><a href="{{route('kelola.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Sarana Prasarana</span></a></li>
+    <li><a href="{{route('kelola.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Sarana Prasarana</span></a>
+    </li>
     <li class="nav-item dropdown">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i><span>Peminjaman</span></a>
         <ul class="dropdown-menu">
@@ -189,5 +203,6 @@
             </li>
         </ul>
     </li>
-    <li><a href="{{route('pelaporan.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Pelaporan</span></a></li>
+    <li><a href="{{route('pelaporan.admin')}}" class="nav-link"><i
+                class="fas fa-file-alt"></i><span>Pelaporan</span></a></li>
 @endsection
