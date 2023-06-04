@@ -43,10 +43,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('home');
 });
 
-//    Route::get('edit-profile', function () {
-//        return view('dashboard.profile');
-//    })->name('profile.edit');
-
 Route::get('edit-profile', function () {
     if (Auth::check()) {
         if (Auth::user()->role == 'superadmin') {
@@ -80,10 +76,6 @@ Route::middleware('can:admin')->group(function () {
         return view('admin.kelola');
     })->name('kelola.admin');
 
-    Route::get('history-admin', function () {
-        return view('admin.history');
-    })->name('history.admin');
-
     Route::get('validasi-admin', function () {
         return view('admin.validasi');
     })->name('validasi.admin');
@@ -98,19 +90,7 @@ Route::middleware('can:admin')->group(function () {
 Route::middleware('can:user')->group(function () {
     Route::get('daftar-sarana-prasarana-user', [SarprasController::class, 'user'])->name('daftarsaranaprasarana.user');
 
-//        Route::get('daftar-sarana-prasarana-user', function () {
-//            return view('user.daftarsaranaprasarana');
-//        })->name('daftarsaranaprasarana.user');
-
     Route::resource('peminjaman-user', PeminjamanUserController::class);
-
-//    Route::get('history-user', function () {
-//        return view('user.history');
-//    })->name('history.user');
-
-//    Route::get('form-user', function () {
-//        return view('user.form');
-//    })->name('form.user');
 });
 
 

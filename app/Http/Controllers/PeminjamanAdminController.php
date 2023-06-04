@@ -12,9 +12,13 @@ class PeminjamanAdminController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $peminjamans = Peminjaman::where('id_user', auth()->user()->id)->when($request->input('search'), function ($query, $search) {
+            $query->where('nama', 'like', '%' . $search . '%');
+        })
+            ->paginate(5);
+        return view('admin.history', compact('peminjamans'));
     }
 
     /**
@@ -76,7 +80,7 @@ class PeminjamanAdminController extends Controller
         }
 
         Peminjaman::create($validatedData);
-        return redirect('history-admin')->with('success', 'Peminjaman berhasil ditambahkan!');
+        return redirect(route('peminjaman-admin.index'))->with('success', 'Peminjaman berhasil ditambahkan!');
     }
 
     /**
@@ -90,9 +94,14 @@ class PeminjamanAdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(peminjaman $peminjaman)
+    public function edit(peminjaman $peminjaman_admin)
     {
-        //
+        $tanggalPeminjaman = Peminjaman::select('id', 'tanggal_mulai', 'tanggal_selesai', 'kegiatan')
+            ->where('id_sarana_prasarana', $peminjaman_admin->id_sarana_prasarana)
+            ->where('status', '!=', 'Ditolak')
+            ->get();
+
+        return view('admin.edit-peminjaman', compact('tanggalPeminjaman', 'peminjaman_admin'));
     }
 
     /**
