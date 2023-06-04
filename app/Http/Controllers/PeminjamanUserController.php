@@ -55,7 +55,17 @@ class PeminjamanUserController extends Controller
             'tanggal_selesai' => [
                 'required',
                 'date',
-                'after_or_equal:tanggal_mulai'
+                'after_or_equal:tanggal_mulai',
+                function ($attribute, $value, $fail) use ($request) {
+                    $existingPeminjaman = Peminjaman::where('id_sarana_prasarana', $request->id_sarana_prasarana)
+                        ->where('tanggal_mulai', '<=', $value)
+                        ->where('tanggal_selesai', '>=', $request->tanggal_mulai)
+                        ->exists();
+
+                    if ($existingPeminjaman) {
+                        $fail('Tanggal selesai telah digunakan pada rentang tanggal yang ada dalam database.');
+                    }
+                }
             ],
         ]);
 
