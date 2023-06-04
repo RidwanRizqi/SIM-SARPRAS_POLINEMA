@@ -110,9 +110,6 @@
                                         </tr>
                                     @endforelse
                                 </table>
-
-                                <!-- Include the Bootstrap JavaScript library -->
-
                             </div>
                             <div class="float-right">
                                 <nav>
