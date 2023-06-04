@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\peminjaman;
 use App\Models\SaranaPrasarana;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 class PeminjamanUserController extends Controller
@@ -67,7 +68,7 @@ class PeminjamanUserController extends Controller
                         ->exists();
 
                     if ($existingPeminjaman) {
-                        $fail('Tanggal selesai telah digunakan pada rentang tanggal yang ada dalam database.');
+                        $fail('Tanggal mulai dan tanggal selesai telah digunakan!');
                     }
                 }
             ],
@@ -94,17 +95,73 @@ class PeminjamanUserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(peminjaman $peminjaman)
+    public function edit(peminjaman $peminjaman_user)
     {
-        //
+        $tanggalPeminjaman = Peminjaman::select('id', 'tanggal_mulai', 'tanggal_selesai', 'kegiatan')
+            ->where('id_sarana_prasarana', $peminjaman_user->id_sarana_prasarana)
+            ->where('status', '!=', 'Ditolak')
+            ->get();
+
+        return view('user.edit-peminjaman', compact('tanggalPeminjaman', 'peminjaman_user'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, peminjaman $peminjaman)
+    public function update(Request $request, peminjaman $peminjaman_user)
     {
-        //
+        $validatedData = $request->validate([
+            'id_user' => 'required',
+            'id_sarana_prasarana' => 'required',
+            'id_wewenang' => 'required',
+            'dokumen' => 'nullable|file|max:1024',
+            'kegiatan' => 'required',
+            'penanggung_jawab' => 'required',
+            'tanggal_mulai' => [
+                'required',
+                'date',
+                Rule::unique('peminjaman')->where(function ($query) use ($request) {
+                    return $query->where('id_sarana_prasarana', $request->id_sarana_prasarana)
+                        ->where('tanggal_selesai', '>=', $request->tanggal_mulai);
+                })->ignore($peminjaman_user->id)
+            ],
+            'tanggal_selesai' => [
+                'required',
+                'date',
+                'after_or_equal:tanggal_mulai',
+                function ($attribute, $value, $fail) use ($request, $peminjaman_user) {
+                    $existingPeminjaman = Peminjaman::where('id_sarana_prasarana', $request->id_sarana_prasarana)
+                        ->where('id', '!=', $peminjaman_user->id)
+                        ->where(function ($query) use ($request) {
+                            $query->whereBetween('tanggal_mulai', [$request->tanggal_mulai, $request->tanggal_selesai])
+                                ->orWhereBetween('tanggal_selesai', [$request->tanggal_mulai, $request->tanggal_selesai])
+                                ->orWhere(function ($query) use ($request) {
+                                    $query->where('tanggal_mulai', '<=', $request->tanggal_mulai)
+                                        ->where('tanggal_selesai', '>=', $request->tanggal_selesai);
+                                });
+                        })
+                        ->exists();
+
+                    if ($existingPeminjaman) {
+                        $fail('Tanggal mulai dan tanggal selesai telah digunakan!');
+                    }
+                }
+            ],
+        ]);
+
+
+        $validatedData['status'] = 'Proses';
+
+        if ($request->file('dokumen')) {
+            if ($request->oldDokumen) {
+                Storage::delete($request->oldDokumen);
+            }
+            $validatedData['dokumen'] = $request->file('dokumen')->store('dokumen');
+        }
+
+        Peminjaman::where('id', $peminjaman_user->id)->update($validatedData);
+
+        return redirect()->route('peminjaman-user.index')->with('success', 'Peminjaman berhasil diubah');
     }
 
     /**
