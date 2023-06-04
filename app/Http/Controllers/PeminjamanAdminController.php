@@ -99,7 +99,6 @@ class PeminjamanAdminController extends Controller
     {
         $tanggalPeminjaman = Peminjaman::select('id', 'tanggal_mulai', 'tanggal_selesai', 'kegiatan')
             ->where('id_sarana_prasarana', $peminjaman_admin->id_sarana_prasarana)
-            ->where('status', '!=', 'Ditolak')
             ->get();
 
         return view('admin.edit-peminjaman', compact('tanggalPeminjaman', 'peminjaman_admin'));
