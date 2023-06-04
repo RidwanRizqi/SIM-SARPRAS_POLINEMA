@@ -51,7 +51,7 @@
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <tr>
-                                        <th>Peminjam</th>
+                                        <th>Kegiatan</th>
                                         <th>Ruangan</th>
                                         <th>Tanggal Peminjaman</th>
                                         <th>Proposal</th>
@@ -60,7 +60,7 @@
                                     </tr>
                                     @forelse($peminjamans as $peminjaman)
                                         <tr>
-                                            <td>{{ $peminjaman->user->name }}</td>
+                                            <td>{{ $peminjaman->kegiatan }}</td>
                                             <td>{{ $peminjaman->saranaPrasarana->nama }}</td>
                                             <td>{{ $peminjaman->tanggal_mulai }}
                                                 sampai {{ $peminjaman->tanggal_selesai }}</td>
