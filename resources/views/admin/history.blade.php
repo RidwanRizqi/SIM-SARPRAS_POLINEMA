@@ -79,12 +79,6 @@
                                             <td>{{ $peminjaman->status }}</td>
                                             <td class="d-flex justify-content-center">
                                                 @if($peminjaman->status == 'Proses')
-                                                    <a href="{{route('peminjaman-admin.edit', ['peminjaman_admin' => $peminjaman->id]) }}">
-                                                        <button class="badge bg-warning border-0 my-3 mx-3 text-white"
-                                                                type="button">
-                                                            <i class="fas fa-user-cog"></i> Edit
-                                                        </button>
-                                                    </a>
                                                     <form action="{{ route('peminjaman-admin.destroy', ['peminjaman_admin' => $peminjaman->id]) }}"
                                                           method="POST" class="d-inline">
                                                         @method('DELETE')
@@ -95,6 +89,12 @@
                                                         </button>
                                                     </form>
                                                 @else
+                                                    <a href="{{route('peminjaman-admin.edit', ['peminjaman_admin' => $peminjaman->id]) }}">
+                                                        <button class="badge bg-warning border-0 my-3 mx-3 text-white"
+                                                                type="button">
+                                                            <i class="fas fa-user-cog"></i> Edit
+                                                        </button>
+                                                    </a>
                                                     <a href="#">
                                                         <button class="badge bg-success border-0 mt-3 mr-2 text-white"
                                                                 type="button">

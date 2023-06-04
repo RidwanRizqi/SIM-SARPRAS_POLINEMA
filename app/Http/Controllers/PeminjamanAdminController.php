@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\peminjaman;
 use App\Models\SaranaPrasarana;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 
 class PeminjamanAdminController extends Controller
@@ -107,16 +108,73 @@ class PeminjamanAdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, peminjaman $peminjaman)
+    public function update(Request $request, peminjaman $peminjaman_admin)
     {
-        //
+        $validatedData = $request->validate([
+            'id_user' => 'required',
+            'id_sarana_prasarana' => 'required',
+            'id_wewenang' => 'required',
+            'dokumen' => 'nullable|file|max:1024',
+            'kegiatan' => 'required',
+            'penanggung_jawab' => 'required',
+            'tanggal_mulai' => [
+                'required',
+                'date',
+                Rule::unique('peminjaman')->where(function ($query) use ($request) {
+                    return $query->where('id_sarana_prasarana', $request->id_sarana_prasarana)
+                        ->where('tanggal_selesai', '>=', $request->tanggal_mulai);
+                })->ignore($peminjaman_admin->id)
+            ],
+            'tanggal_selesai' => [
+                'required',
+                'date',
+                'after_or_equal:tanggal_mulai',
+                function ($attribute, $value, $fail) use ($request, $peminjaman_admin) {
+                    $existingPeminjaman = Peminjaman::where('id_sarana_prasarana', $request->id_sarana_prasarana)
+                        ->where('id', '!=', $peminjaman_admin->id)
+                        ->where(function ($query) use ($request) {
+                            $query->whereBetween('tanggal_mulai', [$request->tanggal_mulai, $request->tanggal_selesai])
+                                ->orWhereBetween('tanggal_selesai', [$request->tanggal_mulai, $request->tanggal_selesai])
+                                ->orWhere(function ($query) use ($request) {
+                                    $query->where('tanggal_mulai', '<=', $request->tanggal_mulai)
+                                        ->where('tanggal_selesai', '>=', $request->tanggal_selesai);
+                                });
+                        })
+                        ->exists();
+
+                    if ($existingPeminjaman) {
+                        $fail('Tanggal mulai dan tanggal selesai telah digunakan!');
+                    }
+                }
+            ],
+        ]);
+
+
+        $validatedData['status'] = 'Valid';
+
+        if ($request->file('dokumen')) {
+            if ($request->oldDokumen) {
+                Storage::delete($request->oldDokumen);
+            }
+            $validatedData['dokumen'] = $request->file('dokumen')->store('dokumen');
+        }
+
+        Peminjaman::where('id', $peminjaman_admin->id)->update($validatedData);
+
+        return redirect()->route('peminjaman-admin.index')->with('success', 'Peminjaman berhasil diubah');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(peminjaman $peminjaman)
+    public function destroy(peminjaman $peminjaman_admin)
     {
-        //
+        if ($peminjaman_admin->dokumen) {
+            Storage::delete($peminjaman_admin->dokumen);
+        }
+
+        Peminjaman::destroy($peminjaman_admin->id);
+
+        return redirect()->route('peminjaman-admin.index')->with('success', 'Peminjaman berhasil dihapus');
     }
 }
