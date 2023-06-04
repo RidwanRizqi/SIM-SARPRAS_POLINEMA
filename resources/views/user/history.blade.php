@@ -78,7 +78,7 @@
                                             </td>
                                             <td>{{ $peminjaman->status }}</td>
                                             <td class="d-flex justify-content-center">
-                                                @if($peminjaman->status == 'Proses')
+                                                @if($peminjaman->status == 'Proses' || $peminjaman->status == 'Ditolak')
                                                     <a href="{{route('peminjaman-user.edit', ['peminjaman_user' => $peminjaman->id]) }}">
                                                         <button class="badge bg-warning border-0 my-3 mx-3 text-white"
                                                                 type="button">
