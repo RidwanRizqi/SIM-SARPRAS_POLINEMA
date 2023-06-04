@@ -12,9 +12,13 @@ class PeminjamanUserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $peminjamans = Peminjaman::where('id_user', auth()->user()->id)->when($request->input('search'), function ($query, $search) {
+            $query->where('nama', 'like', '%' . $search . '%');
+        })
+            ->paginate(5);
+        return view('user.history', compact('peminjamans'));
     }
 
     /**
@@ -76,7 +80,7 @@ class PeminjamanUserController extends Controller
         }
 
         Peminjaman::create($validatedData);
-        return redirect('history-user')->with('success', 'Peminjaman berhasil ditambahkan!');
+        return redirect(route('peminjaman-user.index'))->with('success', 'Peminjaman berhasil diajukan!');
     }
 
     /**
