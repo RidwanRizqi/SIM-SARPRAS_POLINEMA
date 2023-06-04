@@ -79,7 +79,7 @@
                 <a class="nav-link" href="{{route('daftarsaranaprasarana.user')}}">Daftar Sarana Prasarana</a>
             </li>
             <li>
-                <a class="nav-link" href="{{route('history.user')}}">History User</a>
+                <a class="nav-link" href="{{route('peminjaman-user.index')}}">History User</a>
             </li>
         </ul>
     </li>

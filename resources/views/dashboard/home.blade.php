@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-xl-6 mb-4">
                     <!-- Dashboard example card 2-->
-                    <a class="card lift h-100" href="{{route('history.user')}}">
+                    <a class="card lift h-100" href="{{route('peminjaman-user.index')}}">
                         <div class="card-body d-flex justify-content-center flex-column">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="me-3">
@@ -113,7 +113,7 @@
                 <a class="nav-link" href="{{route('daftarsaranaprasarana.user')}}">Daftar Sarana Prasarana</a>
             </li>
             <li>
-                <a class="nav-link" href="{{route('history.user')}}">History User</a>
+                <a class="nav-link" href="{{route('peminjaman-user.index')}}">History User</a>
             </li>
         </ul>
     </li>
