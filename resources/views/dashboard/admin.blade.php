@@ -110,10 +110,10 @@
                 <a class="nav-link" href="{{ route('daftarsaranaprasarana.admin') }}">Pinjam Sarpras</a>
             </li>
             <li>
-                <a class="nav-link" href="{{route('history.admin')}}">History User</a>
+                <a class="nav-link" href="{{route('peminjaman-admin.index')}}">History User</a>
             </li>
             <li>
-                <a class="nav-link" href="{{route('validasi.admin')}}">Validasi User</a>
+                <a class="nav-link" href="{{route('validasi.index')}}">Validasi User</a>
             </li>
         </ul>
     </li>

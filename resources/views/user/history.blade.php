@@ -62,6 +62,7 @@
                                         <th>Tanggal Peminjaman</th>
                                         <th>Proposal</th>
                                         <th>Status</th>
+                                        <th>Catatan Admin</th>
                                         <th>Action</th>
                                     </tr>
                                     @forelse($peminjamans as $peminjaman)
@@ -77,8 +78,15 @@
                                                 </button>
                                             </td>
                                             <td>{{ $peminjaman->status }}</td>
+                                            <td>
+                                                @if($peminjaman->catatan_admin == null)
+                                                    -
+                                                @else
+                                                    {{ $peminjaman->catatan_admin }}
+                                                @endif
+                                            </td>
                                             <td class="d-flex justify-content-center">
-                                                @if($peminjaman->status == 'Proses')
+                                                @if($peminjaman->status == 'Proses' || $peminjaman->status == 'Ditolak')
                                                     <a href="{{route('peminjaman-user.edit', ['peminjaman_user' => $peminjaman->id]) }}">
                                                         <button class="badge bg-warning border-0 my-3 mx-3 text-white"
                                                                 type="button">
