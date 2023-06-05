@@ -15,8 +15,8 @@
                                 <form method="POST" action="{{ route('users.update', ['user' => $user->id]) }}" enctype="multipart/form-data">
                                     @method('PUT')
                                     @csrf
-                                    <div class="col-lg-6 col-sm-6">
-                                        <div class="mb-3">
+                                    <div class="row mb-3">
+                                        <div class="col-lg-6 col-sm-6">
                                         <label for="name" class="form-label">Nama User</label>
                                         <input type="text" class="form-control @error('name') is-invalid @enderror"
                                                id="name" name="name" value="{{ old('name', $user->name) }}">

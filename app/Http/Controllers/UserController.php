@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Wewenang;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -101,8 +101,12 @@ class UserController extends Controller
             'phone' =>'required|max:50|min:1',
             'id_wewenang' => 'required|max:50|min:1',
             'nama_pj' => 'required|max:50|min:3',
-            'ninduk_pj' => 'required|max:50|min:3',
-            'ttd_pj' => 'required|max:50|min:3',
+            'ninduk_pj' => 'required|max:50|min:10',
+            'ttd_pj' => 'required|file|max:1024',
+            'nama_dpk' => 'max:50|min:3',
+            'nip_dpk' => 'max:50|min:10',
+            'ttd_dpk' => 'file|max:1024',
+            'logo' => 'file|max:1024',
         ];
 
 //        check if email not same as before
@@ -113,8 +117,26 @@ class UserController extends Controller
         $validatedData = $request->validate($rules);
         $validatedData['password'] = Hash::make($validatedData['password']);
 
-        User::where('id', $id)
-            ->update($validatedData);
+        if ($request->file('ttd_pj')) {
+            if ($request->oldDokumen) {
+                Storage::delete($request->oldDokumen);
+            }
+            $validatedData['ttd_pj'] = $request->file('ttd_pj')->store('ttdpj');
+        }
+        if ($request->file('ttd_dpk')) {
+            if ($request->oldDokumen) {
+                Storage::delete($request->oldDokumen);
+            }
+            $validatedData['ttd_dpk'] = $request->file('ttd_dpk')->store('ttdpk');
+        }
+        if ($request->file('logo')) {
+            if ($request->oldDokumen) {
+                Storage::delete($request->oldDokumen);
+            }
+            $validatedData['logo'] = $request->file('logo')->store('logoUser');
+        }
+
+        User::where('id', $id)->update($validatedData);
 
         return redirect(route('users.index'))->with('success', 'User berhasil diupdate!');
     }
