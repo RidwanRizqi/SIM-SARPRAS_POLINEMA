@@ -300,7 +300,7 @@
 @section('sidebar')
     @parent
     <li class="nav-item dropdown">
-        <a href="#" class="nav-link has-dropdown"><i class="fas fa-calendar-check"><span>Peminjaman</span></a>
+        <a href="#" class="nav-link has-dropdown"><i class="fas fa-calendar-check"></i><span>Peminjaman</span></a>
         <ul class="dropdown-menu">
             <li>
                 <a class="nav-link" href="{{route('daftarsaranaprasarana.user')}}">Daftar Sarana Prasarana</a>
