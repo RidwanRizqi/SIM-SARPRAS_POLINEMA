@@ -50,7 +50,7 @@
                                     $('#calendar').fullCalendar({
                                         defaultView: 'month',
                                         events: [
-                                                @foreach ($peminjaman as $item)
+                                                @foreach ($tanggalPeminjaman as $item)
                                             {
                                                 title: '{{ $item->kegiatan }}',
                                                 start: '{{ $item->tanggal_mulai }}',
