@@ -33,6 +33,7 @@ return new class extends Migration
             $table->string('nama_dpk')->nullable();
             $table->string('nip_dpk')->nullable()->unique();
             $table->string('ttd_dpk')->nullable();
+            $table->string('logo')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
