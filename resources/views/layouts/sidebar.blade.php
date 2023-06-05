@@ -9,10 +9,12 @@
 
         @section('sidebar')
 
-        <li class="menu-header">Menu</li>
-        <li class="nav-item dropdown">
-            <a href="{{route('home')}}" class="nav-link">
-                <i class="fas fa-poll-h"></i><span>Dashboard</span></a>
+            <li class="menu-header">Menu</li>
+            <li class="nav-item {{ request()->is('home') ? 'active' : '' }}">
+                <a href="{{ route('home') }}" class="nav-link">
+                    <i class="fas fa-poll-h"></i><span>Dashboard</span>
+                </a>
+            </li>
         @show
     </ul>
 

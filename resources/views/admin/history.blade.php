@@ -85,20 +85,20 @@
                                                         @csrf
                                                         <button class="badge bg-danger border-0 my-3 mx-3 text-white"
                                                                 onclick="return confirm('Yakin Menghapus Peminjaman ?')"><i
-                                                                class="fas fa-user-times"></i> Delete
+                                                                class="fas fa-trash"></i> Delete
                                                         </button>
                                                     </form>
                                                 @else
                                                     <a href="{{route('peminjaman-admin.edit', ['peminjaman_admin' => $peminjaman->id]) }}">
                                                         <button class="badge bg-warning border-0 my-3 mx-3 text-white"
                                                                 type="button">
-                                                            <i class="fas fa-user-cog"></i> Edit
+                                                            <i class="fas fa-edit"></i> Edit
                                                         </button>
                                                     </a>
                                                     <a href="#">
                                                         <button class="badge bg-success border-0 mt-3 mr-2 text-white"
                                                                 type="button">
-                                                            <i class="fas fa-user-cog"></i> Cetak Bukti Peminjaman
+                                                            <i class="fas fa-print"></i> Cetak Bukti Peminjaman
                                                         </button>
                                                     </a>
                                                 @endif
@@ -128,20 +128,20 @@
 
 @section('sidebar')
     @parent
-    <li><a href="{{route('kelola.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Sarana Prasarana</span></a></li>
-    <li class="nav-item dropdown">
-        <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i><span>Peminjaman</span></a>
+    <li class="nav-item {{ (request()->is('kelola-ruang')) ? 'active' : '' }}"><a href="{{ route('kelola.admin') }}" class="nav-link"><i class="fas fa-building"></i><span>Kelola Sarana Prasarana</span></a></li>
+    <li class="nav-item dropdown {{ request()->is('daftar-sarana-prasarana-admin', 'peminjaman-admin*', 'validasi*') ? 'active' : '' }}">
+        <a href="#" class="nav-link has-dropdown"><i class="fas fa-calendar-check"></i><span>Peminjaman</span></a>
         <ul class="dropdown-menu">
             <li>
                 <a class="nav-link" href="{{ route('daftarsaranaprasarana.admin') }}">Pinjam Sarpras</a>
             </li>
             <li>
-                <a class="nav-link" href="{{route('peminjaman-admin.index')}}">History Admin</a>
+                <a class="nav-link" href="{{ route('peminjaman-admin.index') }}">History User</a>
             </li>
             <li>
-                <a class="nav-link" href="{{route('validasi.index')}}">Validasi User</a>
+                <a class="nav-link" href="{{ route('validasi.index') }}">Validasi User</a>
             </li>
         </ul>
     </li>
-    <li><a href="{{route('pelaporan.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Pelaporan</span></a></li>
+    <li class="nav-item {{ request()->is('pelaporan-admin') ? 'active' : '' }}"><a href="{{ route('pelaporan.admin') }}" class="nav-link"><i class="fas fa-file-signature"></i><span>Pelaporan</span></a></li>
 @endsection

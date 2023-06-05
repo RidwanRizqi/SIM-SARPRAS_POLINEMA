@@ -24,6 +24,29 @@
                             <div id='calendar'></div>
                             <script>
                                 $(document).ready(function () {
+                                    // Array warna-warna yang tersedia
+                                    var availableColors = [
+                                        '#343A40', // Dark
+                                        '#6C757D', // Secondary
+                                        '#198754', // Success
+                                        '#DC3545', // Danger
+                                        '#FFC107', // Warning
+                                        '#0D6EFD', // Primary
+                                        '#6610F2', // Indigo
+                                        '#6F42C1', // Purple
+                                        '#D63384', // Pink
+                                        '#FD7E14', // Orange
+                                        '#20C997', // Teal
+                                        '#0DCAF0', // Cyan
+                                        '#E83E8C', // Fuchsia
+                                        '#FD7E14', // Yellow
+                                        '#007BFF', // Blue
+                                        '#FFC107', // Amber
+                                        '#28A745', // Green
+                                        '#17A2B8', // Info
+                                        '#6C757D', // Gray
+                                    ];
+
                                     $('#calendar').fullCalendar({
                                         defaultView: 'month',
                                         events: [
@@ -40,8 +63,14 @@
                                     });
 
                                     function getRandomColor() {
-                                        var colors = ['#FF0000', '#00FF00', '#0000FF', '#FF00FF', '#00FFFF', '#FF8000', '#8000FF', '#0080FF', '#FF0080'];
-                                        return colors[Math.floor(Math.random() * colors.length)];
+                                        if (availableColors.length === 0) {
+                                            return '#808080'; // Jika tidak ada warna tersedia, gunakan warna abu-abu
+                                        }
+
+                                        var colorIndex = Math.floor(Math.random() * availableColors.length);
+                                        var color = availableColors[colorIndex];
+                                        availableColors.splice(colorIndex, 1); // Hapus warna dari array
+                                        return color;
                                     }
                                 });
                             </script>
@@ -255,21 +284,21 @@
 
 @section('sidebar')
     @parent
-    <li><a href="{{route('kelola.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Kelola Sarana Prasarana</span></a></li>
-    <li class="nav-item dropdown">
-        <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i><span>Peminjaman</span></a>
+    <li class="nav-item {{ (request()->is('kelola-ruang')) ? 'active' : '' }}"><a href="{{ route('kelola.admin') }}" class="nav-link"><i class="fas fa-building"></i><span>Kelola Sarana Prasarana</span></a></li>
+    <li class="nav-item dropdown {{ request()->is('daftar-sarana-prasarana-admin', 'peminjaman-admin*', 'validasi*') ? 'active' : '' }}">
+        <a href="#" class="nav-link has-dropdown"><i class="fas fa-calendar-check"></i><span>Peminjaman</span></a>
         <ul class="dropdown-menu">
             <li>
                 <a class="nav-link" href="{{ route('daftarsaranaprasarana.admin') }}">Pinjam Sarpras</a>
             </li>
             <li>
-                <a class="nav-link" href="{{route('peminjaman-admin.index')}}">History Admin</a>
+                <a class="nav-link" href="{{ route('peminjaman-admin.index') }}">History User</a>
             </li>
             <li>
-                <a class="nav-link" href="{{route('validasi.index')}}">Validasi User</a>
+                <a class="nav-link" href="{{ route('validasi.index') }}">Validasi User</a>
             </li>
         </ul>
     </li>
-    <li><a href="{{route('pelaporan.admin')}}" class="nav-link"><i class="fas fa-file-alt"></i><span>Pelaporan</span></a></li>
+    <li class="nav-item {{ request()->is('pelaporan-admin') ? 'active' : '' }}"><a href="{{ route('pelaporan.admin') }}" class="nav-link"><i class="fas fa-file-signature"></i><span>Pelaporan</span></a></li>
 @endsection
 
