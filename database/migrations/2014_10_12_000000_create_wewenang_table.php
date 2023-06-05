@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('wewenang', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('pj');
+            $table->string('nip')->unique();
+            $table->string('ttd');
             $table->timestamps();
         });
     }
