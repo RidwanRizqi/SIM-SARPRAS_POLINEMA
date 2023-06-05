@@ -24,6 +24,29 @@
                             <div id='calendar'></div>
                             <script>
                                 $(document).ready(function () {
+                                    // Array warna-warna yang tersedia
+                                    var availableColors = [
+                                        '#343A40', // Dark
+                                        '#6C757D', // Secondary
+                                        '#198754', // Success
+                                        '#DC3545', // Danger
+                                        '#FFC107', // Warning
+                                        '#0D6EFD', // Primary
+                                        '#6610F2', // Indigo
+                                        '#6F42C1', // Purple
+                                        '#D63384', // Pink
+                                        '#FD7E14', // Orange
+                                        '#20C997', // Teal
+                                        '#0DCAF0', // Cyan
+                                        '#E83E8C', // Fuchsia
+                                        '#FD7E14', // Yellow
+                                        '#007BFF', // Blue
+                                        '#FFC107', // Amber
+                                        '#28A745', // Green
+                                        '#17A2B8', // Info
+                                        '#6C757D', // Gray
+                                    ];
+
                                     $('#calendar').fullCalendar({
                                         defaultView: 'month',
                                         events: [
@@ -40,8 +63,14 @@
                                     });
 
                                     function getRandomColor() {
-                                        var colors = ['#FF0000', '#00FF00', '#0000FF', '#FF00FF', '#00FFFF', '#FF8000', '#8000FF', '#0080FF', '#FF0080'];
-                                        return colors[Math.floor(Math.random() * colors.length)];
+                                        if (availableColors.length === 0) {
+                                            return '#808080'; // Jika tidak ada warna tersedia, gunakan warna abu-abu
+                                        }
+
+                                        var colorIndex = Math.floor(Math.random() * availableColors.length);
+                                        var color = availableColors[colorIndex];
+                                        availableColors.splice(colorIndex, 1); // Hapus warna dari array
+                                        return color;
                                     }
                                 });
                             </script>
