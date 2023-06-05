@@ -90,7 +90,7 @@
                                                     <a href="{{route('peminjaman-user.edit', ['peminjaman_user' => $peminjaman->id]) }}">
                                                         <button class="badge bg-warning border-0 my-3 mx-3 text-white"
                                                                 type="button">
-                                                            <i class="fas fa-user-cog"></i> Edit
+                                                            <i class="fas fa-edit"></i> Edit
                                                         </button>
                                                     </a>
                                                     <form action="{{ route('peminjaman-user.destroy', ['peminjaman_user' => $peminjaman->id]) }}"
@@ -99,14 +99,14 @@
                                                         @csrf
                                                         <button class="badge bg-danger border-0 my-3 mx-3 text-white"
                                                                 onclick="return confirm('Yakin Menghapus Peminjaman ?')"><i
-                                                                class="fas fa-user-times"></i> Delete
+                                                                class="fas fa-trash"></i> Delete
                                                         </button>
                                                     </form>
                                                 @else
                                                     <a href="#">
                                                         <button class="badge bg-success border-0 mt-3 mr-2 text-white"
                                                                 type="button">
-                                                            <i class="fas fa-user-cog"></i> Cetak Bukti Peminjaman
+                                                            <i class="fas fa-print"></i> Cetak Bukti Peminjaman
                                                         </button>
                                                     </a>
                                                 @endif
@@ -140,7 +140,7 @@
 @section('sidebar')
     @parent
     <li class="nav-item dropdown">
-        <a href="#" class="nav-link has-dropdown"><i class="fas fa-file-alt"></i><span>Peminjaman</span></a>
+        <a href="#" class="nav-link has-dropdown"><i class="fas fa-calendar-check"></i><span>Peminjaman</span></a>
         <ul class="dropdown-menu">
             <li>
                 <a class="nav-link" href="{{route('daftarsaranaprasarana.user')}}">Daftar Sarana Prasarana</a>
