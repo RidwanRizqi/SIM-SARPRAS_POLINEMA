@@ -69,23 +69,19 @@ Route::middleware('can:superadmin')->group(function () {
 Route::middleware('can:admin')->group(function () {
     Route::get('daftar-sarana-prasarana-admin', [SarprasController::class, 'admin'])->name('daftarsaranaprasarana.admin');
 
-    Route::resource('peminjaman-admin', PeminjamanAdminController::class);
-
-    Route::get('laporan-pdf',[LaporanAdminController::class, 'generatePDF'])->name('laporan.pdf');
-
     Route::get('kelola-ruang', function () {
         return view('admin.kelola');
     })->name('kelola.admin');
 
-    Route::resource('validasi', ValidationController::class);
-
-//    Route::get('validasi-admin', function () {
-//        return view('admin.validasi');
-//    })->name('validasi.admin');
-
     Route::get('pelaporan-admin', function () {
         return view('admin.pelaporan');
     })->name('pelaporan.admin');
+
+    Route::get('laporan-pdf',[LaporanAdminController::class, 'generatePDF'])->name('laporan.pdf');
+
+    Route::resource('peminjaman-admin', PeminjamanAdminController::class);
+
+    Route::resource('validasi', ValidationController::class);
 
     Route::resource('sarpras', SarprasController::class);
 });
