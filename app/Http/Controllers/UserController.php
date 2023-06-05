@@ -45,8 +45,25 @@ class UserController extends Controller
             'role' => 'required|max:50|min:4',
             'phone' =>'required|max:50|min:1',
             'id_wewenang' => 'required|max:50|min:1',
+            'nama_pj' => 'required|max:50|min:3',
+            'ninduk_pj' => 'required|unique:users|max:50|min:10',
+            'ttd_pj' => 'required|file|max:1024',
+            'nama_dpk' => 'max:50|min:3',
+            'nip_dpk' => 'unique:users|max:50|min:10',
+            'ttd_dpk' => 'file|max:1024',
+            'logo' => 'file|max:1024',
         ]);
         $validatedData['password'] = Hash::make($validatedData['password']);
+
+        if ($request->file('ttd_pj')) {
+            $validatedData['ttd_pj'] = $request->file('ttd_pj')->store('ttdpj');
+        }
+        if ($request->file('ttd_dpk')) {
+            $validatedData['ttd_dpk'] = $request->file('ttd_dpk')->store('ttdpk');
+        }
+        if ($request->file('logo')) {
+            $validatedData['logo'] = $request->file('logo')->store('logoUser');
+        }
 
         User::create($validatedData);
 
@@ -83,6 +100,9 @@ class UserController extends Controller
             'role' => 'required|max:50|min:4',
             'phone' =>'required|max:50|min:1',
             'id_wewenang' => 'required|max:50|min:1',
+            'nama_pj' => 'required|max:50|min:3',
+            'ninduk_pj' => 'required|max:50|min:3',
+            'ttd_pj' => 'required|max:50|min:3',
         ];
 
 //        check if email not same as before

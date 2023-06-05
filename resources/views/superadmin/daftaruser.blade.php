@@ -41,7 +41,7 @@
                                         <th>Nama User</th>
                                         <th>Email</th>
                                         <th>Role</th>
-                                        <th>Jurusan</th>
+                                        <th>Wewenang</th>
                                         <th>Telepon</th>
                                         <th>Action</th>
                                     </tr>

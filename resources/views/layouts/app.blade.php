@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport" />
-    <title>SIMSARPRAS - @yield('title')</title>
+    <title>@yield('title') - SIMSARPRAS</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -65,8 +65,26 @@
 <script src="{{ asset('assets/js/dataPicker.js') }}"></script>
 <script src="{{ asset('assets/js/scriptAdmin.js') }}"></script>
 
-
 <!-- Page Specific JS File -->
+<script>
+    // Mendapatkan elemen dropdown
+    var wewenang = document.getElementById('wewenang');
+    // Mendapatkan elemen form tambahan
+    var additionalForm = document.getElementById('additional-form');
+
+    // Event listener untuk perubahan nilai dropdown
+    wewenang.addEventListener('change', function() {
+        // Jika nilai selected value adalah 'option2', tampilkan form tambahan
+        if (wewenang.value === '9') {
+            additionalForm.style.display = 'flex';
+        } else {
+            additionalForm.style.display = 'none';
+        }
+    });
+    if (wewenang.value === '9') {
+        additionalForm.style.display = 'flex';
+    }
+</script>
 </body>
 
 </html>
