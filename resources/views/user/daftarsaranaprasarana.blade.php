@@ -75,14 +75,16 @@
 
 @section('sidebar')
     @parent
-    <li class="nav-item dropdown">
-        <a href="#" class="nav-link has-dropdown"><i class="fas fa-calendar-check"></i><span>Peminjaman</span></a>
+    <li class="nav-item dropdown {{ (request()->is('daftar-sarana-prasarana-user', 'peminjaman-user*')) ? 'active' : '' }}">
+        <a href="#" class="nav-link has-dropdown">
+            <i class="fas fa-calendar-check"></i><span>Peminjaman</span>
+        </a>
         <ul class="dropdown-menu">
             <li>
-                <a class="nav-link" href="{{route('daftarsaranaprasarana.user')}}">Daftar Sarana Prasarana</a>
+                <a class="nav-link" href="{{ route('daftarsaranaprasarana.user') }}">Daftar Sarana Prasarana</a>
             </li>
             <li>
-                <a class="nav-link" href="{{route('peminjaman-user.index')}}">History User</a>
+                <a class="nav-link" href="{{ route('peminjaman-user.index') }}">History User</a>
             </li>
         </ul>
     </li>
