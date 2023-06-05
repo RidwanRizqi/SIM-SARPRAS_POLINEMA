@@ -19,8 +19,7 @@
                     <!-- Dashboard example card 1-->
                     <a class="card lift">
                         <div class="card-header bg-whitesmoke"><h4>Daftar Peminjaman Pada
-                                Ruang {{ $sarpras->nama }}</h4></div>
-                        <div class="card-body">
+                                Ruang {{ $sarpras->nama }}</h4></div><div class="card-body">
                             <div id='calendar'></div>
                             <script>
                                 $(document).ready(function () {
@@ -32,15 +31,21 @@
                                                 title: '{{ $item->kegiatan }}',
                                                 start: '{{ $item->tanggal_mulai }}',
                                                 end: '{{ date('Y-m-d', strtotime($item->tanggal_selesai.' +1 day')) }}',
-                                                color: 'green', // Ganti dengan warna blok yang diinginkan
-                                                textColor: 'white' // Ganti dengan warna font yang diinginkan
+                                                color: getRandomColor(),
+                                                textColor: 'white'
                                             },
                                             @endforeach
                                         ]
                                     });
+
+                                    function getRandomColor() {
+                                        var colors = ['#FF0000', '#00FF00', '#0000FF', '#FF00FF', '#00FFFF', '#FF8000', '#8000FF', '#0080FF', '#FF0080'];
+                                        return colors[Math.floor(Math.random() * colors.length)];
+                                    }
                                 });
                             </script>
                         </div>
+
                     </a>
                 </div>
                 <div class="col-xl-6 mb-4">

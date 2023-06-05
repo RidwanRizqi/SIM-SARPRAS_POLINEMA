@@ -31,7 +31,6 @@ class PeminjamanAdminController extends Controller
         $sarpras = SaranaPrasarana::find($sarprasId);
         $peminjaman = Peminjaman::select('id', 'tanggal_mulai', 'tanggal_selesai', 'kegiatan')
             ->where('id_sarana_prasarana', $sarpras->id)
-            ->where('status', '!=', 'Ditolak')
             ->get();
 
         return view('admin.pinjam', compact('sarpras', 'peminjaman'));

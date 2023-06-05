@@ -27,17 +27,22 @@
                                     $('#calendar').fullCalendar({
                                         defaultView: 'month',
                                         events: [
-                                                @foreach ($tanggalPeminjaman as $item)
+                                                @foreach ($peminjaman as $item)
                                             {
                                                 title: '{{ $item->kegiatan }}',
                                                 start: '{{ $item->tanggal_mulai }}',
                                                 end: '{{ date('Y-m-d', strtotime($item->tanggal_selesai.' +1 day')) }}',
-                                                color: 'green', // Ganti dengan warna blok yang diinginkan
-                                                textColor: 'white' // Ganti dengan warna font yang diinginkan
+                                                color: getRandomColor(),
+                                                textColor: 'white'
                                             },
                                             @endforeach
                                         ]
                                     });
+
+                                    function getRandomColor() {
+                                        var colors = ['#FF0000', '#00FF00', '#0000FF', '#FF00FF', '#00FFFF', '#FF8000', '#8000FF', '#0080FF', '#FF0080'];
+                                        return colors[Math.floor(Math.random() * colors.length)];
+                                    }
                                 });
                             </script>
                         </div>
