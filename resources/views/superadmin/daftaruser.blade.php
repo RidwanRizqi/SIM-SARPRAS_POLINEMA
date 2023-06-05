@@ -55,7 +55,7 @@
                                             <td class="d-flex justify-content-center">
                                                 <a href="{{route('users.edit', ['user' => $user->id]) }}">
                                                     <button class="badge bg-success border-0 mt-3 mr-2 text-white" type="button">
-                                                        <i class="fas fa-user-cog"></i> Edit
+                                                        <i class="fas fa-edit"></i> Edit
                                                     </button>
                                                 </a>
                                                 <form action="{{ route('users.destroy', ['user' => $user->id]) }}"
@@ -64,7 +64,7 @@
                                                     @csrf
                                                     <button class="badge bg-danger border-0 mt-3 text-white"
                                                             onclick="return confirm('Yakin Menghapus User?')"><i
-                                                            class="fas fa-user-times"></i> Delete
+                                                            class="fas fa-trash"></i> Delete
                                                     </button>
                                                 </form>
                                             </td>
@@ -94,5 +94,5 @@
 @section('sidebar')
     @parent
     <li><a href="{{route('kelola.superadmin')}}" class="nav-link"><i
-                class="fas fa-file-alt"></i><span>Kelola Pengguna</span></a></li>
+                class="fas fa-users"></i><span>Kelola Pengguna</span></a></li>
 @endsection
