@@ -20,7 +20,6 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'phone' => ['nullable', 'numeric', 'digits_between:10,12'],
-            'bio' => ['nullable', 'string', 'max:255'],
 
             'email' => [
                 'required',
@@ -39,7 +38,6 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'name' => $input['name'],
                 'email' => $input['email'],
                 'phone' => $input['phone'],
-                'bio' => $input['bio'],
             ])->save();
         }
     }

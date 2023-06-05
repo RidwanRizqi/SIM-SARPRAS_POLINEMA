@@ -26,9 +26,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'nama_pj',
         'ninduk_pj',
         'ttd_pj',
-        'name_dpk',
+        'nama_dpk',
         'nip_dpk',
         'ttd_dpk',
+        'logo',
     ];
 
     /**
