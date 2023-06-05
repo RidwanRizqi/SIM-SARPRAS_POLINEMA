@@ -27,6 +27,12 @@ return new class extends Migration
                 ]
             )->default('user');
             $table->foreignId('id_wewenang')->constrained('wewenang');
+            $table->string('nama_pj');
+            $table->string('ninduk_pj')->unique();
+            $table->string('ttd_pj');
+            $table->string('nama_dpk')->nullable();
+            $table->string('nip_dpk')->nullable()->unique();
+            $table->string('ttd_dpk')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
