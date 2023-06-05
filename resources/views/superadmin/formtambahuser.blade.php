@@ -63,7 +63,7 @@
                                             @enderror
                                         </div>
                                         <div class="col-lg-4 col-sn-4">
-                                            <label for="jurusan" class="form-label">Wewenang</label>
+                                            <label for="wewenang" class="form-label">Wewenang</label>
                                             <select class="form-control" name="id_wewenang">
                                                 @foreach($wewenangs as $wewenang)
                                                     @if(old('wewenang_id') == $wewenang->id)
