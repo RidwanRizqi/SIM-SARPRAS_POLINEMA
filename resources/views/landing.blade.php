@@ -51,7 +51,6 @@
     </div>
   </div> --}}
   <!-- ***** Preloader End ***** -->
-
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
     <div class="container">
@@ -59,9 +58,7 @@
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <!-- <a href="index.html" class="logo"> -->
-              <a class="navbar-brand text-primary logo h1" href="index.html" style="font-size: xxx-large">SIM-SARPRAS POLINEMA</a>
-              <!-- <img src="assets/img/logo.png" alt="Chain App Dev"> -->
+              <a class="navbar-brand text-primary logo h1" href="#" style="font-size: xxx-large">SIM-SARPRAS POLINEMA</a>
             <!-- </a> -->
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
