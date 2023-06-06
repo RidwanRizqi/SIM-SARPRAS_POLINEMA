@@ -18,6 +18,7 @@
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"
     crossorigin="anonymous"></script>
+      <link rel="shortcut icon" href="{{ asset('assets/img/logo_polinema.png') }}" style="width: 50px">
     <title>SIM-SARPRAS POLINEMA</title>
 
     <!-- Bootstrap core CSS -->
