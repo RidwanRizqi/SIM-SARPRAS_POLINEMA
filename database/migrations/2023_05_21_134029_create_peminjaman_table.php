@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('dokumen');
             $table->string('kegiatan');
             $table->string('penanggung_jawab');
+            $table->string('nim')->nullable();
             $table->enum(
                 'status',
                 [

@@ -16,6 +16,7 @@ class Peminjaman extends Model
         'dokumen',
         'kegiatan',
         'penanggung_jawab',
+        'nim',
         'status',
         'daya_listrik',
         'catatan_admin',
