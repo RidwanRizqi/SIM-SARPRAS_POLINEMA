@@ -16,7 +16,6 @@
                         <div class="card mb-4">
                             <div class="card-header bg-whitesmoke"><h4>Filter Laporan</h4></div>
                             <div class="card-body">
-                                <div class="row">
                                     <form method="GET">
                                         <div class="row">
                                         <div class="col-lg-5 col-sm-5">
@@ -36,11 +35,11 @@
                                             <div class="col-lg-2 col-sm-2 mt-1">
                                         <div class="input-group-append mt-1">
                                             <button class="btn btn-primary mt-4">Filter</button>
+                                            <a href="{{ route('pelaporan-admin.index') }}" class="btn btn-secondary mt-4">Reset</a>
                                         </div>
                                             </div>
                                         </div>
                                     </form>
-                                </div>
                             </div>
                         </div>
                     </div>

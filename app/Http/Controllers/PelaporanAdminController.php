@@ -54,19 +54,15 @@ class PelaporanAdminController extends Controller
         //
     }
 
-//    public function generatePDF()
-//    {
-//        $data = ['title' => 'Laporan Peminjaman dan Pemanfaatan Sarana Prasarana Politeknik Negeri Malang'];
-//
-//        $pdf = PDF::loadView('pdf.laporanAdmin', $data);
-//        return $pdf->stream();
-//    }
 
     public function generatePDF()
     {
-        $peminjamans = Peminjaman::all();
-        $pdf = PDF::loadview('pdf.laporanAdmin', ['peminjamans' => $peminjamans]);
-        return $pdf->download('laporan-peminjaman.pdf');
+//        $peminjamans = Peminjaman::all();
+//        $pdf = PDF::loadview('pdf.laporanAdmin', ['peminjamans' => $peminjamans]);
+//        return $pdf->download('laporan-peminjaman.pdf');
+        $data = ['title' => 'Laporan Peminjaman dan Pemanfaatan Sarana Prasarana Politeknik Negeri Malang'];
+        $pdf = PDF::loadView('pdf.laporanAdmin', $data);
+        return $pdf->stream();
     }
 
     public function destroy(Peminjaman $peminjaman)
