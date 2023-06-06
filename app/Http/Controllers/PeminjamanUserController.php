@@ -48,6 +48,7 @@ class PeminjamanUserController extends Controller
             'dokumen' => 'required|file|max:1024',
             'kegiatan' => 'required',
             'penanggung_jawab' => 'required',
+            'nim' => 'required',
             'tanggal_mulai' => [
                 'required',
                 'date',
@@ -115,6 +116,7 @@ class PeminjamanUserController extends Controller
             'dokumen' => 'nullable|file|max:1024',
             'kegiatan' => 'required',
             'penanggung_jawab' => 'required',
+            'nim' => 'required',
             'tanggal_mulai' => [
                 'required',
                 'date',

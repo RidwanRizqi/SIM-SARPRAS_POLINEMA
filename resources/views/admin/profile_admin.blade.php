@@ -87,5 +87,5 @@
             </li>
         </ul>
     </li>
-    <li class="nav-item {{ request()->is('pelaporan-admin') ? 'active' : '' }}"><a href="{{ route('pelaporan.admin') }}" class="nav-link"><i class="fas fa-file-signature"></i><span>Pelaporan</span></a></li>
+    <li class="nav-item {{ request()->is('pelaporan-admin') ? 'active' : '' }}"><a href="{{ route('pelaporan-admin.index') }}" class="nav-link"><i class="fas fa-file-signature"></i><span>Pelaporan</span></a></li>
 @endsection

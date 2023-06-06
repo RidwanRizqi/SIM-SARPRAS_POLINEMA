@@ -4,7 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PeminjamanAdminController;
 use App\Http\Controllers\PeminjamanUserController;
 use App\Http\Controllers\SarprasController;
-use App\Http\Controllers\LaporanAdminController;
+use App\Http\Controllers\PelaporanAdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ValidationController;
 use Illuminate\Support\Facades\Auth;
@@ -73,11 +73,13 @@ Route::middleware('can:admin')->group(function () {
         return view('admin.kelola');
     })->name('kelola.admin');
 
-    Route::get('pelaporan-admin', function () {
-        return view('admin.pelaporan');
-    })->name('pelaporan.admin');
+//    Route::get('pelaporan-admin', function () {
+//        return view('admin.pelaporan');
+//    })->name('pelaporan.admin');
 
-    Route::get('laporan-pdf',[LaporanAdminController::class, 'generatePDF'])->name('laporan.pdf');
+    Route::get('laporan-pdf',[PelaporanAdminController::class, 'generatePDF'])->name('laporan.pdf');
+
+    Route::resource('pelaporan-admin', PelaporanAdminController::class);
 
     Route::resource('peminjaman-admin', PeminjamanAdminController::class);
 

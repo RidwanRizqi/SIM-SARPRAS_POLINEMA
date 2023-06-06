@@ -30,7 +30,7 @@
                 </div>
                 <div class="col-xl-6 mb-4">
                     <!-- Dashboard example card 2-->
-                    <a class="card lift h-100" href="{{route('pelaporan.admin')}}">
+                    <a class="card lift h-100" href="{{route('pelaporan-admin.index')}}">
                         <div class="card-body d-flex justify-content-center flex-column">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="me-3">
@@ -117,5 +117,5 @@
             </li>
         </ul>
     </li>
-    <li class="nav-item {{ request()->is('pelaporan-admin') ? 'active' : '' }}"><a href="{{ route('pelaporan.admin') }}" class="nav-link"><i class="fas fa-file-signature"></i><span>Pelaporan</span></a></li>
+    <li class="nav-item {{ request()->is('pelaporan-admin') ? 'active' : '' }}"><a href="{{ route('pelaporan-admin.index') }}" class="nav-link"><i class="fas fa-file-signature"></i><span>Pelaporan</span></a></li>
 @endsection
