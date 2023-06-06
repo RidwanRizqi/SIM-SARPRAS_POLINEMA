@@ -17,19 +17,29 @@
                             <div class="card-header bg-whitesmoke"><h4>Filter Laporan</h4></div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-3">
+                                    <form method="GET">
+                                        <div class="row">
+                                        <div class="col-lg-5 col-sm-5">
                                         <label for="startDate">Mulai Tanggal</label>
-                                        <input id="startDate" class="form-control" type="date" />
-                                        <span id="startDateSelected"></span>
-                                    </div>
-                                    <div class="col-lg-3">
+                                            <div class="input-group">
+                                                <input name="startDate" class="form-control" type="date" value="{{ request()->input('startDate') }}" />
+                                                <span id="startDateSelected"></span>
+                                            </div>
+                                            </div>
+                                            <div class="col-lg-5 col-sm-5">
                                         <label for="endDate">Sampai Tanggal</label>
-                                        <input id="endDate" class="form-control" type="date" />
-                                        <span id="endDateSelected"></span>
+                                             <div class="input-group">
+                                                <input name="endDate" class="form-control" type="date" value="{{ request()->input('endDate') }}" />
+                                                 <span  id="endDateSelected"></span>
                                     </div>
-                                    <div class="col-lg-3 mt-4">
-                                        <button class="btn btn-primary" type="button">Tampilkan</button>
                                     </div>
+                                            <div class="col-lg-2 col-sm-2 mt-1">
+                                        <div class="input-group-append mt-1">
+                                            <button class="btn btn-primary mt-4">Filter</button>
+                                        </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -38,116 +48,46 @@
                         <div class="card mb-4">
                             <div class="card-header bg-whitesmoke"><h4>Laporan Peminjaman Ruangan</h4></div>
                             <div class="card-body">
-                                <h6>Dari Tanggal ______</h6>
-                                <h6 class="mb-4">Sampai Tanggal ______</h6>
                                 <a href="{{route('laporan.pdf') }}">
                                 <button class="btn btn-success me-2 mb-2" type="button">
                                     <i class="fas fa-file-download"></i> Print PDF
                                 </button>
                                 </a>
                                 <hr>
-                                <table id="datatablesSimple" class="table table-bordered">
-                                    <thead>
-                                    <tr>
-                                        <th>Peminjam</th>
-                                        <th>Ruangan</th>
-                                        <th>Tanggal Peminjaman</th>
-                                        <th>Proposal</th>
-                                    </tr>
-                                    </thead>
-                                    <tfoot>
-                                    <tr>
-                                        <th>Peminjam</th>
-                                        <th>Ruangan</th>
-                                        <th>Tanggal Peminjaman</th>
-                                        <th>Proposal</th>
-                                    </tr>
-                                    </tfoot>
-                                    <tbody>
-                                    <tr>
-                                        <td>OKI 1</td>
-                                        <td>Graha Polinema</td>
-                                        <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-file-alt"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>OKI 1</td>
-                                        <td>Graha Polinema</td>
-                                        <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-file-alt"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>OKI 1</td>
-                                        <td>Graha Polinema</td>
-                                        <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-file-alt"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>OKI 1</td>
-                                        <td>Graha Polinema</td>
-                                        <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-file-alt"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>OKI 1</td>
-                                        <td>Graha Polinema</td>
-                                        <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-file-alt"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>OKI 1</td>
-                                        <td>Graha Polinema</td>
-                                        <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-file-alt"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>OKI 1</td>
-                                        <td>Graha Polinema</td>
-                                        <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-file-alt"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>OKI 1</td>
-                                        <td>Graha Teater</td>
-                                        <td>2022-12-12</td>
-                                        <td class="d-flex justify-content-center">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-file-alt"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+
+                                <div class="clearfix mb-3"></div>
+
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <tr>
+                                            <th>Peminjam</th>
+                                            <th>Kegiatan</th>
+                                            <th>Penanggung Jawab</th>
+                                            <th>NIM</th>
+                                            <th>Ruangan</th>
+                                            <th>Tanggal Peminjaman</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        @forelse($peminjamans as $peminjaman)
+                                            <tr>
+                                                <th>{{ $peminjaman->user->name }}</th>
+                                                <td>{{ $peminjaman->kegiatan }}</td>
+                                                <td>{{ $peminjaman->penanggung_jawab }}</td>
+                                                <td>{{ $peminjaman->nim }}</td>
+                                                <td>{{ $peminjaman->saranaPrasarana->nama }}</td>
+                                                <td>{{ $peminjaman->tanggal_mulai }}
+                                                    sampai {{ $peminjaman->tanggal_selesai }}</td>
+                                                <td>{{ $peminjaman->status }}</td>
+                                            </tr>
+                                        @empty
+                                            <tr>
+                                                <td colspan="5" class="text-center">Tidak ada data</td>
+                                            </tr>
+                                        @endforelse
+                                    </table>
+                                </div>
                         </div>
+                    </div>
                     </div>
                 </main>
             </div>
@@ -172,5 +112,5 @@
             </li>
         </ul>
     </li>
-    <li class="nav-item {{ request()->is('pelaporan-admin') ? 'active' : '' }}"><a href="{{ route('pelaporan.admin') }}" class="nav-link"><i class="fas fa-file-signature"></i><span>Pelaporan</span></a></li>
+    <li class="nav-item {{ request()->is('pelaporan-admin') ? 'active' : '' }}"><a href="{{ route('pelaporan-admin.index') }}" class="nav-link"><i class="fas fa-file-signature"></i><span>Pelaporan</span></a></li>
 @endsection
