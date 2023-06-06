@@ -59,9 +59,7 @@
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <!-- <a href="index.html" class="logo"> -->
-              <a class="navbar-brand text-primary logo h1" href="index.html" style="font-size: xxx-large">SIM-SARPRAS POLINEMA</a>
-              <!-- <img src="assets/img/logo.png" alt="Chain App Dev"> -->
+              <a class="navbar-brand text-primary logo h1" href="#" style="font-size: xxx-large">SIM-SARPRAS POLINEMA</a>
             <!-- </a> -->
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
