@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Peminjaman;
-use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 
@@ -64,13 +63,11 @@ class PelaporanAdminController extends Controller
         $pdf = PDF::loadView('pdf.laporanAdmin', $data);
         return $pdf->stream();
     }
-    public function generatebuktiPDF()
+    public function generatebuktiPDF(Request $request)
     {
-//        $peminjamans = Peminjaman::all();
-//        $pdf = PDF::loadview('pdf.laporanAdmin', ['peminjamans' => $peminjamans]);
-//        return $pdf->download('laporan-peminjaman.pdf');
-        // $data = ['title' => 'Laporan Peminjaman dan Pemanfaatan Sarana Prasarana Politeknik Negeri Malang'];
-        $pdf = PDF::loadView('pdf.buktipendaftaran');
+        $peminjamanId = $request->input('peminjaman_id');
+        $peminjamanPdf = Peminjaman::where('id', $peminjamanId)->get();
+        $pdf = PDF::loadView('pdf.buktipendaftaran', compact('peminjamanPdf'));
         return $pdf->stream();
     }
 

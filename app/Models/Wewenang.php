@@ -13,6 +13,10 @@ class Wewenang extends Model
 
     protected $fillable = [
         'name',
+        'pj',
+        'jabatan',
+        'nip',
+        'ttd'
     ];
 
     public function saranaPrasarana(): \Illuminate\Database\Eloquent\Relations\HasMany

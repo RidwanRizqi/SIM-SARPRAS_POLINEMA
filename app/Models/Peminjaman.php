@@ -22,6 +22,8 @@ class Peminjaman extends Model
         'catatan_admin',
         'tanggal_mulai',
         'tanggal_selesai',
+        'jam_mulai',
+        'jam_selesai'
     ];
 
     public function saranaPrasarana(): \Illuminate\Database\Eloquent\Relations\BelongsTo

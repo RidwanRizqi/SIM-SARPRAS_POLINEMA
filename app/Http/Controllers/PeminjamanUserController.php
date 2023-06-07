@@ -49,6 +49,8 @@ class PeminjamanUserController extends Controller
             'kegiatan' => 'required',
             'penanggung_jawab' => 'required',
             'nim' => 'required',
+            'jam_mulai' => 'required',
+            'jam_selesai' => 'required',
             'tanggal_mulai' => [
                 'required',
                 'date',
@@ -117,6 +119,8 @@ class PeminjamanUserController extends Controller
             'kegiatan' => 'required',
             'penanggung_jawab' => 'required',
             'nim' => 'required',
+            'jam_mulai' => 'required',
+            'jam_selesai' => 'required',
             'tanggal_mulai' => [
                 'required',
                 'date',

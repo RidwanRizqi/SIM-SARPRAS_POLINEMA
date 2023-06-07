@@ -26,7 +26,9 @@ class PeminjamanSeeder extends Seeder
                 'daya_listrik' => 'Ya',
                 'catatan_admin' => 'Catatan Admin 1',
                 'tanggal_mulai' => '2023-06-01',
-                'tanggal_selesai' => '2023-06-02'
+                'tanggal_selesai' => '2023-06-02',
+                'jam_mulai' => '08:00:00',
+                'jam_selesai' => '10:00:00'
             ]
         );
 
@@ -43,7 +45,9 @@ class PeminjamanSeeder extends Seeder
                 'daya_listrik' => 'Tidak',
                 'catatan_admin' => 'Catatan Admin 1',
                 'tanggal_mulai' => '2023-06-03',
-                'tanggal_selesai' => '2023-06-04'
+                'tanggal_selesai' => '2023-06-04',
+                'jam_mulai' => '08:00:00',
+                'jam_selesai' => '10:00:00'
             ]
         );
 
@@ -59,7 +63,9 @@ class PeminjamanSeeder extends Seeder
                 'daya_listrik' => 'Tidak',
                 'catatan_admin' => 'Catatan Admin 1',
                 'tanggal_mulai' => '2023-06-05',
-                'tanggal_selesai' => '2023-06-06'
+                'tanggal_selesai' => '2023-06-06',
+                'jam_mulai' => '08:00:00',
+                'jam_selesai' => '10:00:00'
             ]
         );
 
@@ -75,7 +81,9 @@ class PeminjamanSeeder extends Seeder
                 'daya_listrik' => 'Tidak',
                 'catatan_admin' => 'Catatan Admin 1',
                 'tanggal_mulai' => '2023-06-07',
-                'tanggal_selesai' => '2023-06-08'
+                'tanggal_selesai' => '2023-06-08',
+                'jam_mulai' => '08:00:00',
+                'jam_selesai' => '10:00:00'
             ]
         );
     }
