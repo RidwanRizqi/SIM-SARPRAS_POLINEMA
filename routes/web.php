@@ -78,7 +78,8 @@ Route::middleware('can:admin')->group(function () {
 //    })->name('pelaporan.admin');
 
     Route::get('laporan-pdf',[PelaporanAdminController::class, 'generatePDF'])->name('laporan.pdf');
-    Route::get('bukti-pdf',[PelaporanAdminController::class, 'generatebuktiPDF'])->name('bukti.pdf');
+
+    Route::post('bukti-pdf',[PelaporanAdminController::class, 'generatebuktiPDF'])->name('bukti.pdf');
 
     Route::resource('pelaporan-admin', PelaporanAdminController::class);
 

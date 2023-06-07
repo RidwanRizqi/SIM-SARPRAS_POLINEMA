@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\peminjaman;
+use App\Models\Peminjaman;
 use App\Models\SaranaPrasarana;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PeminjamanAdminController extends Controller
 {
@@ -48,6 +49,8 @@ class PeminjamanAdminController extends Controller
             'dokumen' => 'required|file|max:1024',
             'kegiatan' => 'required',
             'penanggung_jawab' => 'required',
+            'jam_mulai' => 'required',
+            'jam_selesai' => 'required',
             'tanggal_mulai' => [
                 'required',
                 'date',
@@ -115,6 +118,8 @@ class PeminjamanAdminController extends Controller
             'dokumen' => 'nullable|file|max:1024',
             'kegiatan' => 'required',
             'penanggung_jawab' => 'required',
+            'jam_mulai' => 'required',
+            'jam_selesai' => 'required',
             'tanggal_mulai' => [
                 'required',
                 'date',

@@ -166,6 +166,30 @@
                                 {{--                                        @enderror--}}
                                 {{--                                    </div>--}}
                                 {{--                                </div>--}}
+                                <div class="row mb-3">
+                                    <div class="col-lg-6 col-sm-6">
+                                        <label for="jam_mulai" class="form-label">Jam Mulai</label>
+                                        <input type="time"
+                                               class="form-control @error('jam_mulai') is-invalid @enderror"
+                                               id="jam_mulai" name="jam_mulai" value="{{ old('jam_mulai') }}">
+                                        @error('jam_mulai')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <label for="jam_selesai" class="form-label">Jam Selesai</label>
+                                        <input type="time"
+                                               class="form-control @error('jam_selesai') is-invalid @enderror"
+                                               id="jam_selesai" name="jam_selesai" value="{{ old('jam_selesai') }}">
+                                        @error('jam_selesai')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                    </div>
+                                </div>
                                 <div class="mb-3">
                                     <label for="dokumen" class="form-label">Upload Dokumen Pembayaran</label>
                                     <input class="form-control @error('dokumen') is-invalid @enderror" type="file"
@@ -292,7 +316,7 @@
                 <a class="nav-link" href="{{ route('daftarsaranaprasarana.admin') }}">Pinjam Sarpras</a>
             </li>
             <li>
-                <a class="nav-link" href="{{ route('peminjaman-admin.index') }}">History User</a>
+                <a class="nav-link" href="{{ route('peminjaman-admin.index') }}">History Admin</a>
             </li>
             <li>
                 <a class="nav-link" href="{{ route('validasi.index') }}">Validasi User</a>

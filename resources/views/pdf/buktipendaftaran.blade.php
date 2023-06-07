@@ -20,6 +20,7 @@
         }
 
         .hmj {
+            text-transform: uppercase;
             font-weight: bold;
         }
 
@@ -85,25 +86,25 @@
 </head>
 
 <body>
-
     <header>
         <div style="text-align: center;">
-            {{-- <img src="{{ asset('assets/img/logo_polinema.png') }}" alt=""> --}}
+{{--             <img src="{{ asset('assets/img/logo_polinema.png') }}" width="70" height="70" alt="logo">--}}
             <div class="judul">
                 KEMENTRIAN PENDIDIKAN, KEBUDAYAAN,<br>
                 RISET, DAN TEKNOLOGI <br>
                 POLITEKNIK NEGERI MALANG <br>
-                <span class="hmj">LT/HMJ/UKM</span><br>
+                <span class="hmj">{{ auth()->user()->name }}</span><br>
             </div>
             <div class="alamat">
                 Jalan Soekarno Hatta No.9 Malang 65141<br>
                 Telepon (0341) 404424 – 404425 Fax (0341) 404420<br>
-                http://www.polinema.ac.id
+                https://www.polinema.ac.id
             </div>
         </div>
         <hr>
     </header>
     <section class="surat">
+
         <div class="header">
             <div class="tanggal">
                 Malang, 20 Maret 2023
@@ -127,8 +128,10 @@
 
         <div class="isi">
             <p>Dengan Hormat,</p>
-            <p>Sehubungan dengan adanya kegiatan "Nama Kegiatan",
-                kami mohon bantuan peminjaman Gedung (Nama Gedung) beserta fasilitas yang ada didalamnya
+            <p>Sehubungan dengan adanya kegiatan @foreach ($peminjamanPdf as $object)
+                    {{ $object->kegiatan }}
+                @endforeach,
+                kami mohon bantuan peminjaman  beserta fasilitas yang ada didalamnya
                 dan daya listrik di gedung tersebut</p>
             <p>Kegiatan tersebut akan diselenggarakan pada:</p>
             <div class="waktuKegiatan">
@@ -170,9 +173,7 @@
             <div class="kanan nama">NIP. (NIP Ketua Jurusan)</div>
         </div>
 
-
     </section>
-
 </body>
 
 </html>

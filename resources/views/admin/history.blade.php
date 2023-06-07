@@ -95,12 +95,19 @@
                                                             <i class="fas fa-edit"></i> Edit
                                                         </button>
                                                     </a>
-                                                    <a href="{{route('bukti.pdf') }}">
-                                                        <button class="badge bg-success border-0 mt-3 mr-2 text-white"
-                                                                type="button">
+{{--                                                    <a href="{{ route('bukti.pdf', ['$pelaporanPdf' => $peminjaman->id]) }}" target="_blank">--}}
+{{--                                                        <button class="badge bg-success border-0 mt-3 mr-2 text-white"--}}
+{{--                                                                type="button">--}}
+{{--                                                            <i class="fas fa-print"></i> Cetak Bukti Peminjaman--}}
+{{--                                                        </button>--}}
+{{--                                                    </a>--}}
+                                                    <form action="{{ route('bukti.pdf') }}" method="POST" target="_blank">
+                                                        @csrf
+                                                        <input type="hidden" name="peminjaman_id" value="{{ $peminjaman->id }}">
+                                                        <button type="submit" class="badge bg-success border-0 mt-3 mr-2 text-white">
                                                             <i class="fas fa-print"></i> Cetak Bukti Peminjaman
                                                         </button>
-                                                    </a>
+                                                    </form>
                                                 @endif
                                             </td>
                                         </tr>
@@ -136,7 +143,7 @@
                 <a class="nav-link" href="{{ route('daftarsaranaprasarana.admin') }}">Pinjam Sarpras</a>
             </li>
             <li>
-                <a class="nav-link" href="{{ route('peminjaman-admin.index') }}">History User</a>
+                <a class="nav-link" href="{{ route('peminjaman-admin.index') }}">History Admin</a>
             </li>
             <li>
                 <a class="nav-link" href="{{ route('validasi.index') }}">Validasi User</a>
