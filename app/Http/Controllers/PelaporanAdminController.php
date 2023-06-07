@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Peminjaman;
+use App\Models\Wewenang;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 
@@ -67,7 +68,8 @@ class PelaporanAdminController extends Controller
     {
         $peminjamanId = $request->input('peminjaman_id');
         $peminjamanPdf = Peminjaman::where('id', $peminjamanId)->get();
-        $pdf = PDF::loadView('pdf.buktipendaftaran', compact('peminjamanPdf'));
+        $peminjamanPdf2 = Wewenang::where('id',9)->get();
+        $pdf = PDF::loadView('pdf.buktipendaftaran', compact('peminjamanPdf', 'peminjamanPdf2'));
         return $pdf->stream();
     }
 
