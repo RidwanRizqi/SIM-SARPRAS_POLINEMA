@@ -10,7 +10,8 @@
     <style>
         body {
             font-family: 'Times New Roman', Times, serif;
-            margin-left: 3cm;
+            margin-left: 2cm;
+            margin-right: 2cm;
         }
 
         .judul {
@@ -33,6 +34,51 @@
         .tempat, .waktuKegiatan {
             margin-left: 32px;
         }
+        .ttd{
+            /* display: inline; */
+        }
+        .kanan{
+            position: fixed;
+            margin-left: 11cm
+        }
+
+        .kiri{
+            position: fixed;
+        }
+
+        .namakiri{
+            position: fixed;
+            margin-top: 80px;
+        }
+        .namakanan{
+            position: fixed;
+            margin-top: 1.47cm;
+            margin-left: 11cm;
+        }
+
+        .text-center{
+            margin-top: 2.5cm;
+            text-align: center;
+        }
+        .height{
+            margin-top: 5px
+        }
+
+        .tinggikanan{
+            margin-top: 60px;
+        }
+        .tinggikiri{
+            margin-top: 77px
+
+        }
+        .ttd3{
+            margin-top: 95px
+        }
+        .nama{
+            margin-top: 1.7cm
+        }
+
+
 
     </style>
     <title>Document</title>
@@ -42,6 +88,7 @@
 
     <header>
         <div style="text-align: center;">
+            {{-- <img src="{{ asset('assets/img/logo_polinema.png') }}" alt=""> --}}
             <div class="judul">
                 KEMENTRIAN PENDIDIKAN, KEBUDAYAAN,<br>
                 RISET, DAN TEKNOLOGI <br>
@@ -91,6 +138,36 @@
             </div>
             <p>Demikian surat peminjaman ini kami buat, atas izin dan bantuan yang diberikan kami sampaikan terima kasih
             </p>
+        </div>
+
+        <div class="ttd1">
+            <div class="kanan">Hormat kami, </div><br>
+            <div class="kiri">Ketua Umum LT/HHMJ/UKM,</div>
+            <div class="kanan">Ketua Pelaksana,</div>
+            <div class="namakiri">(Nama Ketua Umum)</div><br>
+            <div class="namakiri">NIM. (NIM Ketua Umum)</div>
+            <div class="namakanan">Nama Ketua Pelaksana</div><br>
+            <div class="namakanan">NIM. (NIM Ketua Pelaksana)</div>
+        </div>
+
+        <div class="text-center">Mengetahui dan menyetujui,</div>
+
+        <div class="ttd2">
+            <div class="kiri height">Dosen Pembina Kemahasiswaan,</div>
+            <div class="kanan height">Presiden BEM,</div>
+            <div class="kiri tinggikiri">(Nama DPK)</div><br>
+            <div class="kanan tinggikanan">Ryan Yudhistira Fitrah C.</div>
+            <div class="kiri tinggikiri">NIP. (NIP DPK)</div><br>
+            <div class="kanan tinggikanan">NIM. 2031110036</div>
+        </div>
+
+        <div class="ttd3">
+            <div class="kiri">Pembantu Direktur III,</div>
+            <div class="kanan">Sekretaris Jurusan (TI)</div>
+            <div class="kiri nama">Dr.Eng. Anggit Murdani, S.T., M.Eng</div>
+            <div class="kanan nama">(Nama Ketua Jurusan)</div><br>
+            <div class="kiri nama">NIP. 197109151999031001 </div>
+            <div class="kanan nama">NIP. (NIP Ketua Jurusan)</div>
         </div>
 
 

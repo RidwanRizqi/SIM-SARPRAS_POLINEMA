@@ -95,7 +95,7 @@
                                                             <i class="fas fa-edit"></i> Edit
                                                         </button>
                                                     </a>
-                                                    <a href="#">
+                                                    <a href="{{route('bukti.pdf') }}">
                                                         <button class="badge bg-success border-0 mt-3 mr-2 text-white"
                                                                 type="button">
                                                             <i class="fas fa-print"></i> Cetak Bukti Peminjaman
