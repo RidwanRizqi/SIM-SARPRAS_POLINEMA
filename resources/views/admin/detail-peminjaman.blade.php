@@ -113,6 +113,20 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-lg-6 col-sm-6">
+                                        <label for="jam_mulai" class="form-label">Jam Mulai</label>
+                                        <input type="time"
+                                               class="form-control"
+                                               id="jam_mulai" name="jam_mulai" value="{{ $validasi->jam_mulai }}" readonly disabled>
+                                    </div>
+                                    <div class="col-lg-6 col-sm-6">
+                                        <label for="jam_selesai" class="form-label">Jam Selesai</label>
+                                        <input type="time"
+                                               class="form-control"
+                                               id="jam_selesai" name="jam_selesai" value="{{ $validasi->jam_selesai }}" readonly disabled>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-lg-6 col-sm-6">
                                         <label for="kapasitas" class="form-label">Penanggung Jawab</label>
                                         <input type="text"
                                                class="form-control"
@@ -184,7 +198,7 @@
                 <a class="nav-link" href="{{ route('daftarsaranaprasarana.admin') }}">Pinjam Sarpras</a>
             </li>
             <li>
-                <a class="nav-link" href="{{ route('peminjaman-admin.index') }}">History User</a>
+                <a class="nav-link" href="{{ route('peminjaman-admin.index') }}">History Admin</a>
             </li>
             <li>
                 <a class="nav-link" href="{{ route('validasi.index') }}">Validasi User</a>

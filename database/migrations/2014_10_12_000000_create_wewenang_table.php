@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('pj');
+            $table->string('jabatan');
             $table->string('nip')->unique();
             $table->string('ttd');
             $table->timestamps();

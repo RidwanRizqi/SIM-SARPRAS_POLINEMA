@@ -38,6 +38,8 @@ return new class extends Migration
             $table->text('catatan_admin')->nullable();
             $table->date('tanggal_mulai');
             $table->date('tanggal_selesai');
+            $table->time('jam_mulai');
+            $table->time('jam_selesai');
             $table->timestamps();
         });
     }
