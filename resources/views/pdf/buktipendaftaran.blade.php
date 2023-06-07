@@ -10,6 +10,7 @@
     <style>
         body {
             font-family: 'Times New Roman', Times, serif;
+            margin: auto;
             margin-left: 2cm;
             margin-right: 2cm;
         }
@@ -17,6 +18,10 @@
         .judul {
             font-size: 14;
             /* font-weight: bold; */
+        }
+
+        .isi{
+            text-align: justify;
         }
 
         .hmj {
@@ -40,7 +45,7 @@
         }
         .kanan{
             position: fixed;
-            margin-left: 11cm
+            margin-left: 9.5cm;
         }
 
         .kiri{
@@ -54,7 +59,7 @@
         .namakanan{
             position: fixed;
             margin-top: 1.47cm;
-            margin-left: 11cm;
+            margin-left: 9.5cm;
         }
 
         .text-center{
@@ -70,7 +75,6 @@
         }
         .tinggikiri{
             margin-top: 77px
-
         }
         .ttd3{
             margin-top: 95px
@@ -86,6 +90,9 @@
 </head>
 
 <body>
+@foreach ($peminjamanPdf as $object)
+    @foreach($peminjamanPdf2 as $object2)
+
     <header>
         <div style="text-align: center;">
 {{--             <img src="{{ asset('assets/img/logo_polinema.png') }}" width="70" height="70" alt="logo">--}}
@@ -107,13 +114,13 @@
 
         <div class="header">
             <div class="tanggal">
-                Malang, 20 Maret 2023
+                Malang, {{ $object->tanggal_mulai}}
             </div>
 
             <div class="lampiran">
-                Nomor : <br>
-                Lampiran : 1 (satu) Lembar <br>
-                Perilah : Peminjaman Gedung <br>
+                Nomor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <br>
+                Lampiran &nbsp;&nbsp;&nbsp;: 1 (satu) Lembar <br>
+                Perilah &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Peminjaman Gedung <br>
             </div>
             <br>
 
@@ -128,16 +135,15 @@
 
         <div class="isi">
             <p>Dengan Hormat,</p>
-            <p>Sehubungan dengan adanya kegiatan @foreach ($peminjamanPdf as $object)
-                    {{ $object->kegiatan }}
-                @endforeach,
-                kami mohon bantuan peminjaman  beserta fasilitas yang ada didalamnya
-                dan daya listrik di gedung tersebut</p>
+            <p>Sehubungan dengan adanya kegiatan
+                    {{ $object->kegiatan }},
+                kami mohon bantuan peminjaman Sarana Prasarana {{ $object->saranaPrasarana->nama }} {{ $object->wewenang->name }} beserta fasilitas yang ada didalamnya
+                dan daya listrik di gedung tersebut.</p>
             <p>Kegiatan tersebut akan diselenggarakan pada:</p>
             <div class="waktuKegiatan">
-                hari, tanggal : <br>
-                pukul : <br>
-                tempat : <br>
+                hari, tanggal  &nbsp;&nbsp;: {{ $object->tanggal_mulai }} hingga {{ $object->tanggal_selesai }}<br>
+                pukul  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{ $object->jam_mulai}} - {{ $object->jam_selesai}}<br>
+                tempat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{ $object->saranaPrasarana->nama }} {{ $object->wewenang->name }}<br>
             </div>
             <p>Demikian surat peminjaman ini kami buat, atas izin dan bantuan yang diberikan kami sampaikan terima kasih
             </p>
@@ -145,12 +151,12 @@
 
         <div class="ttd1">
             <div class="kanan">Hormat kami, </div><br>
-            <div class="kiri">Ketua Umum LT/HHMJ/UKM,</div>
+            <div class="kiri">Ketua Umum {{ $object->user->name }},</div>
             <div class="kanan">Ketua Pelaksana,</div>
-            <div class="namakiri">(Nama Ketua Umum)</div><br>
-            <div class="namakiri">NIM. (NIM Ketua Umum)</div>
-            <div class="namakanan">Nama Ketua Pelaksana</div><br>
-            <div class="namakanan">NIM. (NIM Ketua Pelaksana)</div>
+            <div class="namakiri">{{ $object->user->nama_pj }}</div><br>
+            <div class="namakiri">NIM. {{ $object->user->ninduk_pj }}</div>
+            <div class="namakanan">{{ $object->penanggung_jawab }}</div><br>
+            <div class="namakanan">NIM. {{ $object->nim }}</div>
         </div>
 
         <div class="text-center">Mengetahui dan menyetujui,</div>
@@ -158,22 +164,24 @@
         <div class="ttd2">
             <div class="kiri height">Dosen Pembina Kemahasiswaan,</div>
             <div class="kanan height">Presiden BEM,</div>
-            <div class="kiri tinggikiri">(Nama DPK)</div><br>
-            <div class="kanan tinggikanan">Ryan Yudhistira Fitrah C.</div>
-            <div class="kiri tinggikiri">NIP. (NIP DPK)</div><br>
+            <div class="kiri tinggikiri">{{ $object->user->nama_dpk }}</div><br>
+            <div class="kanan tinggikanan">Ahmad Assas Hakiki</div>
+            <div class="kiri tinggikiri">NIP.{{ $object->user->nip_dpk }}</div><br>
             <div class="kanan tinggikanan">NIM. 2031110036</div>
         </div>
 
         <div class="ttd3">
-            <div class="kiri">Pembantu Direktur III,</div>
-            <div class="kanan">Sekretaris Jurusan (TI)</div>
-            <div class="kiri nama">Dr.Eng. Anggit Murdani, S.T., M.Eng</div>
-            <div class="kanan nama">(Nama Ketua Jurusan)</div><br>
-            <div class="kiri nama">NIP. 197109151999031001 </div>
-            <div class="kanan nama">NIP. (NIP Ketua Jurusan)</div>
+            <div class="kiri">{{ $object2->jabatan }}</div>
+            <div class="kanan">{{ $object->wewenang->jabatan }}</div>
+            <div class="kiri nama">{{ $object2->pj }}</div>
+            <div class="kanan nama">{{ $object->wewenang->pj }}</div><br>
+            <div class="kiri nama">NIP. {{ $object2->nip }} </div>
+            <div class="kanan nama">NIP. {{ $object->wewenang->nip }}</div>
         </div>
 
     </section>
+@endforeach
+@endforeach
 </body>
 
 </html>
