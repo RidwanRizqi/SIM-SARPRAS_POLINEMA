@@ -94,6 +94,7 @@ class PeminjamanSeeder extends Seeder
                 'dokumen' => 'test4',
                 'kegiatan' => 'Kegiatan 5',
                 'penanggung_jawab' => 'Penanggung Jawab 4',
+                'nim' => '1234567890',
                 'status' => 'Valid',
                 'daya_listrik' => 'Tidak',
                 'catatan_admin' => 'Catatan Admin 1',

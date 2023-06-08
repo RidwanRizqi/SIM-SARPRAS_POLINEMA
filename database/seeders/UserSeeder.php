@@ -156,17 +156,18 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password')
         ]);
         User::create([
-            'name' => 'Organisasi Kemahasiswaan Intra',
-            'email' => 'userOKI@gmail.com',
+            'name' => 'Badan Eksekutif Mahasiswa',
+            'email' => 'userBEM@gmail.com',
             'phone' => '0811289012345',
             'role' => 'user',
             'id_wewenang' => '9',
-            'nama_pj' => 'M Abdul Muktif',
+            'nama_pj' => 'Ahmad Asas Hakiki',
             'ninduk_pj' => '2141720018',
-            'ttd_pj' => 'ttd_pjOKI.png',
-            'nama_dpk' => 'Anggit Moerdani',
-            'nip_dpk' => '2141000013',
-            'ttd_dpk' => 'ttd_dpkOKI.png',
+            'ttd_pj' => 'ttd_pjBem.png',
+            'nama_dpk' => 'Dr. Eng. Anggit Murdani, S.T., M. Eng',
+            'nip_dpk' => '197810252012121001',
+            'ttd_dpk' => 'ttd_dpkBEM.png',
+            'logo' => 'logoBEM.png',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
