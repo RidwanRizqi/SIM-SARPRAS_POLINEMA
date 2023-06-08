@@ -101,7 +101,7 @@
 {{--                                                            <i class="fas fa-print"></i> Cetak Bukti Peminjaman--}}
 {{--                                                        </button>--}}
 {{--                                                    </a>--}}
-                                                    <form action="{{ route('bukti.pdf') }}" method="POST" target="_blank">
+                                                    <form action="{{ route('buktiumum.pdf') }}" method="POST" target="_blank">
                                                         @csrf
                                                         <input type="hidden" name="peminjaman_id" value="{{ $peminjaman->id }}">
                                                         <button type="submit" class="badge bg-success border-0 mt-3 mr-2 text-white">

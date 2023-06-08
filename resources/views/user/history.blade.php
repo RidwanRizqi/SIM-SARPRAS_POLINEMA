@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('title', 'Menu History User')
 
 @foreach($peminjamans as $peminjaman)
@@ -103,12 +102,13 @@
                                                         </button>
                                                     </form>
                                                 @else
-                                                    <a href="#">
-                                                        <button class="badge bg-success border-0 mt-3 mr-2 text-white"
-                                                                type="button">
+                                                    <form action="{{ route('bukti.pdf') }}" method="POST" target="_blank">
+                                                        @csrf
+                                                        <input type="hidden" name="peminjaman_id" value="{{ $peminjaman->id }}">
+                                                        <button type="submit" class="badge bg-success border-0 mt-3 mr-2 text-white">
                                                             <i class="fas fa-print"></i> Cetak Bukti Peminjaman
                                                         </button>
-                                                    </a>
+                                                    </form>
                                                 @endif
                                             </td>
                                         </tr>
@@ -133,10 +133,7 @@
         </div>
     </section>
 @endsection
-@push('customJs')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-@endpush
+
 @section('sidebar')
     @parent
     <li class="nav-item dropdown {{ (request()->is('daftar-sarana-prasarana-user', 'peminjaman-user*')) ? 'active' : '' }}">
