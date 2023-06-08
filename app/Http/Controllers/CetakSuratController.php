@@ -6,8 +6,10 @@ use App\Models\Peminjaman;
 use App\Models\Wewenang;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
+use Carbon\CarbonInterface;
 
-class PelaporanAdminController extends Controller
+class CetakSuratController extends Controller
 {
     public function index(Request $request)
     {
@@ -70,6 +72,15 @@ class PelaporanAdminController extends Controller
         $peminjamanPdf = Peminjaman::where('id', $peminjamanId)->get();
         $peminjamanPdf2 = Wewenang::where('id',9)->get();
         $pdf = PDF::loadView('pdf.buktipendaftaran', compact('peminjamanPdf', 'peminjamanPdf2'));
+        return $pdf->stream();
+    }
+
+    public function generatebuktiUPDF(Request $request)
+    {
+        $peminjamanId = $request->input('peminjaman_id');
+        $peminjamanPdf = Peminjaman::where('id', $peminjamanId)->get();
+        $peminjamanPdf2 = Wewenang::where('id',8)->get();
+        $pdf = PDF::loadView('pdf.buktiumum', compact('peminjamanPdf', 'peminjamanPdf2'));
         return $pdf->stream();
     }
 

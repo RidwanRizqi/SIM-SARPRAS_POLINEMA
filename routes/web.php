@@ -4,7 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PeminjamanAdminController;
 use App\Http\Controllers\PeminjamanUserController;
 use App\Http\Controllers\SarprasController;
-use App\Http\Controllers\PelaporanAdminController;
+use App\Http\Controllers\CetakSuratController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ValidationController;
 use Illuminate\Support\Facades\Auth;
@@ -77,11 +77,11 @@ Route::middleware('can:admin')->group(function () {
 //        return view('admin.pelaporan');
 //    })->name('pelaporan.admin');
 
-    Route::get('laporan-pdf',[PelaporanAdminController::class, 'generatePDF'])->name('laporan.pdf');
+    Route::get('laporan-pdf',[CetakSuratController::class, 'generatePDF'])->name('laporan.pdf');
 
-    Route::post('bukti-pdf',[PelaporanAdminController::class, 'generatebuktiPDF'])->name('bukti.pdf');
+    Route::post('buktiumum-pdf',[CetakSuratController::class, 'generatebuktiUPDF'])->name('buktiumum.pdf');
 
-    Route::resource('pelaporan-admin', PelaporanAdminController::class);
+    Route::resource('pelaporan-admin', CetakSuratController::class);
 
     Route::resource('peminjaman-admin', PeminjamanAdminController::class);
 
@@ -92,6 +92,8 @@ Route::middleware('can:admin')->group(function () {
 
 Route::middleware('can:user')->group(function () {
     Route::get('daftar-sarana-prasarana-user', [SarprasController::class, 'user'])->name('daftarsaranaprasarana.user');
+
+    Route::post('bukti-pdf',[CetakSuratController::class, 'generatebuktiPDF'])->name('bukti.pdf');
 
     Route::resource('peminjaman-user', PeminjamanUserController::class);
 });

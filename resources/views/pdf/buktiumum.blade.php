@@ -72,18 +72,8 @@
             margin-top: 2.5cm;
             text-align: center;
         }
-        .height{
-            margin-top: 5px
-        }
-
-        .tinggikanan{
-            margin-top: 60px;
-        }
-        .tinggikiri{
-            margin-top: 77px;
-        }
-        .ttd3{
-            margin-top: 95px;
+        .ttd2{
+            margin-top: 0.5cm;
         }
         .nama{
             margin-top: 1.7cm;
@@ -98,6 +88,7 @@
 <body>
 @foreach ($peminjamanPdf as $object)
     @foreach($peminjamanPdf2 as $object2)
+
     <header>
         <div style="text-align: center;">
 {{--             <img src="{{ asset('assets/img/logo_polinema.png') }}" width="70" height="70" alt="logo">--}}
@@ -121,7 +112,7 @@
             <div class="tanggal">
                 Malang, @php $created_at = Carbon::parse($object->created_at)->locale('id')->isoFormat('dddd D MMMM Y');
                         echo $created_at;
-                @endphp
+                        @endphp
             </div>
 
             <div class="lampiran">
@@ -132,7 +123,7 @@
             <br>
 
             <div class="penerima">
-                Yth. Pembantu Direktur II <br>
+                Yth. Pembantu Direktur III <br>
                 <div class="tempat">
                     Politeknik Negeri Malang <br>
                     Malang
@@ -156,7 +147,7 @@
                     $jam_mulai = substr($object->jam_mulai, 0, 5);
                     echo "pukul  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: " . $jam_mulai . " - ". $jam_selesai . "<br>";
                 @endphp
-                    tempat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{ $object->saranaPrasarana->nama }} {{ $object->wewenang->name }}<br>
+                tempat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{ $object->saranaPrasarana->nama }} {{ $object->wewenang->name }}<br>
             </div>
             <p>Demikian surat peminjaman ini kami buat, atas izin dan bantuan yang diberikan kami sampaikan terima kasih
             </p>
@@ -165,25 +156,16 @@
         <div class="ttd1">
             <div class="kanan">Hormat kami, </div><br>
             <div class="kiri">Ketua Umum {{ $object->user->name }},</div>
-            <div class="kanan">Ketua Pelaksana,</div>
+            <div class="kanan">Penanggung Jawab,</div>
             <div class="namakiri">{{ $object->user->nama_pj }}</div><br>
-            <div class="namakiri">NIM. {{ $object->user->ninduk_pj }}</div>
+            <div class="namakiri">NIP. {{ $object->user->ninduk_pj }}</div>
             <div class="namakanan">{{ $object->penanggung_jawab }}</div><br>
-            <div class="namakanan">NIM. {{ $object->nim }}</div>
+            <div class="namakanan">NIP. {{ $object->nim }}</div>
         </div>
 
         <div class="text-center">Mengetahui dan menyetujui,</div>
 
         <div class="ttd2">
-            <div class="kiri height">Dosen Pembina Kemahasiswaan,</div>
-            <div class="kanan height">Presiden BEM,</div>
-            <div class="kiri tinggikiri">{{ $object->user->nama_dpk }}</div><br>
-            <div class="kanan tinggikanan">Ahmad Assas Hakiki</div>
-            <div class="kiri tinggikiri">NIP.{{ $object->user->nip_dpk }}</div><br>
-            <div class="kanan tinggikanan">NIM. 2031110036</div>
-        </div>
-
-        <div class="ttd3">
             <div class="kiri">{{ $object2->jabatan }}</div>
             <div class="kanan">{{ $object->wewenang->jabatan }}</div>
             <div class="kiri nama">{{ $object2->pj }}</div>
