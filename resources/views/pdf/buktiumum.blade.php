@@ -10,7 +10,7 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="{{ asset('assets/img/logo_polinema.png') }}" style="width: 50px">
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo_polinema.png') }}">
     <title>Unduh Bukti Peminjaman - SIMSARPRAS</title>
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/stylepdf.css') }}"> --}}
     <style>
@@ -24,6 +24,16 @@
         .judul {
             font-size: 14;
             /* font-weight: bold; */
+        }
+        .logo {
+            float: left;
+            margin-top: 0.5cm;
+            margin-bottom: 0.5cm;
+        }
+        .logo2 {
+            float: right;
+            margin-top: 0.5cm;
+            margin-bottom: 0.5cm;
         }
 
         .isi{
@@ -91,7 +101,7 @@
 
     <header>
         <div style="text-align: center;">
-{{--             <img src="{{ asset('assets/img/logo_polinema.png') }}" width="70" height="70" alt="logo">--}}
+            <img src="assets/img/logo_polinema.png" width="100" height="100" alt="logo" class="d-inline logo2">
             <div class="judul">
                 KEMENTRIAN PENDIDIKAN, KEBUDAYAAN,<br>
                 RISET, DAN TEKNOLOGI <br>
