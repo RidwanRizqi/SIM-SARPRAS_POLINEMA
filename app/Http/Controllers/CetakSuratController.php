@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Peminjaman;
 use App\Models\Wewenang;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
@@ -71,7 +72,8 @@ class CetakSuratController extends Controller
         $peminjamanId = $request->input('peminjaman_id');
         $peminjamanPdf = Peminjaman::where('id', $peminjamanId)->get();
         $peminjamanPdf2 = Wewenang::where('id',9)->get();
-        $pdf = PDF::loadView('pdf.buktipendaftaran', compact('peminjamanPdf', 'peminjamanPdf2'));
+        $peminjamanPdf3 = User::where('id',13)->get();
+        $pdf = PDF::loadView('pdf.buktipendaftaran', compact('peminjamanPdf', 'peminjamanPdf2','peminjamanPdf3'));
         return $pdf->stream();
     }
 
@@ -80,7 +82,8 @@ class CetakSuratController extends Controller
         $peminjamanId = $request->input('peminjaman_id');
         $peminjamanPdf = Peminjaman::where('id', $peminjamanId)->get();
         $peminjamanPdf2 = Wewenang::where('id',8)->get();
-        $pdf = PDF::loadView('pdf.buktiumum', compact('peminjamanPdf', 'peminjamanPdf2'));
+        $peminjamanPdf3 = User::where('id',13)->get();
+        $pdf = PDF::loadView('pdf.buktiumum', compact('peminjamanPdf', 'peminjamanPdf2','peminjamanPdf3'));
         return $pdf->stream();
     }
 

@@ -16,7 +16,9 @@
     <style>
         body {
             font-family: 'Times New Roman', Times, serif;
-            margin: auto 2cm;
+            margin-right: 1cm;
+            margin-left: 1cm;
+            margin-bottom: 0.5cm;
         }
         .logo {
             float: left;
@@ -30,7 +32,7 @@
         }
 
         .judul {
-            font-size: 12;
+            font-size: 14;
             /* font-weight: bold; */
         }
 
@@ -104,8 +106,10 @@
 <body>
 @foreach ($peminjamanPdf as $object)
     @foreach($peminjamanPdf2 as $object2)
+        @foreach($peminjamanPdf3 as $object3)
     <header>
         <img src="assets/img/logo_polinema.png" width="100" height="100" alt="logo" class="d-inline logo">
+{{--        <img src="assets/img/logo_polinema.png" width="100" height="100" alt="logo" class="d-inline logo2">--}}
         <img src="storage/logoUser/<?= $object->user->logo; ?>>" width="100" height="100" alt="logo" class="d-inline logo2">
         <div style="text-align: center;">
 
@@ -133,14 +137,63 @@
             </div>
 
             <div class="lampiran">
-                Nomor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <br>
+                @php
+                    $created_id = Carbon::parse($object->created_at)->locale('id')->isoFormat('Y');
+                        function generateInitials($name)
+    {
+        $initials = '';
+        $words = strtok($name, ' ');
+
+        while ($words !== false) {
+            $initials .= strtoupper(substr($words, 0, 1));
+            $words = strtok(' ');
+        }
+
+        return $initials;
+    }
+
+    $initials = generateInitials($object->user->name);
+
+                            function romanNumerals($number)
+        {
+            $romans = array(
+                1 => 'I',
+                2 => 'II',
+                3 => 'III',
+                4 => 'IV',
+                5 => 'V',
+                6 => 'VI',
+                7 => 'VII',
+                8 => 'VIII',
+                9 => 'IX',
+                10 => 'X',
+                11 => 'XI',
+                12 => 'XII'
+            );
+            $result = '';
+            foreach ($romans as $key => $value) {
+                if ($number >= $key) {
+                    $result .= $value;
+                    $number -= $key;
+                }
+            }
+            return $result;
+        }
+        $currentMonth = date('m');
+        $romanMonth = romanNumerals($currentMonth);
+                            $id = $object->id;
+                            $databaseDate = $object->tanggal;
+                            $month = date('m', strtotime($databaseDate));
+                            $romanMonth = romanNumerals($month);
+                @endphp
+                Nomor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{ $id }}/{{ $romanMonth }}/{{$created_id}}/{{$initials}}<br>
                 Lampiran &nbsp;&nbsp;&nbsp;: 1 (satu) Lembar <br>
                 Perilah &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Peminjaman Gedung <br>
             </div>
             <br>
 
             <div class="penerima">
-                Yth. Pembantu Direktur II <br>
+                Yth. {{ str_replace('Sekretaris', 'Ketua', $object->wewenang->jabatan) }}<br>
                 <div class="tempat">
                     Politeknik Negeri Malang <br>
                     Malang
@@ -164,7 +217,11 @@
                     $jam_mulai = substr($object->jam_mulai, 0, 5);
                     echo "pukul  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: " . $jam_mulai . " - ". $jam_selesai . "<br>";
                 @endphp
-                    tempat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{ $object->saranaPrasarana->nama }} {{ $object->wewenang->name }}<br>
+                    tempat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{ $object->saranaPrasarana->nama }}
+                @if ($object->wewenang->name != 'Sarana-Prasarana Pusat')
+                    {{ $object->wewenang->name }}
+                @endif Politeknik Negeri Malang
+                <br>
             </div>
             <p>Demikian surat peminjaman ini kami buat, atas izin dan bantuan yang diberikan kami sampaikan terima kasih
             </p>
@@ -186,9 +243,9 @@
             <div class="kiri height">Dosen Pembina Kemahasiswaan,</div>
             <div class="kanan height">Presiden BEM,</div>
             <div class="kiri tinggikiri">{{ $object->user->nama_dpk }}</div><br>
-            <div class="kanan tinggikanan">Ahmad Assas Hakiki</div>
+            <div class="kanan tinggikanan">{{ $object->user->nama_pj }}</div>
             <div class="kiri tinggikiri">NIP.{{ $object->user->nip_dpk }}</div><br>
-            <div class="kanan tinggikanan">NIM. 2031110036</div>
+            <div class="kanan tinggikanan">NIM. {{ $object->user->ninduk_pj }}</div>
         </div>
 
         <div class="ttd3">
@@ -201,6 +258,7 @@
         </div>
 
     </section>
+@endforeach
 @endforeach
 @endforeach
 </body>
