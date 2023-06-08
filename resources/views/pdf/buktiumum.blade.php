@@ -108,7 +108,7 @@
         <header>
             <div style="text-align: center;">
                 <img src="assets/img/logo_polinema.png" width="100" height="100" alt="logo" class="d-inline logo">
-                <img src="assets/img/logo_polinema.png" width="100" height="100" alt="logo" class="d-inline logo2">
+                <img src="assets/img/logo_iso.png" width="80" height="100" alt="logo" class="d-inline logo2">
                 <div class="judul">
                     KEMENTRIAN PENDIDIKAN, KEBUDAYAAN,<br>
                     RISET, DAN TEKNOLOGI <br>
@@ -183,7 +183,7 @@
                     @endphp
                     Nomor &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{ $id }}/{{ $romanMonth }}/{{$created_id}}/{{$initials}}<br>
                     Lampiran &nbsp;&nbsp;&nbsp;: 1 (satu) Lembar <br>
-                    Perilah &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Peminjaman Gedung <br>
+                    Perihal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: Peminjaman Gedung <br>
                 </div>
                 <br>
                 <div class="penerima">
@@ -202,8 +202,13 @@
                     kami mohon bantuan peminjaman Sarana
                     Prasarana {{ $object->saranaPrasarana->nama }} {{ $object->wewenang->name }} beserta fasilitas yang
                     ada didalamnya
-                    dan daya listrik di gedung tersebut.</p>
-                <p>Kegiatan tersebut akan diselenggarakan pada:</p>
+                    @if ($object->daya_listrik == 'Ya')
+                        tanpa daya listrik di gedung tersebut.
+                @else
+                    dan daya listrik di gedung tersebut.
+                @endif
+                </p>
+                Kegiatan tersebut akan diselenggarakan pada:
                 <div class="waktuKegiatan">
                     @php
                         $tanggal_mulai = Carbon::parse($object->tanggal_mulai)->locale('id')->isoFormat('dddd D MMMM Y');

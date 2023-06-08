@@ -58,11 +58,14 @@
                         <div class="card mb-4">
                             <div class="card-header bg-whitesmoke"><h4>Laporan Peminjaman Ruangan</h4></div>
                             <div class="card-body">
-                                <a href="{{route('laporan.pdf') }}">
-                                    <button class="btn btn-success me-2 mb-2" type="button">
-                                        <i class="fas fa-file-download"></i> Print PDF
+                                <form action="{{ route('laporan.pdf') }}" method="POST" target="_blank">
+                                    @csrf
+                                    <input type="hidden" name="sDate" value="{{ request()->input('startDate') }}">
+                                    <input type="hidden" name="eDate" value="{{ request()->input('endDate') }}">
+                                    <button type="submit" class="badge bg-success border-0 mt-3 mr-2 text-white">
+                                        <i class="fas fa-print"></i> Cetak Bukti Peminjaman
                                     </button>
-                                </a>
+                                </form>
                                 <hr>
 
                                 <div class="clearfix mb-3"></div>

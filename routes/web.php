@@ -77,7 +77,7 @@ Route::middleware('can:admin')->group(function () {
 //        return view('admin.pelaporan');
 //    })->name('pelaporan.admin');
 
-    Route::get('laporan-pdf',[CetakSuratController::class, 'generatePDF'])->name('laporan.pdf');
+    Route::post('laporan-pdf',[CetakSuratController::class, 'generatePDF'])->name('laporan.pdf');
 
     Route::post('buktiumum-pdf',[CetakSuratController::class, 'generatebuktiUPDF'])->name('buktiumum.pdf');
 

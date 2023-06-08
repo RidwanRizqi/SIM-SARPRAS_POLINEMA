@@ -58,13 +58,23 @@ class CetakSuratController extends Controller
     }
 
 
-    public function generatePDF()
+    public function generatePDF(Request $request)
     {
-//        $peminjamans = Peminjaman::all();
-//        $pdf = PDF::loadview('pdf.laporanAdmin', ['peminjamans' => $peminjamans]);
-//        return $pdf->download('laporan-peminjaman.pdf');
-        $data = ['title' => 'Laporan Peminjaman dan Pemanfaatan Sarana Prasarana Politeknik Negeri Malang'];
-        $pdf = PDF::loadView('pdf.laporanAdmin', $data);
+        $sDate = $request->input('sDate');
+        $eDate = $request->input('eDate');
+
+        $peminjamanPdf = Peminjaman::when($sDate && $eDate, function ($query) use ($sDate, $eDate) {
+            $query->whereBetween('tanggal_mulai', [$sDate, $eDate]);
+        });
+        $peminjamanPdf = $peminjamanPdf->where('status', 'Valid')->get();
+        // Mengubah format startDate
+        $startDateFormatted = Carbon::parse($sDate)->locale('id')->isoFormat('D MMMM Y');
+
+        // Mengubah format endDate
+        $endDateFormatted = Carbon::parse($eDate)->locale('id')->isoFormat('D MMMM Y');
+
+        $pdf = PDF::loadView('pdf.laporanAdmin', compact('peminjamanPdf',
+            'startDateFormatted', 'endDateFormatted'));
         return $pdf->stream();
     }
     public function generatebuktiPDF(Request $request)
