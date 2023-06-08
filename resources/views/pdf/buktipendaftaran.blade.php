@@ -10,19 +10,27 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="{{ asset('assets/img/logo_polinema.png') }}" style="width: 50px">
+    <link rel="shortcut icon" href="{{ asset('assets/img/logo_polinema.png') }}">
     <title>Unduh Bukti Peminjaman - SIMSARPRAS</title>
     {{-- <link rel="stylesheet" href="{{ asset('assets/css/stylepdf.css') }}"> --}}
     <style>
         body {
             font-family: 'Times New Roman', Times, serif;
-            margin: auto;
-            margin-left: 2cm;
-            margin-right: 2cm;
+            margin: auto 2cm;
+        }
+        .logo {
+            float: left;
+            margin-top: 0.5cm;
+            margin-bottom: 0.5cm;
+        }
+        .logo2 {
+            float: right;
+            margin-top: 0.5cm;
+            margin-bottom: 0.5cm;
         }
 
         .judul {
-            font-size: 14;
+            font-size: 12;
             /* font-weight: bold; */
         }
 
@@ -89,8 +97,6 @@
             margin-top: 1.7cm;
         }
 
-
-
     </style>
     <title>Document</title>
 </head>
@@ -99,8 +105,10 @@
 @foreach ($peminjamanPdf as $object)
     @foreach($peminjamanPdf2 as $object2)
     <header>
+        <img src="assets/img/logo_polinema.png" width="100" height="100" alt="logo" class="d-inline logo">
+        <img src="storage/logoUser/<?= $object->user->logo; ?>>" width="100" height="100" alt="logo" class="d-inline logo2">
         <div style="text-align: center;">
-{{--             <img src="{{ asset('assets/img/logo_polinema.png') }}" width="70" height="70" alt="logo">--}}
+
             <div class="judul">
                 KEMENTRIAN PENDIDIKAN, KEBUDAYAAN,<br>
                 RISET, DAN TEKNOLOGI <br>
