@@ -1,26 +1,8 @@
 @extends('layouts.app')
+
 @section('title', 'Menu History User')
 
 @section('content')
-    @foreach($peminjamans as $peminjaman)
-        <div class="modal fade" id="exampleModal_{{ $peminjaman->id }}" tabindex="-1" role="dialog"
-             aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Preview Proposal</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="{{ asset('storage/' . $peminjaman->dokumen) }}" alt="" style="max-width: 100%;">
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endforeach
-
     <section class="section">
         <div class="section-header">
             <h1>History Peminjaman</h1>
@@ -112,50 +94,6 @@
                                             <td colspan="5" class="text-center">Tidak ada data</td>
                                         </tr>
                                     @endforelse
-
-                                    <script>
-                                        function showPdf(pdfUrl) {
-                                            // Membuat elemen iframe untuk menampilkan file PDF
-                                            var iframe = document.createElement('iframe');
-                                            iframe.src = pdfUrl;
-                                            iframe.width = '100%';
-                                            iframe.height = '500px';
-
-                                            // Membuat modal dengan modalId
-                                            var modalId = 'exampleModal';
-                                            var modal = document.createElement('div');
-                                            modal.id = modalId;
-                                            modal.classList.add('modal', 'fade');
-                                            modal.tabIndex = '-1';
-                                            modal.setAttribute('aria-hidden', 'true');
-                                            modal.innerHTML = `
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">File PDF</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body"></div>
-                </div>
-            </div>
-        `;
-
-                                            // Menambahkan elemen modal ke dalam dokumen
-                                            document.body.appendChild(modal);
-
-                                            // Menghapus konten modal sebelumnya (jika ada)
-                                            var modalBody = modal.querySelector('.modal-body');
-                                            modalBody.innerHTML = '';
-
-                                            // Menambahkan elemen iframe ke dalam modal
-                                            modalBody.appendChild(iframe);
-
-                                            // Menampilkan modal
-                                            $('#' + modalId).modal('show');
-                                        }
-                                    </script>
                                 </table>
                             </div>
                             <div class="float-right">

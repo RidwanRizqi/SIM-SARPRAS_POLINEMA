@@ -209,7 +209,7 @@
                                 <div class="mb-3">
                                     <label for="dokumen" class="form-label">Upload Proposal</label>
                                     <input class="form-control @error('dokumen') is-invalid @enderror" type="file"
-                                           id="dokumen" name="dokumen">
+                                           id="dokumen" name="dokumen" accept=".pdf">
                                     @error('dokumen')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
