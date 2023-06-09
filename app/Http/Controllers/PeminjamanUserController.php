@@ -16,7 +16,7 @@ class PeminjamanUserController extends Controller
     public function index(Request $request)
     {
         $peminjamans = Peminjaman::where('id_user', auth()->user()->id)->when($request->input('search'), function ($query, $search) {
-            $query->where('nama', 'like', '%' . $search . '%');
+            $query->where('kegiatan', 'like', '%' . $search . '%');
         })
             ->paginate(5);
         return view('user.history', compact('peminjamans'));
