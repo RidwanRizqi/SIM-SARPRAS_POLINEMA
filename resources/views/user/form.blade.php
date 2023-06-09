@@ -4,8 +4,8 @@
 @push('customCSS')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>--}}
-{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>--}}
+    {{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>--}}
+    {{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>--}}
 @endpush
 @section('content')
     <section class="section">
@@ -19,7 +19,8 @@
                     <!-- Dashboard example card 1-->
                     <a class="card lift">
                         <div class="card-header bg-whitesmoke"><h4>Daftar Peminjaman Pada
-                                Ruang {{ $sarpras->nama }}</h4></div><div class="card-body">
+                                Ruang {{ $sarpras->nama }}</h4></div>
+                        <div class="card-body">
                             <div id='calendar'></div>
                             <script>
                                 $(document).ready(function () {
@@ -116,7 +117,8 @@
                                         <label for="penanggung_jawab" class="form-label">Penanggung Jawab</label>
                                         <input type="text"
                                                class="form-control @error('penanggung_jawab') is-invalid @enderror"
-                                               id="penanggung_jawab" name="penanggung_jawab" value="{{ old('penanggung_jawab') }}">
+                                               id="penanggung_jawab" name="penanggung_jawab"
+                                               value="{{ old('penanggung_jawab') }}">
                                         @error('penanggung_jawab')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -214,7 +216,7 @@
                                 <div class="mb-3">
                                     <label for="dokumen" class="form-label">Upload Proposal</label>
                                     <input class="form-control @error('dokumen') is-invalid @enderror" type="file"
-                                           id="dokumen" name="dokumen">
+                                           id="dokumen" name="dokumen" accept=".pdf">
                                     @error('dokumen')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -222,7 +224,8 @@
                                 <div class="mb-3">
                                     <label for="fasilitas" class="form-label">Fasilitas</label>
                                     <textarea type="text" class="form-control @error('fasilitas') is-invalid @enderror"
-                                              id="fasilitas" readonly style="height: 72px">{{ $sarpras->fasilitas }}</textarea>
+                                              id="fasilitas" readonly
+                                              style="height: 72px">{{ $sarpras->fasilitas }}</textarea>
                                     @error('fasilitas')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -322,8 +325,8 @@
     </section>
 @endsection
 @push('customJS')
-{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>--}}
-{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>--}}
+    {{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>--}}
+    {{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>--}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
 @endpush
 

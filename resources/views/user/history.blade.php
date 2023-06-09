@@ -1,24 +1,6 @@
 @extends('layouts.app')
-@section('title', 'Menu History User')
 
-@foreach($peminjamans as $peminjaman)
-    <div class="modal fade" id="exampleModal_{{ $peminjaman->id }}" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Preview Proposal</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="{{ asset('storage/' . $peminjaman->dokumen) }}" alt="" style="max-width: 100%;">
-                </div>
-            </div>
-        </div>
-    </div>
-@endforeach
+@section('title', 'Menu History User')
 
 @section('content')
     <section class="section">
@@ -43,7 +25,7 @@
                             <div class="float-right">
                                 <form method="GET">
                                     <div class="input-group">
-                                        <input name="search" type="text" class="form-control" placeholder="Search">
+                                        <input name="search" type="text" class="form-control" placeholder="Search nama kegiatan">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                                         </div>
@@ -68,13 +50,11 @@
                                         <tr>
                                             <td>{{ $peminjaman->kegiatan }}</td>
                                             <td>{{ $peminjaman->saranaPrasarana->nama }}</td>
-                                            <td>{{ $peminjaman->tanggal_mulai }}
-                                                sampai {{ $peminjaman->tanggal_selesai }}</td>
+                                            <td>{{ $peminjaman->tanggal_mulai }} sampai {{ $peminjaman->tanggal_selesai }}</td>
                                             <td class="d-flex justify-content-center">
-                                                <button class="btn btn-primary border-0 my-3 mr-2" type="button" data-toggle="modal"
-                                                        data-target="#exampleModal_{{ $peminjaman->id }}">
+                                                <a class="btn btn-primary border-0 my-3 mr-2" href="{{ asset('storage/' . $peminjaman->dokumen) }}" target="_blank">
                                                     <i class="fas fa-file-alt"></i>
-                                                </button>
+                                                </a>
                                             </td>
                                             <td>{{ $peminjaman->status }}</td>
                                             <td>
@@ -87,18 +67,15 @@
                                             <td class="d-flex justify-content-center">
                                                 @if($peminjaman->status == 'Proses' || $peminjaman->status == 'Ditolak')
                                                     <a href="{{route('peminjaman-user.edit', ['peminjaman_user' => $peminjaman->id]) }}">
-                                                        <button class="badge bg-warning border-0 my-3 mx-3 text-white"
-                                                                type="button">
+                                                        <button class="badge bg-warning border-0 my-3 mx-3 text-white" type="button">
                                                             <i class="fas fa-edit"></i> Edit
                                                         </button>
                                                     </a>
-                                                    <form action="{{ route('peminjaman-user.destroy', ['peminjaman_user' => $peminjaman->id]) }}"
-                                                          method="POST" class="d-inline">
+                                                    <form action="{{ route('peminjaman-user.destroy', ['peminjaman_user' => $peminjaman->id]) }}" method="POST" class="d-inline">
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button class="badge bg-danger border-0 my-3 mx-3 text-white"
-                                                                onclick="return confirm('Yakin Menghapus Peminjaman ?')"><i
-                                                                class="fas fa-trash"></i> Delete
+                                                        <button class="badge bg-danger border-0 my-3 mx-3 text-white" onclick="return confirm('Yakin Menghapus Peminjaman ?')">
+                                                            <i class="fas fa-trash"></i> Delete
                                                         </button>
                                                     </form>
                                                 @else

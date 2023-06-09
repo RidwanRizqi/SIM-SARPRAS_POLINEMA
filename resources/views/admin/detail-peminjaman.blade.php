@@ -2,23 +2,6 @@
 
 @section('title', 'Detail Peminjaman')
 
-<div class="modal fade" id="exampleModal_{{ $validasi->id }}" tabindex="-1" role="dialog"
-     aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Preview Proposal</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <img src="{{ asset('storage/' . $validasi->dokumen) }}" alt="" style="max-width: 100%;">
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="modal fade" id="tolakModal{{$validasi->id}}" tabindex="-1" role="dialog"
      aria-labelledby="tolakModalLabel{{$validasi->id}}" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -149,11 +132,11 @@
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <div class="col-lg-6 col-sm-6">
+                                    <div class="col-lg-1 col-sm-1">
                                         <label for="Proposal" class="form-label">Proposal</label>
-                                        <img src="{{ asset('storage/' . $validasi->dokumen) }}"
-                                             class="img-preview img-fluid mb-3" data-toggle="modal"
-                                             data-target="#exampleModal_{{ $validasi->id }}">
+                                            <a class="btn btn-primary border-0 my-3 mr-2 d-block" href="{{ asset('storage/' . $validasi->dokumen) }}" target="_blank">
+                                                <i class="fas fa-file-alt"></i>
+                                            </a>
                                     </div>
                                 </div>
                                 <div class="row mb-3">

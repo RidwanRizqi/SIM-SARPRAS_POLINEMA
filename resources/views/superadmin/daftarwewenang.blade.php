@@ -25,7 +25,7 @@
                             <div class="float-right">
                                 <form method="GET">
                                     <div class="input-group">
-                                        <input name="search" type="text" class="form-control" placeholder="Search">
+                                        <input name="search" type="text" class="form-control" placeholder="Search Wewenang">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                                         </div>

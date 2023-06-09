@@ -2,72 +2,54 @@
 
 @section('title', 'Validasi Proposal Admin')
 
-@foreach($peminjamans as $peminjaman)
-    <div class="modal fade" id="exampleModal_{{ $peminjaman->id }}" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content modal-xl">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Preview Proposal</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <img src="{{ asset('storage/' . $peminjaman->dokumen) }}" alt="" style="max-width: 100%;">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="tolakModal{{$peminjaman->id}}" tabindex="-1" role="dialog"
-         aria-labelledby="tolakModalLabel{{$peminjaman->id}}" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="tolakModalLabel{{$peminjaman->id}}">Tolak Peminjaman</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="{{ route('validasi.update', ['validasi' => $peminjaman->id]) }}" method="POST">
-                        @csrf
-                        @method('PUT')
-                        <div class="form-group">
-                            <label for="catatan_admin">Catatan Admin</label>
-                            <textarea class="form-control" id="catatan_admin" name="catatan_admin" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-danger">Tolak Peminjaman</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="terimaModal{{$peminjaman->id}}" tabindex="-1" role="dialog"
-         aria-labelledby="terimaModalLabel{{$peminjaman->id}}" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="terimaModalLabel{{$peminjaman->id}}">Terima Peminjaman</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="{{ route('validasi.update', ['validasi' => $peminjaman->id]) }}" method="POST">
-                        @csrf
-                        @method('PUT')
-                        <button type="submit" class="btn btn-success">Terima Peminjaman</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-@endforeach
-
 @section('content')
+    @foreach($peminjamans as $peminjaman)
+        <div class="modal fade" id="tolakModal{{$peminjaman->id}}" tabindex="-1" role="dialog"
+             aria-labelledby="tolakModalLabel{{$peminjaman->id}}" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tolakModalLabel{{$peminjaman->id}}">Tolak Peminjaman</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('validasi.update', ['validasi' => $peminjaman->id]) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="form-group">
+                                <label for="catatan_admin">Catatan Admin</label>
+                                <textarea class="form-control" id="catatan_admin" name="catatan_admin" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-danger">Tolak Peminjaman</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="terimaModal{{$peminjaman->id}}" tabindex="-1" role="dialog"
+             aria-labelledby="terimaModalLabel{{$peminjaman->id}}" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="terimaModalLabel{{$peminjaman->id}}">Terima Peminjaman</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ route('validasi.update', ['validasi' => $peminjaman->id]) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <button type="submit" class="btn btn-success">Terima Peminjaman</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
     <section class="section">
         <div class="section-header">
             <h1>Validasi Peminjaman</h1>
@@ -90,7 +72,7 @@
                             <div class="float-right">
                                 <form method="GET">
                                     <div class="input-group">
-                                        <input name="search" type="text" class="form-control" placeholder="Search">
+                                        <input name="search" type="text" class="form-control" placeholder="Search nama kegiatan">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                                         </div>
@@ -119,11 +101,9 @@
                                             <td>{{ $peminjaman->tanggal_mulai }}
                                                 sampai {{ $peminjaman->tanggal_selesai }}</td>
                                             <td class="d-flex justify-content-center">
-                                                <button class="btn btn-primary border-0 my-3" type="button"
-                                                        data-toggle="modal"
-                                                        data-target="#exampleModal_{{ $peminjaman->id }}">
+                                                <a class="btn btn-primary border-0 my-3 mr-2" href="{{ asset('storage/' . $peminjaman->dokumen) }}" target="_blank">
                                                     <i class="fas fa-file-alt"></i>
-                                                </button>
+                                                </a>
                                             </td>
                                             <td>{{ $peminjaman->status }}</td>
                                             <td class="">

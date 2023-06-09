@@ -14,9 +14,7 @@ class SarprasController extends Controller
     public function index(Request $request)
     {
         $sarpras = SaranaPrasarana::when($request->input('search'), function ($query, $search) {
-            $query->where('nama', 'like', '%' . $search . '%')
-                ->orWhere('kapasitas', 'like', '%' . $search . '%')
-                ->orWhere('fasilitas', 'like', '%' . $search . '%');
+            $query->where('nama', 'like', '%' . $search . '%');
         })
             ->paginate(5);
 
