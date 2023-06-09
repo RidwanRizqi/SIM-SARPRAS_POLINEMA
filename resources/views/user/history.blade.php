@@ -68,13 +68,11 @@
                                         <tr>
                                             <td>{{ $peminjaman->kegiatan }}</td>
                                             <td>{{ $peminjaman->saranaPrasarana->nama }}</td>
-                                            <td>{{ $peminjaman->tanggal_mulai }}
-                                                sampai {{ $peminjaman->tanggal_selesai }}</td>
+                                            <td>{{ $peminjaman->tanggal_mulai }} sampai {{ $peminjaman->tanggal_selesai }}</td>
                                             <td class="d-flex justify-content-center">
-                                                <button class="btn btn-primary border-0 my-3 mr-2" type="button" data-toggle="modal"
-                                                        data-target="#exampleModal_{{ $peminjaman->id }}">
+                                                <a class="btn btn-primary border-0 my-3 mr-2" href="{{ asset('storage/' . $peminjaman->dokumen) }}" target="_blank">
                                                     <i class="fas fa-file-alt"></i>
-                                                </button>
+                                                </a>
                                             </td>
                                             <td>{{ $peminjaman->status }}</td>
                                             <td>
@@ -87,18 +85,15 @@
                                             <td class="d-flex justify-content-center">
                                                 @if($peminjaman->status == 'Proses' || $peminjaman->status == 'Ditolak')
                                                     <a href="{{route('peminjaman-user.edit', ['peminjaman_user' => $peminjaman->id]) }}">
-                                                        <button class="badge bg-warning border-0 my-3 mx-3 text-white"
-                                                                type="button">
+                                                        <button class="badge bg-warning border-0 my-3 mx-3 text-white" type="button">
                                                             <i class="fas fa-edit"></i> Edit
                                                         </button>
                                                     </a>
-                                                    <form action="{{ route('peminjaman-user.destroy', ['peminjaman_user' => $peminjaman->id]) }}"
-                                                          method="POST" class="d-inline">
+                                                    <form action="{{ route('peminjaman-user.destroy', ['peminjaman_user' => $peminjaman->id]) }}" method="POST" class="d-inline">
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button class="badge bg-danger border-0 my-3 mx-3 text-white"
-                                                                onclick="return confirm('Yakin Menghapus Peminjaman ?')"><i
-                                                                class="fas fa-trash"></i> Delete
+                                                        <button class="badge bg-danger border-0 my-3 mx-3 text-white" onclick="return confirm('Yakin Menghapus Peminjaman ?')">
+                                                            <i class="fas fa-trash"></i> Delete
                                                         </button>
                                                     </form>
                                                 @else
@@ -117,6 +112,50 @@
                                             <td colspan="5" class="text-center">Tidak ada data</td>
                                         </tr>
                                     @endforelse
+
+                                    <script>
+                                        function showPdf(pdfUrl) {
+                                            // Membuat elemen iframe untuk menampilkan file PDF
+                                            var iframe = document.createElement('iframe');
+                                            iframe.src = pdfUrl;
+                                            iframe.width = '100%';
+                                            iframe.height = '500px';
+
+                                            // Membuat modal dengan modalId
+                                            var modalId = 'exampleModal';
+                                            var modal = document.createElement('div');
+                                            modal.id = modalId;
+                                            modal.classList.add('modal', 'fade');
+                                            modal.tabIndex = '-1';
+                                            modal.setAttribute('aria-hidden', 'true');
+                                            modal.innerHTML = `
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">File PDF</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body"></div>
+                </div>
+            </div>
+        `;
+
+                                            // Menambahkan elemen modal ke dalam dokumen
+                                            document.body.appendChild(modal);
+
+                                            // Menghapus konten modal sebelumnya (jika ada)
+                                            var modalBody = modal.querySelector('.modal-body');
+                                            modalBody.innerHTML = '';
+
+                                            // Menambahkan elemen iframe ke dalam modal
+                                            modalBody.appendChild(iframe);
+
+                                            // Menampilkan modal
+                                            $('#' + modalId).modal('show');
+                                        }
+                                    </script>
                                 </table>
                             </div>
                             <div class="float-right">
