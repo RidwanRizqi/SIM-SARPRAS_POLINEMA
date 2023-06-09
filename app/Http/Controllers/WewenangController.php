@@ -67,7 +67,7 @@ class WewenangController extends Controller
      */
     public function edit(wewenang $wewenang)
     {
-        //
+        return view('superadmin.formeditwewenang', compact('wewenang'));
     }
 
     /**
@@ -75,7 +75,28 @@ class WewenangController extends Controller
      */
     public function update(Request $request, wewenang $wewenang)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|max:100|min:3',
+            'pj' => 'required|max:200|min:3',
+            'jabatan' => 'required|max:50|min:3',
+            'nip' =>'required|numeric',
+            'ttd' => 'image|mimes:jpeg,png,jpg,svg|max:2048',
+        ]);
+
+        if ($request->file('ttd')) {
+            if ($request->oldTtd) {
+                Storage::delete($request->oldTtd);
+            }
+
+            $file = $request->file('ttd');
+            $filename = 'ttdpj/' . time() . '_' . $file->getClientOriginalName();
+            $file->storeAs('', $filename);
+            $validatedData['ttd'] = $filename;
+        }
+
+        Wewenang::where('id', $wewenang->id)->update($validatedData);
+
+        return redirect()->route('wewenang.index')->with('success', 'Wewenang berhasil diubah!');
     }
 
     /**
