@@ -103,7 +103,7 @@
                                                    id="nama_pj" name="nama_pj" value="{{ old('nama_pj', $user->nama_pj)}}">
                                             @error('nama_pj')
                                             <div class="invalid-feedback">
-                                                The name Ketua/Admin field is required.
+                                                {{ $message }}
                                             </div>
                                             @enderror
                                         </div>
@@ -113,7 +113,7 @@
                                                    id="ninduk_pj" name="ninduk_pj" value="{{ old('ninduk_pj', $user->ninduk_pj)}}">
                                             @error('ninduk_pj')
                                             <div class="invalid-feedback">
-                                                The NIM/NIP field is required.
+                                                {{ $message }}
                                             </div>
                                             @enderror
                                         </div>
@@ -123,7 +123,7 @@
                                                    id="ttd_pj" name="ttd_pj">
                                             @error('ttd_pj')
                                             <div class="invalid-feedback">
-                                                The ttd Ketua/Admin field is required.
+                                                {{ $message }}
                                             </div>
                                             @enderror
                                         </div>
@@ -135,7 +135,7 @@
                                                    id="nama_dpk" name="nama_dpk" value="{{ old('nama_dpk',$user->nama_dpk) }}">
                                             @error('nama_dpk')
                                             <div class="invalid-feedback">
-                                                The name DPK field is required.
+                                                {{ $message }}
                                             </div>
                                             @enderror
                                         </div>
@@ -145,7 +145,7 @@
                                                    id="nip_dpk" name="nip_dpk" value="{{ old('nip_dpk',$user->nip_dpk) }}">
                                             @error('nip_dpk')
                                             <div class="invalid-feedback">
-                                                The NIP DPK field is required.
+                                                {{ $message }}
                                             </div>
                                             @enderror
                                         </div>
@@ -155,11 +155,15 @@
                                                    id="ttd_dpk" name="ttd_dpk">
                                             @error('ttd_dpk')
                                             <div class="invalid-feedback">
-                                                The ttd DPK field is required.
+                                                {{ $message }}
                                             </div>
                                             @enderror
                                         </div>
                                     </div>
+                                    <input type="hidden" name="oldttdpj" value="{{ $user->ttd_pj }}">
+                                    <input type="hidden" name="oldttddpk" value="{{ $user->ttd_dpk }}">
+                                    <input type="hidden" name="oldLogo" value="{{ $user->logo }}">
+
 
                                     <button type="submit" class="btn btn-primary mt-5">Update</button>
                                 </form>

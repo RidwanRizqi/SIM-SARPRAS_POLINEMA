@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('ninduk_pj')->unique();
             $table->string('ttd_pj');
             $table->string('nama_dpk')->nullable();
-            $table->string('nip_dpk')->nullable()->unique();
+            $table->string('nip_dpk')->nullable();
             $table->string('ttd_dpk')->nullable();
             $table->string('logo')->nullable();
             $table->rememberToken();
