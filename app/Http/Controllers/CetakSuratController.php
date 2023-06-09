@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Carbon\CarbonInterface;
+use Illuminate\Support\Facades\Auth;
 
 class CetakSuratController extends Controller
 {
@@ -20,6 +21,9 @@ class CetakSuratController extends Controller
         $peminjamans = Peminjaman::when($startDate && $endDate, function ($query) use ($startDate, $endDate) {
             $query->whereBetween('tanggal_mulai', [$startDate, $endDate]);
         })
+            ->when(Auth::user()->id_wewenang, function ($query) {
+                $query->where('id_wewenang', Auth::user()->id_wewenang);
+            })
             ->paginate(5);
 
         return view('admin.pelaporan', compact('peminjamans'));
@@ -65,7 +69,9 @@ class CetakSuratController extends Controller
 
         $peminjamanPdf = Peminjaman::when($sDate && $eDate, function ($query) use ($sDate, $eDate) {
             $query->whereBetween('tanggal_mulai', [$sDate, $eDate]);
-        });
+        })->when(Auth::user()->id_wewenang, function ($query) {
+                $query->where('id_wewenang', Auth::user()->id_wewenang);
+            });
         $peminjamanPdf = $peminjamanPdf->where('status', 'Valid')->get();
         // Mengubah format startDate
         $startDateFormatted = Carbon::parse($sDate)->locale('id')->isoFormat('D MMMM Y');
