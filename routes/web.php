@@ -7,6 +7,7 @@ use App\Http\Controllers\SarprasController;
 use App\Http\Controllers\CetakSuratController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ValidationController;
+use App\Http\Controllers\WewenangController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -63,7 +64,13 @@ Route::middleware('can:superadmin')->group(function () {
         return view('superadmin.kelola');
     })->name('kelola.superadmin');
 
+    Route::get('kelola-wewenang', function () {
+        return view('superadmin.wewenang');
+    })->name('kelola.wewenang');
+
     Route::resource('users', UserController::class);
+
+    Route::resource('wewenang', WewenangController::class);
 });
 
 Route::middleware('can:admin')->group(function () {

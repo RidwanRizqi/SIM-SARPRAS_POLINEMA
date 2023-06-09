@@ -5,7 +5,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Kelola Data Pengguna</h1>
+            <h1>Kelola Data Wewenang</h1>
         </div>
         @if(session()->has('success'))
             <div class="alert alert-success" role="alert">
@@ -19,7 +19,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Daftar Pengguna</h4>
+                            <h4>Daftar Wewenang</h4>
                         </div>
                         <div class="card-body">
                             <div class="float-right">
@@ -38,32 +38,34 @@
                             <div class="table-responsive">
                                 <table class="table table-striped">
                                     <tr>
-                                        <th>Nama User</th>
-                                        <th>Email</th>
-                                        <th>Role</th>
                                         <th>Wewenang</th>
-                                        <th>Telepon</th>
+                                        <th>Penanggung Jawab</th>
+                                        <th>Jabatan</th>
+                                        <th>NIP</th>
+                                        <th>TTD</th>
                                         <th>Action</th>
                                     </tr>
-                                    @forelse($users as $user)
+                                    @forelse($wewenangs as $wewenang)
                                         <tr>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->email }}</td>
-                                            <td>{{ $user->role }}</td>
-                                            <td>{{ $user->wewenang->name }}</td>
-                                            <td>{{ $user->phone }}</td>
+                                            <td>{{ $wewenang->name }}</td>
+                                            <td>{{ $wewenang->pj }}</td>
+                                            <td>{{ $wewenang->jabatan }}</td>
+                                            <td>{{ $wewenang->nip }}</td>
+                                            <td>
+                                                <img src="{{ asset('storage/' . $wewenang->ttd) }}" width="70px">
+                                            </td>
                                             <td class="d-flex justify-content-center">
-                                                <a href="{{route('users.edit', ['user' => $user->id]) }}">
+                                                <a href="{{route('wewenang.edit', ['wewenang' => $wewenang->id]) }}">
                                                     <button class="badge bg-success border-0 mt-3 mr-2 text-white" type="button">
                                                         <i class="fas fa-edit"></i> Edit
                                                     </button>
                                                 </a>
-                                                <form action="{{ route('users.destroy', ['user' => $user->id]) }}"
+                                                <form action="{{ route('wewenang.destroy', ['wewenang' => $wewenang->id]) }}"
                                                       method="POST" class="d-inline">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button class="badge bg-danger border-0 mt-3 text-white"
-                                                            onclick="return confirm('Yakin Menghapus User?')"><i
+                                                            onclick="return confirm('Yakin Menghapus Wewenang?')"><i
                                                             class="fas fa-trash"></i> Delete
                                                     </button>
                                                 </form>
@@ -79,7 +81,7 @@
                             <div class="float-right">
                                 <nav>
                                     <ul class="pagination">
-                                        {{ $users->withQueryString()->links() }}
+                                        {{ $wewenangs->withQueryString()->links() }}
                                     </ul>
                                 </nav>
                             </div>

@@ -13,7 +13,7 @@ class ValidationController extends Controller
     public function index(Request $request)
     {
         $peminjamans = Peminjaman::where('id_wewenang', auth()->user()->id_wewenang)->when($request->input('search'), function ($query, $search) {
-            $query->where('nama', 'like', '%' . $search . '%');
+            $query->where('kegiatan', 'like', '%' . $search . '%');
         })
             ->paginate(5);
         return view('admin.validasi', compact('peminjamans'));

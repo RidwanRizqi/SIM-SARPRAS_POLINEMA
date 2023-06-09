@@ -84,7 +84,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Data Peminjaman {{ $peminjamans[0]->wewenang->name }}</h4>
+                            <h4>Data Peminjaman</h4>
                         </div>
                         <div class="card-body">
                             <div class="float-right">

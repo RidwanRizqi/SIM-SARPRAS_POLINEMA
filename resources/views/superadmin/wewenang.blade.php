@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Menu Kelola User')
+@section('title', 'Menu Kelola Wewenang')
 
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Kelola User</h1>
+            <h1>Kelola Wewenang</h1>
         </div>
 
 
@@ -23,13 +23,13 @@
                         <div class="row">
                             <div class="col-xl-6 mb-4">
                                 <!-- Dashboard example card 1-->
-                                <a class="card lift h-100" href="{{route('users.create')}}">
+                                <a class="card lift h-100" href="{{route('wewenang.create')}}">
                                     <div class="card-body d-flex justify-content-center flex-column">
                                         <div class="d-flex align-items-center justify-content-between">
                                             <div class="me-3">
                                                 <i class="fas fa-user-plus" style="font-size: xx-large"></i>
                                                 <br><br>
-                                                <h5>Tambah User</h5>
+                                                <h5>Tambah Wewenang</h5>
                                                 <div class="text-muted small">Description</div>
                                             </div>
                                             <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
@@ -40,13 +40,13 @@
                             </div>
                             <div class="col-xl-6 mb-4">
                                 <!-- Dashboard example card 2-->
-                                <a class="card lift h-100" href="{{route('users.index')}}">
+                                <a class="card lift h-100" href="{{route('wewenang.index')}}">
                                     <div class="card-body d-flex justify-content-center flex-column">
                                         <div class="d-flex align-items-center justify-content-between">
                                             <div class="me-3">
                                                 <i class="fas fa-user-edit" style="font-size: xx-large"></i>
                                                 <br><br>
-                                                <h5>Update User</h5>
+                                                <h5>Update Wewenang</h5>
                                                 <div class="text-muted small">Description</div>
                                             </div>
                                             <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
