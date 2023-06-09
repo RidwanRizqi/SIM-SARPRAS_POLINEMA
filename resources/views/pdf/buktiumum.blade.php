@@ -60,23 +60,40 @@
 
         .namakiri{
             position: fixed;
-            margin-top: 80px;
+            margin-top: 120px;
         }
         .namakanan{
             position: fixed;
-            margin-top: 1.47cm;
+            margin-top: 2.6cm;
             margin-left: 9.5cm;
         }
 
+<<<<<<< Updated upstream
         .text-center{
             margin-top: 2.5cm;
+=======
+        .text-center {
+            margin-top: 3.5cm;
+>>>>>>> Stashed changes
             text-align: center;
         }
         .ttd2{
             margin-top: 0.5cm;
         }
+<<<<<<< Updated upstream
         .nama{
             margin-top: 1.7cm;
+=======
+
+        .nama {
+            margin-top: 3.1cm;
+        }
+        .gambar{
+            margin-right: 120px;
+        }
+        .gambarkiri{
+            float: left;
+>>>>>>> Stashed changes
         }
 
 
@@ -153,6 +170,7 @@
             </p>
         </div>
 
+<<<<<<< Updated upstream
         <div class="ttd1">
             <div class="kanan">Hormat kami, </div><br>
             <div class="kiri">Ketua Umum {{ $object->user->name }},</div>
@@ -162,9 +180,31 @@
             <div class="namakanan">{{ $object->penanggung_jawab }}</div><br>
             <div class="namakanan">NIP. {{ $object->nim }}</div>
         </div>
+=======
+            <div class="ttd1">
+                <div class="kanan">Hormat kami,</div>
+                <br>
+                <div class="kiri">{{ $object->user->name }},</div>
+                <div class="kanan">Penanggung Jawab,</div>
+                <div class="gambar">
+                    <img src="assets/img/logo_iso.png" width="100" height="100" alt="logo" class="d-inline logo2">
+                </div>
+                <div class="namakiri">{{ $object->user->nama_pj }}</div>
+
+                <div class="gambarkiri">
+                    <img src="assets/img/logo_iso.png" width="100" height="100" alt="logo" class="d-inline logo2">
+                </div>
+                <br>
+                <div class="namakiri">NIP. {{ $object->user->ninduk_pj }}</div>
+                <div class="namakanan">{{ $object->penanggung_jawab }}</div>
+                <br>
+                <div class="namakanan">NIP. {{ $object->nim }}</div>
+            </div>
+>>>>>>> Stashed changes
 
         <div class="text-center">Mengetahui dan menyetujui,</div>
 
+<<<<<<< Updated upstream
         <div class="ttd2">
             <div class="kiri">{{ $object2->jabatan }}</div>
             <div class="kanan">{{ $object->wewenang->jabatan }}</div>
@@ -173,6 +213,24 @@
             <div class="kiri nama">NIP. {{ $object2->nip }} </div>
             <div class="kanan nama">NIP. {{ $object->wewenang->nip }}</div>
         </div>
+=======
+            <div class="ttd2">
+                <div class="kiri">{{ $object2->jabatan }}</div>
+                <div class="kanan">{{ $object->wewenang->jabatan }}</div>
+                <div class="gambar">
+                    <img src="assets/img/logo_iso.png" width="100" height="100" alt="logo" class="d-inline logo2">
+                </div>
+                <div class="kiri nama">{{ $object2->pj }}</div>
+                <div class="kanan nama">{{ $object->wewenang->pj }}</div>
+
+                <div class="gambarkiri">
+                    <img src="assets/img/logo_iso.png" width="100" height="100" alt="logo" class="d-inline logo2">
+                </div>
+                <br>
+                <div class="kiri nama">NIP. {{ $object2->nip }} </div>
+                <div class="kanan nama">NIP. {{ $object->wewenang->nip }}</div>
+            </div>
+>>>>>>> Stashed changes
 
     </section>
 @endforeach

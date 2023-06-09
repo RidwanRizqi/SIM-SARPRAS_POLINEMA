@@ -20,7 +20,7 @@
                                     <!-- Profile picture image-->
                                     <img class="img-account-profile rounded-circle mb-2" src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-1.png" alt="" style="width: 12rem"/>
                                     <!-- Profile picture help block-->
-                                    <div class="small font-italic text-muted mb-4">JPG / PNG < 5 MB</div>
+                                    <div class="small font-italic text-muted mb-4">Foto Profil</div>
                                     <!-- Profile picture upload button-->
                                 </div>
                             </div>
