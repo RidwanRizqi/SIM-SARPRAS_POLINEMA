@@ -38,7 +38,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $rules = [
             'name' => 'required|max:50|min:3',
             'email' => 'required|unique:users|max:50|min:3',
             'password' => 'required|max:50|min:3',
@@ -48,11 +48,17 @@ class UserController extends Controller
             'nama_pj' => 'required|max:50|min:3',
             'ninduk_pj' => 'required|unique:users|max:50|min:10',
             'ttd_pj' => 'file|max:1024',
-            'nama_dpk' => 'max:50|min:3',
-            'nip_dpk' => 'unique:users|max:50|min:10',
-            'ttd_dpk' => 'file|max:1024',
             'logo' => 'file|max:1024',
-        ]);
+        ];
+
+        if ($request->id_wewenang == 9) {
+            $rules['nama_dpk'] = 'required|max:50|min:3';
+            $rules['nip_dpk'] = 'required|unique:users|max:50|min:10';
+            $rules['ttd_dpk'] = 'file|max:1024';
+        }
+
+        $validatedData = $request->validate($rules);
+
         $validatedData['password'] = Hash::make($validatedData['password']);
 
         if ($request->file('ttd_pj')) {
@@ -103,9 +109,6 @@ class UserController extends Controller
             'nama_pj' => 'required|max:50|min:3',
             'ninduk_pj' => 'required|max:50|min:10',
             'ttd_pj' => 'file|max:1024',
-            'nama_dpk' => 'max:50|min:3',
-            'nip_dpk' => 'max:50|min:10',
-            'ttd_dpk' => 'file|max:1024',
             'logo' => 'file|max:1024',
         ];
 
@@ -114,24 +117,30 @@ class UserController extends Controller
             $rules['email'] = 'required|unique:users|max:50|min:3';
         }
 
+        if ($request->id_wewenang == 9) {
+            $rules['nama_dpk'] = 'required|max:50|min:3';
+            $rules['nip_dpk'] = 'required|unique:users|max:50|min:10';
+            $rules['ttd_dpk'] = 'file|max:1024';
+        }
+
         $validatedData = $request->validate($rules);
         $validatedData['password'] = Hash::make($validatedData['password']);
 
         if ($request->file('ttd_pj')) {
-            if ($request->oldDokumen) {
-                Storage::delete($request->oldDokumen);
+            if ($request->oldttdpj) {
+                Storage::delete($request->oldttdpj);
             }
             $validatedData['ttd_pj'] = $request->file('ttd_pj')->store('ttdpj');
         }
         if ($request->file('ttd_dpk')) {
-            if ($request->oldDokumen) {
-                Storage::delete($request->oldDokumen);
+            if ($request->oldttddpk) {
+                Storage::delete($request->oldttddpk);
             }
             $validatedData['ttd_dpk'] = $request->file('ttd_dpk')->store('ttdpk');
         }
         if ($request->file('logo')) {
-            if ($request->oldDokumen) {
-                Storage::delete($request->oldDokumen);
+            if ($request->oldLogo) {
+                Storage::delete($request->oldLogo);
             }
             $validatedData['logo'] = $request->file('logo')->store('logoUser');
         }
