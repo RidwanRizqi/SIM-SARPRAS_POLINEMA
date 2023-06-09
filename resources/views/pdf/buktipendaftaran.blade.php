@@ -224,9 +224,9 @@
                         Prasarana {{ $object->saranaPrasarana->nama }} {{ $object->wewenang->name }} beserta fasilitas
                         yang ada didalamnya
                         @if ($object->daya_listrik == 'Ya')
-                        tanpa daya listrik di gedung tersebut.</p>
-                    @else
                         dan daya listrik di gedung tersebut.</p>
+                    @else
+                        tanpa daya listrik di gedung tersebut.</p>
                     @endif
                     Kegiatan tersebut akan diselenggarakan pada:
                     <div class="waktuKegiatan">
