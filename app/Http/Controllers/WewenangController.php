@@ -10,9 +10,13 @@ class WewenangController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $wewenangs = Wewenang::when($request->input('search'), function ($query, $search) {
+            $query->where('nama', 'like', '%' . $search . '%');
+        })
+            ->paginate(5);
+        return view('superadmin.daftarwewenang', compact('wewenangs'));
     }
 
     /**
