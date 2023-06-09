@@ -74,17 +74,17 @@
 
         .namakiri {
             position: fixed;
-            margin-top: 80px;
+            margin-top: 120px;
         }
 
         .namakanan {
             position: fixed;
-            margin-top: 1.47cm;
+            margin-top: 2.5cm;
             margin-left: 9.5cm;
         }
 
         .text-center {
-            margin-top: 2.5cm;
+            margin-top: 3.5cm;
             text-align: center;
         }
 
@@ -93,7 +93,14 @@
         }
 
         .nama {
-            margin-top: 1.7cm;
+            margin-top: 3.2cm;
+        }
+        .gambar{
+            margin-right: 140px;
+            /*position: fixed;*/
+        }
+        .gambar2{
+            float: left;
         }
 
 
@@ -235,7 +242,14 @@
                 <br>
                 <div class="kiri">{{ $object->user->name }},</div>
                 <div class="kanan">Penanggung Jawab,</div>
+                <div class="gambar">
+                <img src="assets/img/logo_iso.png" width="80" height="100" alt="logo" class="d-inline logo2">
+                </div>
+
                 <div class="namakiri">{{ $object->user->nama_pj }}</div>
+                <div class="gambar2">
+                <img src="assets/img/logo_iso.png" width="80" height="100" alt="logo" class="d-inline logo2">
+                </div>
                 <br>
                 <div class="namakiri">NIP. {{ $object->user->ninduk_pj }}</div>
                 <div class="namakanan">{{ $object->penanggung_jawab }}</div>
@@ -247,9 +261,16 @@
 
             <div class="ttd2">
                 <div class="kiri">{{ $object2->jabatan }}</div>
+                <div class="gambar">
+                <img src="assets/img/logo_iso.png" width="80" height="100" alt="logo" class="d-inline logo2">
+                </div>
                 <div class="kanan">{{ $object->wewenang->jabatan }}</div>
+
                 <div class="kiri nama">{{ $object2->pj }}</div>
                 <div class="kanan nama">{{ $object->wewenang->pj }}</div>
+                <div class="gambar2">
+                <img src="assets/img/logo_iso.png" width="80" height="100" alt="logo" class="d-inline logo2">
+                </div>
                 <br>
                 <div class="kiri nama">NIP. {{ $object2->nip }} </div>
                 <div class="kanan nama">NIP. {{ $object->wewenang->nip }}</div>
