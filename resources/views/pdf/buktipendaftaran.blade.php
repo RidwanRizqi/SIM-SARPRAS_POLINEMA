@@ -119,7 +119,7 @@
             <header>
                 <img src="assets/img/logo_polinema.png" width="100" height="100" alt="logo" class="d-inline logo">
                 {{--        <img src="assets/img/logo_polinema.png" width="100" height="100" alt="logo" class="d-inline logo2">--}}
-                <img src="storage/logoUser/<?= $object->user->logo; ?>>" width="100" height="100" alt="logo"
+                <img src="storage/<?= $object->user->logo; ?>>" width="100" height="100" alt="logo"
                      class="d-inline logo2">
                 <div style="text-align: center;">
 

@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'id_wewenang' => '1',
             'nama_pj' => 'Super Admin',
             'ninduk_pj' => '12345689',
-            'ttd_pj' => 'ttd_pjSA.png',
+            'ttd_pj' => 'ttdpj/ttd_pjSA.png',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
@@ -33,7 +33,7 @@ class UserSeeder extends Seeder
             'id_wewenang' => '1',
             'nama_pj' => 'Admin 1',
             'ninduk_pj' => '12345687',
-            'ttd_pj' => 'ttd_pjAM.png',
+            'ttd_pj' => 'ttdpj/ttd_pjAM.png',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
@@ -44,7 +44,7 @@ class UserSeeder extends Seeder
             'id_wewenang' => '1',
             'nama_pj' => 'User 1',
             'ninduk_pj' => '12345684',
-            'ttd_pj' => 'ttd_pjUS.png',
+            'ttd_pj' => 'ttdpj/ttd_pjUS.png',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
@@ -55,7 +55,7 @@ class UserSeeder extends Seeder
             'id_wewenang' => '8',
             'nama_pj' => 'Ahmad Syahroni S.Kom., M.Kom.',
             'ninduk_pj' => '2141896365',
-            'ttd_pj' => 'ttd_pjPuskom.png',
+            'ttd_pj' => 'ttdpj/ttd_pjPuskom.png',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
@@ -67,7 +67,7 @@ class UserSeeder extends Seeder
             'id_wewenang' => '1',
             'nama_pj' => 'M Yahya Fathoni S.E., M.M.',
             'ninduk_pj' => '2141896386',
-            'ttd_pj' => 'ttd_pjMesin.png',
+            'ttd_pj' => 'ttdpj/ttd_pjMesin.png',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
@@ -79,7 +79,7 @@ class UserSeeder extends Seeder
             'id_wewenang' => '2',
             'nama_pj' => 'Siti Munawaroh S.E., M.M.',
             'ninduk_pj' => '2141896375',
-            'ttd_pj' => 'ttd_pjAkutansi.png',
+            'ttd_pj' => 'ttdpj/ttd_pjAkutansi.png',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
@@ -91,7 +91,7 @@ class UserSeeder extends Seeder
             'id_wewenang' => '3',
             'nama_pj' => 'Lasiem Karminah S.T., M.T.',
             'ninduk_pj' => '2141896390',
-            'ttd_pj' => 'ttd_pjSipil.png',
+            'ttd_pj' => 'ttdpj/ttd_pjSipil.png',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
@@ -103,7 +103,7 @@ class UserSeeder extends Seeder
             'id_wewenang' => '4',
             'nama_pj' => 'Jaya Setiabudi S.T., M.T.',
             'ninduk_pj' => '2141896366',
-            'ttd_pj' => 'ttd_pjElektro.png',
+            'ttd_pj' => 'ttdpj/ttd_pjElektro.png',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
@@ -115,7 +115,7 @@ class UserSeeder extends Seeder
             'id_wewenang' => '5',
             'nama_pj' => 'Titis Mulyati S.Kom., M.Kom.',
             'ninduk_pj' => '2141896311',
-            'ttd_pj' => 'ttd_pjTI.png',
+            'ttd_pj' => 'ttdpj/ttd_pjTI.png',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
@@ -127,7 +127,7 @@ class UserSeeder extends Seeder
             'id_wewenang' => '6',
             'nama_pj' => 'Harsinah S.E., M.M.',
             'ninduk_pj' => '2141896331',
-            'ttd_pj' => 'ttd_pjAdbis.png',
+            'ttd_pj' => 'ttdpj/ttd_pjAdbis.png',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
@@ -139,7 +139,7 @@ class UserSeeder extends Seeder
             'id_wewenang' => '7',
             'nama_pj' => 'Nurul Hidayati S.T., M.T.',
             'ninduk_pj' => '2141896318',
-            'ttd_pj' => 'ttd_pjKimia.png',
+            'ttd_pj' => 'ttdpj/ttd_pjKimia.png',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
@@ -151,7 +151,7 @@ class UserSeeder extends Seeder
             'id_wewenang' => '8',
             'nama_pj' => 'Harya Dwi Prasetya S.T., M.T.',
             'ninduk_pj' => '2141896301',
-            'ttd_pj' => 'ttd_pjAA.png',
+            'ttd_pj' => 'ttdpj/ttd_pjAA.png',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
@@ -163,11 +163,11 @@ class UserSeeder extends Seeder
             'id_wewenang' => '9',
             'nama_pj' => 'Ahmad Asas Hakiki',
             'ninduk_pj' => '2141720018',
-            'ttd_pj' => 'ttd_pjBem.png',
+            'ttd_pj' => 'ttdpj/ttd_pjBem.png',
             'nama_dpk' => 'Dr. Eng. Anggit Murdani, S.T., M. Eng',
             'nip_dpk' => '197810252012121001',
-            'ttd_dpk' => 'ttd_dpkBEM.png',
-            'logo' => 'logoBEM.png',
+            'ttd_dpk' => 'ttdpk/ttd_dpkBEM.png',
+            'logo' => 'logoUser/logoBEM.png',
             'email_verified_at' => now(),
             'password' => Hash::make('password')
         ]);
