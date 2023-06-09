@@ -147,7 +147,7 @@ class SaranaPrasaranaSeeder extends Seeder
 
         SaranaPrasarana::create(
             [
-                'id_wewenang' => '5',
+                'id_wewenang' => '6',
                 'nama' => 'Ruang Kuliah 01',
                 'kapasitas' => '30',
                 'fasilitas' => '1 Papan Tulis, 30 Kursi, 1 Proyektor, 1 AC',
@@ -155,7 +155,7 @@ class SaranaPrasaranaSeeder extends Seeder
         );
         SaranaPrasarana::create(
             [
-                'id_wewenang' => '5',
+                'id_wewenang' => '6',
                 'nama' => 'Ruang Kuliah 12',
                 'kapasitas' => '30',
                 'fasilitas' => '1 Papan Tulis, 30 Kursi, 1 Proyektor, 1 AC',
@@ -163,7 +163,7 @@ class SaranaPrasaranaSeeder extends Seeder
         );
         SaranaPrasarana::create(
             [
-                'id_wewenang' => '5',
+                'id_wewenang' => '6',
                 'nama' => 'Laboratorium Komputer',
                 'kapasitas' => '30',
                 'fasilitas' => '1 Papan Tulis, 30 Kursi, 15 Meja, 1 Proyektor, 1 AC, 30 Set Komputer',
@@ -171,7 +171,7 @@ class SaranaPrasaranaSeeder extends Seeder
         );
         SaranaPrasarana::create(
             [
-                'id_wewenang' => '5',
+                'id_wewenang' => '6',
                 'nama' => 'Auditorium Gedung AB',
                 'kapasitas' => '60',
                 'fasilitas' => '60 Kursi, 1 Proyektor, 2 AC, 2 Speaker, Set Sound System',
@@ -180,7 +180,7 @@ class SaranaPrasaranaSeeder extends Seeder
 
         SaranaPrasarana::create(
             [
-                'id_wewenang' => '6',
+                'id_wewenang' => '5',
                 'nama' => 'Ruang Teori 5',
                 'kapasitas' => '30',
                 'fasilitas' => '1 Papan Tulis, 30 Kursi, 1 Proyektor, 1 AC',
@@ -188,7 +188,7 @@ class SaranaPrasaranaSeeder extends Seeder
         );
         SaranaPrasarana::create(
             [
-                'id_wewenang' => '6',
+                'id_wewenang' => '5',
                 'nama' => 'Laboratorium RPL 4',
                 'kapasitas' => '30',
                 'fasilitas' => '1 Papan Tulis, 30 Kursi, 1 Proyektor, 1 AC',
@@ -196,7 +196,7 @@ class SaranaPrasaranaSeeder extends Seeder
         );
         SaranaPrasarana::create(
             [
-                'id_wewenang' => '6',
+                'id_wewenang' => '5',
                 'nama' => 'Laboratorium Jaringan Komputer',
                 'kapasitas' => '30',
                 'fasilitas' => '1 Papan Tulis, 30 Kursi, 1 Proyektor, 1 AC, 30 Set Komputer',
@@ -204,7 +204,7 @@ class SaranaPrasaranaSeeder extends Seeder
         );
         SaranaPrasarana::create(
             [
-                'id_wewenang' => '6',
+                'id_wewenang' => '5',
                 'nama' => 'Auditorium Teknologi Informasi',
                 'kapasitas' => '90',
                 'fasilitas' => '90 Kursi, 24 Meja, 40 Set Komputer, 3 Proyektor, 4 AC, 4 Speaker, Set Sound System',
