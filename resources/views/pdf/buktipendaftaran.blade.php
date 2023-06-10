@@ -105,7 +105,10 @@
         }
 
         .nama {
-            margin-top: 1.7cm;
+            margin-top: 2.3cm;
+        }
+        .gambar{
+            position: fixed;
         }
 
     </style>
@@ -118,7 +121,7 @@
         @foreach($peminjamanPdf3 as $object3)
             <header>
                 <img src="assets/img/logo_polinema.png" width="100" height="100" alt="logo" class="d-inline logo">
-                {{--        <img src="assets/img/logo_polinema.png" width="100" height="100" alt="logo" class="d-inline logo2">--}}
+{{--                        <img src="assets/img/logo_polinema.png" width="100" height="100" alt="logo" class="d-inline logo2">--}}
                 <img src="storage/<?= $object->user->logo; ?>>" width="100" height="100" alt="logo"
                      class="d-inline logo2">
                 <div style="text-align: center;">
@@ -255,6 +258,9 @@
                     <br>
                     <div class="kiri">Ketua Umum {{$initials}},</div>
                     <div class="kanan">Ketua Pelaksana,</div>
+                    <div class="gambar">
+                        <img src="assets/img/logo_iso.png" alt="" width="80" height="100">
+                    </div>
                     <div class="namakiri">{{ $object->user->nama_pj }}</div>
                     <br>
                     <div class="namakiri">NIM. {{ $object->user->ninduk_pj }}</div>
