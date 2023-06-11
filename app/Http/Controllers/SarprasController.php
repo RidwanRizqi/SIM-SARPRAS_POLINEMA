@@ -45,7 +45,7 @@ class SarprasController extends Controller
 
         SaranaPrasarana::create($validatedData);
 
-        return redirect('kelola-ruang')->with('success', 'Sarana Prasarana berhasil ditambahkan!');
+        return redirect(route('sarpras.index'))->with('success', 'Sarana Prasarana berhasil ditambahkan!');
     }
 
     /**

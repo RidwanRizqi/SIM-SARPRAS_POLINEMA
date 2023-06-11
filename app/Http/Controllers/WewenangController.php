@@ -51,7 +51,7 @@ class WewenangController extends Controller
 
         Wewenang::create($validatedData);
 
-        return redirect('kelola-wewenang')->with('success', 'Wewenang berhasil ditambahkan!');
+        return redirect()->route('wewenang.index')->with('success', 'Wewenang berhasil ditambahkan!');
     }
 
     /**

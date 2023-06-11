@@ -73,7 +73,7 @@ class UserController extends Controller
 
         User::create($validatedData);
 
-        return redirect('kelola-superadmin')->with('success', 'User berhasil ditambahkan!');
+        return redirect(route('users.index'))->with('success', 'User berhasil ditambahkan!');
     }
 
     /**
