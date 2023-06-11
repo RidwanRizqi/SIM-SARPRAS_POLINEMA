@@ -41,16 +41,14 @@
                                             @enderror
                                         </div>
                                         <div class="col-lg-6 col-sm-6">
-                                            <label for="id_wewenang" class="form-label">Kategori</label>
+                                            <label for="id_wewenang" class="form-label">Wewenang</label>
                                             <select class="form-control select2 select2-hidden-accessible"
                                                     name="id_wewenang">
-                                                @foreach($wewenangs as $wewenang)
-                                                    @if(old('wewenang_id') == $wewenang->id)
-                                                        <option value="{{$wewenang->id}}"
-                                                                selected>{{$wewenang->name}}</option>
+                                                    @if(old('wewenang_id') == auth()->user()->wewenang->id)
+                                                        <option value="{{auth()->user()->wewenang->id}}"
+                                                                selected>{{auth()->user()->wewenang->name}}</option>
                                                     @endif
-                                                    <option value="{{$wewenang->id}}">{{$wewenang->name}}</option>
-                                                @endforeach
+                                                    <option value="{{auth()->user()->wewenang->id}}">{{auth()->user()->wewenang->name}}</option>
                                             </select>
                                         </div>
                                     </div>
