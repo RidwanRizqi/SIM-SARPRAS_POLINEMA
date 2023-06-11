@@ -13,6 +13,13 @@
                 <main>
                     <!-- Main page content-->
                     <div class="container-xl px-4 mt-n10">
+                        @if(session()->has('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('success') }}
+                            </div>
+
+                        @endif
+                    <div class="container-xl px-4 mt-n10">
                         <div class="row">
                             <div class="col-xl-6 mb-6">
                                 <!-- Dashboard example card 1-->
