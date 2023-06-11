@@ -68,19 +68,13 @@
                                                                 class="fas fa-trash"></i> Delete
                                                         </button>
                                                     </form>
-                                                @else
                                                     <a href="{{route('peminjaman-admin.edit', ['peminjaman_admin' => $peminjaman->id]) }}">
                                                         <button class="badge bg-warning border-0 my-3 mx-3 text-white"
                                                                 type="button">
                                                             <i class="fas fa-edit"></i> Edit
                                                         </button>
                                                     </a>
-{{--                                                    <a href="{{ route('bukti.pdf', ['$pelaporanPdf' => $peminjaman->id]) }}" target="_blank">--}}
-{{--                                                        <button class="badge bg-success border-0 mt-3 mr-2 text-white"--}}
-{{--                                                                type="button">--}}
-{{--                                                            <i class="fas fa-print"></i> Cetak Bukti Peminjaman--}}
-{{--                                                        </button>--}}
-{{--                                                    </a>--}}
+                                                @else
                                                     <form action="{{ route('buktiumum.pdf') }}" method="POST" target="_blank">
                                                         @csrf
                                                         <input type="hidden" name="peminjaman_id" value="{{ $peminjaman->id }}">
