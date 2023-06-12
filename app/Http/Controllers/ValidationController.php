@@ -66,7 +66,7 @@ class ValidationController extends Controller
         } else {
             $peminjaman->status = 'Valid';
             $peminjaman->save();
-            return redirect()->back()->with('success', 'Peminjaman diterima');
+            return redirect(route('validasi.index'))->with('success', 'Peminjaman disetujui');
         }
     }
 

@@ -115,7 +115,7 @@ class PeminjamanAdminController extends Controller
             'id_user' => 'required',
             'id_sarana_prasarana' => 'required',
             'id_wewenang' => 'required',
-            'dokumen' => 'required|file|mimes:pdf|max:5120',
+            'dokumen' => 'file|mimes:pdf|max:5120',
             'kegiatan' => 'required',
             'penanggung_jawab' => 'required',
             'jam_mulai' => 'required',
@@ -153,7 +153,7 @@ class PeminjamanAdminController extends Controller
         ]);
 
 
-        $validatedData['status'] = 'Valid';
+        $validatedData['status'] = 'Proses';
 
         if ($request->file('dokumen')) {
             if ($request->oldDokumen) {
