@@ -76,7 +76,7 @@ class PeminjamanAdminController extends Controller
             ],
         ]);
 
-        $validatedData['status'] = 'Valid';
+        $validatedData['status'] = 'Proses';
 
         if ($request->file('dokumen')) {
             $validatedData['dokumen'] = $request->file('dokumen')->store('dokumen');
