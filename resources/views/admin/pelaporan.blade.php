@@ -123,7 +123,7 @@
                 <a class="nav-link" href="{{ route('peminjaman-admin.index') }}">History Admin</a>
             </li>
             <li>
-                <a class="nav-link" href="{{ route('validasi.index') }}">Validasi User</a>
+                <a class="nav-link" href="{{ route('validasi.index') }}">Validasi Peminjaman</a>
             </li>
         </ul>
     </li>
