@@ -91,6 +91,7 @@
                                         <th>Tanggal Peminjaman</th>
                                         <th>Dokumen</th>
                                         <th>Status</th>
+                                        <th>Catatan Admin</th>
                                         <th>Action</th>
                                     </tr>
                                     @forelse($peminjamans as $peminjaman)
@@ -106,6 +107,13 @@
                                                 </a>
                                             </td>
                                             <td>{{ $peminjaman->status }}</td>
+                                            <td>
+                                                @if($peminjaman->catatan_admin == null)
+                                                    -
+                                                @else
+                                                    {{ $peminjaman->catatan_admin }}
+                                                @endif
+                                            </td>
                                             <td class="">
                                                 <div class="btn-group-vertical my-3">
                                                     @if($peminjaman->status == 'Proses')

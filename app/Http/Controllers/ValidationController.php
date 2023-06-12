@@ -62,7 +62,7 @@ class ValidationController extends Controller
             $peminjaman->catatan_admin = $request->input('catatan_admin');
             $peminjaman->status = 'Ditolak';
             $peminjaman->save();
-            return redirect()->back()->with('success', 'Peminjaman ditolak');
+            return redirect(route('validasi.index'))->with('success', 'Peminjaman ditolak');
         } else {
             $peminjaman->status = 'Valid';
             $peminjaman->save();

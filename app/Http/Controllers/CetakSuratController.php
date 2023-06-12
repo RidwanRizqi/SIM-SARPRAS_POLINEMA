@@ -23,7 +23,7 @@ class CetakSuratController extends Controller
         })
             ->when(Auth::user()->id_wewenang, function ($query) {
                 $query->where('id_wewenang', Auth::user()->id_wewenang);
-            })
+            })  ->where('status', 'Valid')
             ->paginate(5);
 
         return view('admin.pelaporan', compact('peminjamans'));

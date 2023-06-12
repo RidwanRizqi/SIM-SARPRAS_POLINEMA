@@ -101,15 +101,6 @@
             text-align: center;
         }
 
-        .ttd2 {
-            margin-top: 0.5cm;
-        }
-
-        .nama {
-            margin-top: 1.7cm;
-        }
-
-
     </style>
     <title>Document</title>
 </head>
