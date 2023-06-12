@@ -36,12 +36,12 @@
                                         </div>
                                         <div class="col-lg-4 col-sm-4 mt-1">
                                             <div class="row">
-                                                <div class="col-lg-2 col-sm-2 mt-1">
+                                                <div class="col-lg-2 col-sm-2">
                                                     <div class="input-group-append mt-1">
                                                         <button class="btn btn-primary mt-4">Filter</button>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-2 col-sm-2 mt-1">
+                                                <div class="col-lg-2 col-sm-2">
                                                     <div class="input-group-append mt-1">
                                                         <a href="{{ route('pelaporan-admin.index') }}"
                                                            class="btn btn-secondary mt-4">Reset</a>
