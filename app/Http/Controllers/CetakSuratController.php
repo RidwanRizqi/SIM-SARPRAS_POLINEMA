@@ -100,7 +100,6 @@ class CetakSuratController extends Controller
         $peminjamanPdf2 = Wewenang::where('id',8)->get();
         $peminjamanPdf3 = User::where('id',13)->get();
         $pdf = PDF::loadView('pdf.buktiumum', compact('peminjamanPdf', 'peminjamanPdf2','peminjamanPdf3'));
-        $ttd = Wewenang::where('id',8)->get();
         return $pdf->stream();
     }
 
