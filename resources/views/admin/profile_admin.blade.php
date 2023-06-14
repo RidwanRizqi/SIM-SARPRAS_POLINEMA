@@ -18,8 +18,11 @@
                                 <div class="card-header bg-whitesmoke"><h4>Foto Profil</h4></div>
                                 <div class="card-body text-center">
                                     <!-- Profile picture image-->
-                                    <img class="img-account-profile rounded-circle mb-2" src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-1.png" alt="" style="width: 12rem"/>
-                                    <!-- Profile picture help block-->
+                                    @if(auth()->user()->logo <> null)
+                                        <img class="img-account-profile rounded-circle mb-2" src="storage/<?= auth()->user()->logo; ?>" alt="Tidak ada gambar" style="width: 12rem"/>
+                                    @else
+                                        <img class="img-account-profile rounded-circle mb-2" src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-1.png" alt="" style="width: 12rem"/>
+                                    @endif                                    <!-- Profile picture help block-->
                                     <div class="small font-italic text-muted mb-4">JPG / PNG < 5 MB</div>
                                     <!-- Profile picture upload button-->
                                 </div>
@@ -32,14 +35,14 @@
                                 <div class="card-body">
                                     <form class="row g-3">
                                         <!-- Form Group (username)-->
-                                        <div class="mb-3 col-md-6">
+                                        <div class="mb-3 col-md-12">
                                             <label class="small mb-1" for="inputUsername">Username</label>
                                             <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="{{ auth()->user()->name }}" disabled readonly />
                                         </div>
-                                        <div class="mb-3 col-md-6">
-                                            <label class="small mb-1" for="inputOrgName">Organisasi</label>
-                                            <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Admin JTI" disabled readonly/>
-                                        </div>
+{{--                                        <div class="mb-3 col-md-6">--}}
+{{--                                            <label class="small mb-1" for="inputOrgName">Organisasi</label>--}}
+{{--                                            <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Admin JTI" disabled readonly/>--}}
+{{--                                        </div>--}}
                                         <!-- Form Group (email address)-->
                                         <!-- Form Row-->
                                             <!-- Form Group (phone number)-->
@@ -55,6 +58,10 @@
                                                 <label class="small mb-1" for="penanggungjawab">Penanggung Jawab</label>
                                                 <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="{{ auth()->user()->nama_pj }} " disabled readonly />
                                             </div>
+                                        <div class="mb-3 col">
+                                            <label class="small mb-1" for="NIP">NIP</label>
+                                            <input class="form-control" id="NIP" type="tel" placeholder="Enter your phone number" value="{{ auth()->user()->ninduk_pj }} " disabled readonly />
+                                        </div>
                                     </form>
                                 </div>
                             </div>
