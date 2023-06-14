@@ -242,13 +242,13 @@
                 <br>
                 <div class="kiri">{{ $object->user->name }},</div>
                 <div class="kanan">Penanggung Jawab,</div>
-                <div class="gambar">
-                <img src="assets/img/logo_iso.png" width="80" height="100" alt="logo" class="d-inline logo2">
-                </div>
+{{--                <div class="gambar">--}}
+{{--                <img src="assets/img/logo_iso.png" width="80" height="100" alt="logo" class="d-inline logo2">--}}
+{{--                </div>--}}
 
                 <div class="namakiri">{{ $object->user->nama_pj }}</div>
                 <div class="gambar2">
-                <img src="assets/img/logo_iso.png" width="80" height="100" alt="logo" class="d-inline logo2">
+                <img src="storage/<?= $object->user->ttd_pj; ?>>" width="80" height="100" alt="logo" class="d-inline logo2">
                 </div>
                 <br>
                 <div class="namakiri">NIP. {{ $object->user->ninduk_pj }}</div>
@@ -262,14 +262,14 @@
             <div class="ttd2">
                 <div class="kiri">{{ $object2->jabatan }}</div>
                 <div class="gambar">
-                <img src="assets/img/logo_iso.png" width="80" height="100" alt="logo" class="d-inline logo2">
+                <img src="assets/img/{{ $object->wewenang->ttd }}" width="80" height="100" alt="logo" class="d-inline logo2">
                 </div>
                 <div class="kanan">{{ $object->wewenang->jabatan }}</div>
 
                 <div class="kiri nama">{{ $object2->pj }}</div>
                 <div class="kanan nama">{{ $object->wewenang->pj }}</div>
                 <div class="gambar2">
-                <img src="assets/img/logo_iso.png" width="80" height="100" alt="logo" class="d-inline logo2">
+                <img src="assets/img/{{ $object->wewenang->ttd }}" width="80" height="100" alt="logo" class="d-inline logo2">
                 </div>
                 <br>
                 <div class="kiri nama">NIP. {{ $object2->nip }} </div>

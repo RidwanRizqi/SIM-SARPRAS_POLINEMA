@@ -65,7 +65,7 @@
 
         .kanan {
             position: fixed;
-            margin-left: 9.5cm;
+            margin-left: 11cm;
         }
 
         .kiri {
@@ -74,13 +74,13 @@
 
         .namakiri {
             position: fixed;
-            margin-top: 80px;
+            margin-top: 90px;
         }
 
         .namakanan {
             position: fixed;
-            margin-top: 1.47cm;
-            margin-left: 9.5cm;
+            margin-top: 1.88cm;
+            margin-left: 11cm;
         }
 
         .text-center {
@@ -93,11 +93,11 @@
         }
 
         .tinggikanan {
-            margin-top: 60px;
+            margin-top: 73px;
         }
 
         .tinggikiri {
-            margin-top: 77px;
+            margin-top: 89px;
         }
 
         .ttd3 {
@@ -109,6 +109,13 @@
         }
         .gambar{
             position: fixed;
+            margin-top: 20px;
+            /*margin-left: 30px;*/
+        }
+        .gambar2{
+            position: fixed;
+            margin-top: 20px;
+            margin-left: 11cm;
         }
 
     </style>
@@ -122,7 +129,7 @@
             <header>
                 <img src="assets/img/logo_polinema.png" width="100" height="100" alt="logo" class="d-inline logo">
 {{--                        <img src="assets/img/logo_polinema.png" width="100" height="100" alt="logo" class="d-inline logo2">--}}
-                <img src="storage/<?= $object->user->logo; ?>>" width="100" height="100" alt="logo"
+                <img src="storage/<?= $object->user->logo; ?>" width="100" height="100" alt="logo"
                      class="d-inline logo2">
                 <div style="text-align: center;">
 
@@ -259,9 +266,12 @@
                     <div class="kiri">Ketua Umum {{$initials}},</div>
                     <div class="kanan">Ketua Pelaksana,</div>
                     <div class="gambar">
-                        <img src="assets/img/logo_iso.png" alt="" width="80" height="100">
+                        <img src="storage/<?= $object->user->ttd_pj; ?>" alt="" width="50" height="70">
                     </div>
                     <div class="namakiri">{{ $object->user->nama_pj }}</div>
+{{--                    <div class="gambar2">--}}
+{{--                        <img src="storage/<?= $object->ttd_pj; ?>" alt="" width="50" height="70">--}}
+{{--                    </div>--}}
                     <br>
                     <div class="namakiri">NIM. {{ $object->user->ninduk_pj }}</div>
                     <div class="namakanan">{{ $object->penanggung_jawab }}</div>
@@ -275,18 +285,30 @@
                     <div class="kiri height">Dosen Pembina Kemahasiswaan,</div>
                     <div class="kanan height">Presiden BEM,</div>
                     <div class="kiri tinggikiri">{{ $object->user->nama_dpk }}</div>
+{{--                    <div class="gambar">--}}
+{{--                        <img src="storage/<?= $object->user->ttd_pj; ?>" alt="" width="50" height="70">--}}
+{{--                    </div>--}}
+                    <div class="gambar2">
+                        <img src="storage/<?= $object3->ttd_pj; ?>" alt="" width="50" height="70">
+                    </div>
                     <br>
-                    <div class="kanan tinggikanan">{{ $object->user->nama_pj }}</div>
+                    <div class="kanan tinggikanan">{{ $object3->nama_pj }}</div>
                     <div class="kiri tinggikiri">NIP.{{ $object->user->nip_dpk }}</div>
                     <br>
-                    <div class="kanan tinggikanan">NIM. {{ $object->user->ninduk_pj }}</div>
+                    <div class="kanan tinggikanan">NIM. {{ $object->ninduk_pj}}</div>
                 </div>
 
                 <div class="ttd3">
                     <div class="kiri">{{ $object2->jabatan }}</div>
                     <div class="kanan">{{ $object->wewenang->jabatan }}</div>
                     <div class="kiri nama">{{ $object2->pj }}</div>
+                    <div class="gambar">
+                        <img src="storage/<?= $object->ttd; ?>" alt="" width="50" height="70">
+                    </div>
                     <div class="kanan nama">{{ $object->wewenang->pj }}</div>
+                    <div class="gambar2">
+                        <img src="storage/<?= $object->wewenang->ttd; ?>" alt="" width="50" height="70">
+                    </div>
                     <br>
                     <div class="kiri nama">NIP. {{ $object2->nip }} </div>
                     <div class="kanan nama">NIP. {{ $object->wewenang->nip }}</div>
