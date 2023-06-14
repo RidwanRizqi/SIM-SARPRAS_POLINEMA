@@ -32,14 +32,14 @@
                                 <div class="card-body">
                                     <form class="row g-3">
                                         <!-- Form Group (username)-->
-                                        <div class="mb-3 col-md-6">
+                                        <div class="mb-3 col-md-12">
                                             <label class="small mb-1" for="inputUsername">Username</label>
                                             <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="{{ auth()->user()->name }}" disabled readonly />
                                         </div>
-                                        <div class="mb-3 col-md-6">
-                                            <label class="small mb-1" for="inputOrgName">Organisasi</label>
-                                            <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Admin JTI" disabled readonly/>
-                                        </div>
+{{--                                        <div class="mb-3 col-md-6">--}}
+{{--                                            <label class="small mb-1" for="inputOrgName">Organisasi</label>--}}
+{{--                                            <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Admin JTI" disabled readonly/>--}}
+{{--                                        </div>--}}
                                         <!-- Form Group (email address)-->
                                         <!-- Form Row-->
                                             <!-- Form Group (phone number)-->
@@ -55,6 +55,10 @@
                                                 <label class="small mb-1" for="penanggungjawab">Penanggung Jawab</label>
                                                 <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="{{ auth()->user()->nama_pj }} " disabled readonly />
                                             </div>
+                                        <div class="mb-3 col">
+                                            <label class="small mb-1" for="NIP">NIP</label>
+                                            <input class="form-control" id="NIP" type="tel" placeholder="Enter your phone number" value="{{ auth()->user()->ninduk_pj }} " disabled readonly />
+                                        </div>
                                     </form>
                                 </div>
                             </div>
