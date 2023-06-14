@@ -18,7 +18,7 @@
                             <div class="card-body">
                                 <form method="GET">
                                     <div class="row">
-                                        <div class="col-lg-4 col-sm-4">
+                                        <div class="col-lg-4 col-sm-3">
                                             <label for="startDate">Mulai Tanggal</label>
                                             <div class="input-group">
                                                 <input name="startDate" class="form-control" type="date"
@@ -26,7 +26,7 @@
                                                 <span id="startDateSelected"></span>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4 col-sm-4">
+                                        <div class="col-lg-4 col-sm-3">
                                             <label for="endDate">Sampai Tanggal</label>
                                             <div class="input-group">
                                                 <input name="endDate" class="form-control" type="date"
@@ -34,21 +34,17 @@
                                                 <span id="endDateSelected"></span>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4 col-sm-4 mt-1">
-                                            <div class="row">
-                                                <div class="col-lg-2 col-sm-2">
+                                                <div class="col-lg-1 col-sm-2 mt-1">
                                                     <div class="input-group-append mt-1">
                                                         <button class="btn btn-primary mt-4">Filter</button>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-2 col-sm-2">
+                                                <div class="col-lg-1 col-sm-2 mt-1">
                                                     <div class="input-group-append mt-1">
                                                         <a href="{{ route('pelaporan-admin.index') }}"
                                                            class="btn btn-secondary mt-4">Reset</a>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </form>
                             </div>
