@@ -87,18 +87,24 @@
 
         .namakiri {
             position: fixed;
-            margin-top: 80px;
+            margin-top: 3cm;
         }
 
         .namakanan {
             position: fixed;
-            margin-top: 1.47cm;
+            margin-top: 2.4cm;
             margin-left: 9.5cm;
         }
 
         .text-center {
             margin-top: 2.5cm;
             text-align: center;
+        }
+        .gambar{
+            margin-right: 190px;
+        }
+        .gambar2{
+            float: left;
         }
 
     </style>
@@ -231,7 +237,14 @@ $initials = generateInitials(auth()->user()->wewenang->name);
         <br>
         <div class="kiri">{{ auth()->user()->wewenang->jabatan }},</div>
         <div class="kanan">{{ auth()->user()->name }},</div>
+        <div class="gambar">
+            <img src="assets/img/{{ auth()->user()->wewenang->ttd }}" width="75" height="90" alt="logo" class="d-inline logo2">
+{{--            <img src="assets" alt="">--}}
+        </div>
         <div class="namakiri">{{ auth()->user()->wewenang->pj }}</div>
+        <div class="gambar2">
+            <img src="assets/img/{{ auth()->user()->ttd_pj }}" width="75" height="90" alt="logo" class="d-inline logo2">
+        </div>
         <br>
         <div class="namakiri">NIP. {{ auth()->user()->ninduk_pj }}</div>
         <div class="namakanan">{{ auth()->user()->nama_pj }}</div>
