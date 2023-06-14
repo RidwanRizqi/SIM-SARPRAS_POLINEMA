@@ -34,32 +34,24 @@
                                         <!-- Form Group (username)-->
                                         <div class="mb-3 col-md-6">
                                             <label class="small mb-1" for="inputUsername">Username</label>
-                                            <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username" />
+                                            <input class="form-control" id="inputUsername" type="text" value="{{ auth()->user()->name }}" disabled readonly />
                                         </div>
                                         <div class="mb-3 col-md-6">
-                                            <label class="small mb-1" for="inputOrgName">Organisasi</label>
-                                            <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Admin JTI" disabled readonly/>
+                                            <label class="small mb-1" for="inputOrgName">Email</label>
+                                            <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="{{ auth()->user()->email }}" disabled readonly/>
+                                        </div>
+                                        <div class="mb-3 col-md-6">
+                                            <label for="inputPassword5" class="small mb-1">Penanggung Jawab</label>
+                                            <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="{{ auth()->user()->nama_pj }}" disabled readonly/>
+                                        </div>
+                                        <div class="mb-3 col-md-6">
+                                            <label for="inputPassword5" class="small mb-1">NIP</label>
+                                            <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="{{ auth()->user()->ninduk_pj }}" disabled readonly/>
                                         </div>
                                         <div class="mb-3 col-md-12">
-                                            <label for="inputPassword5" class="small mb-1">Password</label>
-                                            <input type="password" id="inputPassword5" class="form-control" aria-labelledby="passwordHelpBlock">
-                                            <div id="passwordHelpBlock" class="form-text">
-                                                Password harus 8-20 karakter.
-                                            </div>
+                                            <label for="inputPassword5" class="small mb-1">Nomor Telepon</label>
+                                            <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="{{ auth()->user()->phone }}" disabled readonly/>
                                         </div>
-                                        <!-- Form Group (email address)-->
-                                        <!-- Form Row-->
-                                            <!-- Form Group (phone number)-->
-                                            <div class="mb-3 col-md-6">
-                                                <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com" />
-                                            </div>
-                                            <div class="mb-3 col-md-6">
-                                                <label class="small mb-1" for="inputPhone">Nomor HP</label>
-                                                <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="123456789" />
-                                            </div>
-                                        <!-- Save changes button-->
-                                        <button class="col-md-12 btn btn-primary" type="submit">Update</button>
                                     </form>
                                 </div>
                             </div>
