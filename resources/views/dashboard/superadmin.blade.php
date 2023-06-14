@@ -29,22 +29,23 @@
                     </a>
                 </div>
                 <div class="col-xl-6 mb-4">
-                    <a class="card lift h-100" href="#!">
-                    <div class="card-body d-flex justify-content-center flex-column">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <div class="me-3">
-                                <i class="fas fa-user-lock" style="font-size: xxx-large"></i>
-                                <br>
-                                <br>
-                                <h4>PUSAT KOMPUTER POLINEMA</h4>
-                                <div class="text-muted small">Description</div>
+                    <!-- Dashboard example card 1-->
+                    <a class="card lift h-100" href="{{route('wewenang.index')}}">
+                        <div class="card-body d-flex justify-content-center flex-column">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="me-3">
+                                    <i class="fas fa-handshake" style="font-size: xxx-large"></i>
+                                    <br>
+                                    <br>
+                                    <h5>Daftar Wewenang</h5>
+                                    <div class="text-muted small">Description</div>
+                                </div>
+                                <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
+                                     alt="..." style="width: 8rem"/>
                             </div>
-                            <img src="{{ asset('assets/img/logo_polinema.png') }}"
-                                 alt="..." style="width: 8rem"/>
                         </div>
-                </div>
                     </a>
-            </div>
+                </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-xl-6 mb-4">

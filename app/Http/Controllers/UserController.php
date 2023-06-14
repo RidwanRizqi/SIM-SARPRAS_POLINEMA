@@ -119,7 +119,7 @@ class UserController extends Controller
 
         if ($request->id_wewenang == 9) {
             $rules['nama_dpk'] = 'required|max:50|min:3';
-            $rules['nip_dpk'] = 'required|unique:users|max:50|min:10';
+            $rules['nip_dpk'] = 'required|max:50|min:10';
             $rules['ttd_dpk'] = 'file|max:1024';
         }
 
