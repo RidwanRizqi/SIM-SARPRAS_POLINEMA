@@ -18,7 +18,12 @@
                                 <div class="card-header bg-whitesmoke"><h4>Foto Profil</h4></div>
                                 <div class="card-body text-center">
                                     <!-- Profile picture image-->
-                                    <img class="img-account-profile rounded-circle mb-2" src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-1.png" alt="" style="width: 12rem"/>
+                                    @if(auth()->user()->logo <> null)
+                                        <img class="img-account-profile rounded-circle mb-2" src="storage/<?= auth()->user()->logo; ?>" alt="Tidak ada gambar" style="width: 12rem"/>
+                                    @else
+                                        <img class="img-account-profile rounded-circle mb-2" src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/profiles/profile-1.png" alt="" style="width: 12rem"/>
+                                    @endif
+{{--                                    <img class="img-account-profile rounded-circle mb-2" src="storage/<?= auth()->user()->logo; ?>" alt="Tidak ada gambar" style="width: 12rem"/>--}}
                                     <!-- Profile picture help block-->
                                     <div class="small font-italic text-muted mb-4">JPG / PNG < 5 MB</div>
                                     <!-- Profile picture upload button-->
