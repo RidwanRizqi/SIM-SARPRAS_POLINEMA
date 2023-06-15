@@ -295,7 +295,7 @@
                     <div class="kanan tinggikanan">{{ $object3->nama_pj }}</div>
                     <div class="kiri tinggikiri">NIP.{{ $object->user->nip_dpk }}</div>
                     <br>
-                    <div class="kanan tinggikanan">NIM. {{ $object->ninduk_pj}}</div>
+                    <div class="kanan tinggikanan">NIM. {{ $object->user->ninduk_pj}}</div>
                 </div>
 
                 <div class="ttd3">
