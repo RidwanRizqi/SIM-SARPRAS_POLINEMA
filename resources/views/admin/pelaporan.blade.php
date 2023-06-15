@@ -59,7 +59,7 @@
                                     <input type="hidden" name="sDate" value="{{ request()->input('startDate') }}">
                                     <input type="hidden" name="eDate" value="{{ request()->input('endDate') }}">
                                     <button type="submit" class="badge bg-success border-0 mt-3 mr-2 text-white">
-                                        <i class="fas fa-print"></i> Cetak Bukti Peminjaman
+                                        <i class="fas fa-print"></i> Cetak Laporan Data Peminjaman
                                     </button>
                                 </form>
                                 <hr>
