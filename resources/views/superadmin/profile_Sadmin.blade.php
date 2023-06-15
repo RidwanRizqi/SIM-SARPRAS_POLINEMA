@@ -54,7 +54,7 @@
                                         </div>
                                         <div class="mb-3 col-md-12">
                                             <label for="inputPassword5" class="small mb-1">Nomor Telepon</label>
-                                            <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="{{ auth()->user()->phone }}" disabled readonly/>
+                                            <input class="form-control" id="inputOrgName" type="text" placeholder="-" value="{{ auth()->user()->phone }}" disabled readonly/>
                                         </div>
                                     </form>
                                 </div>
