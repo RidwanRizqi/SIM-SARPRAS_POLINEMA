@@ -67,10 +67,22 @@
                                     <div class="row mb-3">
                                         <div class="col-lg-4 col-sm-4">
                                             <label for="Role" class="form-label">Role</label>
-                                            <select class="form-control" name="role" >
-                                                <option>User</option>
-                                                <option>Super Admin</option>
-                                                <option>Admin</option>
+                                            <select class="form-control" name="role" id="role">
+                                                @if(old('role', $user->role) == 'user')
+                                                    <option value="user" selected>User</option>
+                                                @else
+                                                    <option value="user">User</option>
+                                                @endif
+                                                @if(old('role', $user->role) == 'superadmin')
+                                                    <option value="superadmin" selected>Super Admin</option>
+                                                @else
+                                                    <option value="superadmin">Super Admin</option>
+                                                @endif
+                                                @if(old('role', $user->role) == 'admin')
+                                                    <option value="admin" selected>Admin</option>
+                                                @else
+                                                    <option value="admin">Admin</option>
+                                                @endif
                                             </select>
                                         </div>
                                         <div class="col-lg-4 col-sn-4">

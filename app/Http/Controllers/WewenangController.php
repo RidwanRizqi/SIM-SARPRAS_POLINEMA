@@ -38,7 +38,7 @@ class WewenangController extends Controller
             'name' => 'required|max:100|min:3',
             'pj' => 'required|max:200|min:3',
             'jabatan' => 'required|max:50|min:3',
-            'nip' =>'required|unique:users|max:50|min:10',
+            'nip' =>'required|unique:wewenang|max:50|min:10',
             'ttd' => 'image|mimes:jpeg,png,jpg,svg|max:2048',
         ]);
 
