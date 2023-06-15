@@ -285,9 +285,9 @@
                     <div class="kiri height">Dosen Pembina Kemahasiswaan,</div>
                     <div class="kanan height">Presiden BEM,</div>
                     <div class="kiri tinggikiri">{{ $object->user->nama_dpk }}</div>
-{{--                    <div class="gambar">--}}
-{{--                        <img src="storage/<?= $object->user->ttd_pj; ?>" alt="" width="50" height="70">--}}
-{{--                    </div>--}}
+                    <div class="gambar">
+                        <img src="storage/<?= $object->user->ttd_dpk; ?>" alt="" width="50" height="70">
+                    </div>
                     <div class="gambar2">
                         <img src="storage/<?= $object3->ttd_pj; ?>" alt="" width="50" height="70">
                     </div>
@@ -303,7 +303,7 @@
                     <div class="kanan">{{ $object->wewenang->jabatan }}</div>
                     <div class="kiri nama">{{ $object2->pj }}</div>
                     <div class="gambar">
-                        <img src="storage/<?= $object->ttd; ?>" alt="" width="50" height="70">
+                        <img src="storage/<?= $object2->ttd; ?>" alt="" width="50" height="70">
                     </div>
                     <div class="kanan nama">{{ $object->wewenang->pj }}</div>
                     <div class="gambar2">

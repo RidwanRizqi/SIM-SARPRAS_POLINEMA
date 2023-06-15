@@ -238,12 +238,11 @@ $initials = generateInitials(auth()->user()->wewenang->name);
         <div class="kiri">{{ auth()->user()->wewenang->jabatan }},</div>
         <div class="kanan">{{ auth()->user()->name }},</div>
         <div class="gambar">
-            <img src="assets/img/{{ auth()->user()->wewenang->ttd }}" width="75" height="90" alt="logo" class="d-inline logo2">
-{{--            <img src="assets" alt="">--}}
+            <img src="storage/<?= auth()->user()->ttd_pj; ?>>" width="80" height="100" alt="logo" class="d-inline logo2">
         </div>
         <div class="namakiri">{{ auth()->user()->wewenang->pj }}</div>
         <div class="gambar2">
-            <img src="assets/img/{{ auth()->user()->ttd_pj }}" width="75" height="90" alt="logo" class="d-inline logo2">
+            <img src="storage/<?= auth()->user()->wewenang->ttd; ?>>" width="80" height="100" alt="logo" class="d-inline logo2">
         </div>
         <br>
         <div class="namakiri">NIP. {{ auth()->user()->ninduk_pj }}</div>
