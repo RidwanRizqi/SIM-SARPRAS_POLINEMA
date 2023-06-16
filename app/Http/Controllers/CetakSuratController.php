@@ -89,7 +89,11 @@ class CetakSuratController extends Controller
         $peminjamanPdf = Peminjaman::where('id', $peminjamanId)->get();
         $peminjamanPdf2 = Wewenang::where('id',9)->get();
         $peminjamanPdf3 = User::where('id',13)->get();
-        $pdf = PDF::loadView('pdf.buktipendaftaran', compact('peminjamanPdf', 'peminjamanPdf2','peminjamanPdf3'));
+        if (User::where('id',13)) {
+            $pdf = PDF::loadView('pdf.buktipendaftaranBEM', compact('peminjamanPdf', 'peminjamanPdf2','peminjamanPdf3'));
+        } else {
+            $pdf = PDF::loadView('pdf.buktipendaftaran', compact('peminjamanPdf', 'peminjamanPdf2','peminjamanPdf3'));
+        }
         return $pdf->stream();
     }
 
