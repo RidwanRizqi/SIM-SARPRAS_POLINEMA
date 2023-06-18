@@ -15,10 +15,26 @@ class PeminjamanUserController extends Controller
      */
     public function index(Request $request)
     {
-        $peminjamans = Peminjaman::where('id_user', auth()->user()->id)->when($request->input('search'), function ($query, $search) {
-            $query->where('kegiatan', 'like', '%' . $search . '%');
-        })
-            ->paginate(5);
+        if ($request->history == 'valid') {
+            $peminjamans = Peminjaman::where('id_user', auth()->user()->id)
+                ->where('status', 'Valid')
+                ->when($request->input('search'), function ($query, $search) {
+                    $query->where('kegiatan', 'like', '%' . $search . '%');
+                })
+                ->paginate(5);
+        } elseif ($request->history == 'proses') {
+            $peminjamans = Peminjaman::where('id_user', auth()->user()->id)
+                ->where('status', 'Proses')
+                ->when($request->input('search'), function ($query, $search) {
+                    $query->where('kegiatan', 'like', '%' . $search . '%');
+                })
+                ->paginate(5);
+        }  else {
+            $peminjamans = Peminjaman::where('id_user', auth()->user()->id)->when($request->input('search'), function ($query, $search) {
+                $query->where('kegiatan', 'like', '%' . $search . '%');
+            })
+                ->paginate(5);
+        }
         return view('user.history', compact('peminjamans'));
     }
 

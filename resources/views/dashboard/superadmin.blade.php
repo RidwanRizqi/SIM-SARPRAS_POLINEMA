@@ -20,7 +20,7 @@
                                     <br>
                                     <br>
                                     <h5>Daftar User</h5>
-                                    <div class="text-muted small">Description</div>
+                                    <div class="text-muted small">Lihat dan kelola daftar user dengan mudah.</div>
                                 </div>
                                 <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
                                      alt="..." style="width: 8rem"/>
@@ -38,7 +38,7 @@
                                     <br>
                                     <br>
                                     <h5>Daftar Wewenang</h5>
-                                    <div class="text-muted small">Description</div>
+                                    <div class="text-muted small">Lihat dan kelola daftar wewenang dengan mudah.</div>
                                 </div>
                                 <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
                                      alt="..." style="width: 8rem"/>
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between small shadow-dark">
-                            <a class="text-white stretched-link" href="{{ route('users.index') }}"><h6>Detail</h6></a>
+                            <a class="text-white stretched-link" href="{{ route('users.index', ['user' => 'oki']) }}"><h6>Detail</h6></a>
                             <div class="text-white"><i class="fas fa-angle-right"></i></div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between small shadow-dark">
-                            <a class="text-white stretched-link" href="{{ route('users.index') }}"><h6>Detail</h6></a>
+                            <a class="text-white stretched-link" href="{{ route('users.index', ['user' => 'admin']) }}"><h6>Detail</h6></a>
                             <div class="text-white"><i class="fas fa-angle-right"></i></div>
                         </div>
                     </div>

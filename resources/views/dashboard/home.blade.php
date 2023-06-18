@@ -20,7 +20,7 @@
                                     <br>
                                     <br>
                                     <h5>Daftar Sarana &amp; Prasarana</h5>
-                                    <div class="text-muted small">Description</div>
+                                    <div class="text-muted small">Lihat daftar sarana dan prasarana yang tersedia dengan mudah.</div>
                                 </div>
                                 <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
                                      alt="..." style="width: 8rem"/>
@@ -38,7 +38,7 @@
                                     <br>
                                     <br>
                                     <h5>Histori</h5>
-                                    <div class="text-muted small">Description</div>
+                                    <div class="text-muted small">Lihat histori peminjaman dengan mudah.</div>
                                 </div>
                                 <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
                                      alt="..." style="width: 8rem"/>
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between small shadow-dark">
-                            <a class="text-white stretched-link" href="{{ route('peminjaman-user.index') }}"><h6>Detail</h6></a>
+                            <a class="text-white stretched-link" href="{{ route('peminjaman-user.index', ['history' => 'valid']) }}"><h6>Detail</h6></a>
                             <div class="text-white"><i class="fas fa-angle-right"></i></div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         <div class="card-footer d-flex align-items-center justify-content-between small shadow-dark">
-                            <a class="text-white stretched-link" href="{{ route('peminjaman-user.index') }}"><h6>Detail</h6></a>
+                            <a class="text-white stretched-link" href="{{ route('peminjaman-user.index', ['history' => 'proses']) }}"><h6>Detail</h6></a>
                             <div class="text-white"><i class="fas fa-angle-right"></i></div>
                         </div>
                     </div>
