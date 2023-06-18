@@ -22,12 +22,14 @@ class DashboardController extends Controller
     public function admin()
     {
 
-        $countPeminjamanValid = Peminjaman::where('id_wewenang', auth()->user()->id_wewenang)->where('status', 'valid')->count();
-        $countPeminjamanProses = Peminjaman::where('id_wewenang', auth()->user()->id_wewenang)->where('status', 'proses')->count();
+        $countPeminjamanValid = Peminjaman::where('id_user', auth()->user()->id)->where('status', 'valid')->count();
+        $countPeminjamanProses = Peminjaman::where('id_user', auth()->user()->id)->where('status', 'proses')->count();
+        $countPermintaanPeminjaman = Peminjaman::where('id_wewenang', auth()->user()->id_wewenang)->where('status', 'proses')->count();
 
         return view('dashboard.admin', [
             'countPeminjamanValid' => $countPeminjamanValid,
             'countPeminjamanProses' => $countPeminjamanProses,
+            'countPermintaanPeminjaman' => $countPermintaanPeminjaman,
         ]);
     }
 
