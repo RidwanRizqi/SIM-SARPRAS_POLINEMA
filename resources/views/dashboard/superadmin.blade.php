@@ -20,7 +20,7 @@
                                     <br>
                                     <br>
                                     <h5>Daftar User</h5>
-                                    <div class="text-muted small">Description</div>
+                                    <div class="text-muted small">Lihat dan kelola daftar user dengan mudah.</div>
                                 </div>
                                 <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
                                      alt="..." style="width: 8rem"/>
@@ -38,7 +38,7 @@
                                     <br>
                                     <br>
                                     <h5>Daftar Wewenang</h5>
-                                    <div class="text-muted small">Description</div>
+                                    <div class="text-muted small">Lihat dan kelola daftar wewenang dengan mudah.</div>
                                 </div>
                                 <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
                                      alt="..." style="width: 8rem"/>
