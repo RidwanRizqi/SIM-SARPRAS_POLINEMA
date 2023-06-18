@@ -15,11 +15,25 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $users = User::when($request->input('search'), function ($query, $search) {
-            $query->where('name', 'like', '%' . $search . '%')
-                ->orWhere('email', 'like', '%' . $search . '%');
-        })
-            ->paginate(5);
+        if ($request->user == 'oki') {
+            $users = User::where('role', 'user')->when($request->input('search'), function ($query, $search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('email', 'like', '%' . $search . '%');
+            })
+                ->paginate(5);
+        } elseif ($request->user == 'admin') {
+            $users = User::where('role', 'admin')->when($request->input('search'), function ($query, $search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('email', 'like', '%' . $search . '%');
+            })
+                ->paginate(5);
+        } else {
+            $users = User::when($request->input('search'), function ($query, $search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                    ->orWhere('email', 'like', '%' . $search . '%');
+            })
+                ->paginate(5);
+        }
         return view('superadmin.daftaruser', compact('users'));
     }
 
