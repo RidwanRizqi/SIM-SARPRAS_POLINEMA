@@ -23,7 +23,6 @@
                                                 <i class="fas fa-plus-square" style="font-size: xx-large"></i>
                                                 <br><br>
                                                 <h5>Tambah Sarana & Prasarana</h5>
-                                                <div class="text-muted small">Description</div>
                                             </div>
                                             <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
                                                  alt="..." style="width: 8rem"/>
@@ -57,7 +56,6 @@
                                                 <i class="fas fa-edit" style="font-size: xx-large"></i>
                                                 <br><br>
                                                 <h5>Update Sarana & Prasarana</h5>
-                                                <div class="text-muted small">Description</div>
                                             </div>
                                             <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
                                                  alt="..." style="width: 8rem"/>

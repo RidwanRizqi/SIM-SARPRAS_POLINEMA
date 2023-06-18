@@ -20,7 +20,7 @@
                                     <br>
                                     <br>
                                     <h5>Kelola Sarana Prasarana</h5>
-                                    <div class="text-muted small">Description</div>
+                                    <div class="text-muted small">Kelola dan atur data sarana dan prasarana dengan mudah.</div>
                                 </div>
                                 <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
                                      alt="..." style="width: 8rem"/>
@@ -38,7 +38,7 @@
                                     <br>
                                     <br>
                                     <h5>Pelaporan</h5>
-                                    <div class="text-muted small">Description</div>
+                                    <div class="text-muted small">Laporkan informasi mengenai peminjaman sarana dan prasarana.</div>
                                 </div>
                                 <img src="https://sb-admin-pro.startbootstrap.com/assets/img/illustrations/browser-stats.svg"
                                      alt="..." style="width: 8rem"/>
