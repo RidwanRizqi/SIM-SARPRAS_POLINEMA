@@ -65,6 +65,7 @@ class PeminjamanAdminController extends Controller
             'dokumen' => 'required|file|mimes:pdf|max:5120',
             'kegiatan' => 'required',
             'penanggung_jawab' => 'required',
+            'nim' => 'nullable',
             'jam_mulai' => 'required',
             'jam_selesai' => 'required',
             'tanggal_mulai' => [
@@ -134,6 +135,7 @@ class PeminjamanAdminController extends Controller
             'dokumen' => 'file|mimes:pdf|max:5120',
             'kegiatan' => 'required',
             'penanggung_jawab' => 'required',
+            'nim' => 'nullable',
             'jam_mulai' => 'required',
             'jam_selesai' => 'required',
             'tanggal_mulai' => [

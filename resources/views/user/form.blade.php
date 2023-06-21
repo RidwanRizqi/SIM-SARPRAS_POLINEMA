@@ -156,11 +156,11 @@
                                                class="form-control @error('tanggal_selesai') is-invalid @enderror"
                                                type="date"
                                                name="tanggal_selesai">
-                                        @error('tanggal_selesai')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
+{{--                                        @error('tanggal_selesai')--}}
+{{--                                        <div class="invalid-feedback">--}}
+{{--                                            {{ $message }}--}}
+{{--                                        </div>--}}
+{{--                                        @enderror--}}
                                         <span id="endDateSelected"></span>
                                     </div>
                                     @if($errors->has(['tanggal_selesai']))

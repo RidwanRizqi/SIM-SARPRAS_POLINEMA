@@ -87,12 +87,12 @@
 
         .namakiri {
             position: fixed;
-            margin-top: 3cm;
+            margin-top: 3.2cm;
         }
 
         .namakanan {
             position: fixed;
-            margin-top: 2.4cm;
+            margin-top: 2.65cm;
             margin-left: 9.5cm;
         }
 

@@ -122,18 +122,22 @@
                                         @enderror
                                     </div>
                                     <div class="col-lg-6 col-sm-6">
-                                        <label for="daya_listrik" class="form-label">Daya Listrik</label>
-                                        <select class="form-control" name="daya_listrik">
-                                            <option>Ya</option>
-                                            <option>Tidak</option>
-                                        </select>
+                                        <label for="nim" class="form-label">NIP</label>
+                                        <input type="text"
+                                               class="form-control @error('nim') is-invalid @enderror"
+                                               id="nim" name="nim" value="{{ old('nim') }}">
+                                        @error('nim')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <div class="col-lg-6 col-sm-6">
+                                    <div class="col-lg-4 col-sm-4">
                                         <label for="tanggal_mulai" class="form-label">Mulai Tanggal</label>
                                         <input id="tanggal_mulai"
-                                               class="form-control @error('tanggal_mulai') is-invalid @enderror"
+                                               class="form-control @error('tanggal_selesai') is-invalid @enderror"
                                                type="date" name="tanggal_mulai">
                                         @error('tanggal_mulai')
                                         <div class="invalid-feedback">
@@ -142,18 +146,32 @@
                                         @enderror
                                         <span id="startDateSelected"></span>
                                     </div>
-                                    <div class="col-lg-6 col-sm-6">
+                                    <div class="col-lg-4 col-sm-4">
                                         <label for="tanggal_selesai" class="form-label">Sampai Tanggal</label>
                                         <input id="tanggal_selesai"
                                                class="form-control @error('tanggal_selesai') is-invalid @enderror"
                                                type="date"
                                                name="tanggal_selesai">
-                                        @error('tanggal_selesai')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
+{{--                                        @error('tanggal_selesai')--}}
+{{--                                        <div class="invalid-feedback">--}}
+{{--                                            {{ $message }}--}}
+{{--                                        </div>--}}
+{{--                                        @enderror--}}
                                         <span id="endDateSelected"></span>
+                                    </div>
+                                    @if($errors->has(['tanggal_selesai']))
+                                        <div class="col-lg-12">
+                                            <div class="alert alert-danger mt-3">
+                                                Tanggal mulai dan tanggal selesai telah digunakan!.
+                                            </div>
+                                        </div>
+                                    @endif
+                                    <div class="col-lg-4 col-sm-4">
+                                        <label for="daya_listrik" class="form-label">Daya Listrik</label>
+                                        <select class="form-control" name="daya_listrik">
+                                            <option>Ya</option>
+                                            <option>Tidak</option>
+                                        </select>
                                     </div>
                                 </div>
                                 {{--                                <div class="mb-3">--}}

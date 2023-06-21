@@ -125,20 +125,19 @@
                                         @enderror
                                     </div>
                                     <div class="col-lg-6 col-sm-6">
-                                        <label for="daya_listrik" class="form-label">Daya Listrik</label>
-                                        <select class="form-control" name="daya_listrik">
-                                            @if($peminjaman_admin->daya_listrik == 'Ya')
-                                                <option selected>Ya</option>
-                                                <option>Tidak</option>
-                                            @else
-                                                <option>Ya</option>
-                                                <option selected>Tidak</option>
-                                            @endif
-                                        </select>
+                                        <label for="nim" class="form-label">NIP</label>
+                                        <input type="text"
+                                               class="form-control @error('nim') is-invalid @enderror"
+                                               id="nim" name="nim" value="{{ old('nim', $peminjaman_admin->nim) }}">
+                                        @error('nim')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <div class="col-lg-6 col-sm-6">
+                                    <div class="col-lg-4 col-sm-4">
                                         <label for="tanggal_mulai" class="form-label">Mulai Tanggal</label>
                                         <input id="tanggal_mulai"
                                                class="form-control @error('tanggal_selesai') is-invalid @enderror"
@@ -150,7 +149,7 @@
                                         @enderror
                                         <span id="startDateSelected"></span>
                                     </div>
-                                    <div class="col-lg-6 col-sm-6">
+                                    <div class="col-lg-4 col-sm-4">
                                         <label for="tanggal_selesai" class="form-label">Sampai Tanggal</label>
                                         <input id="tanggal_selesai"
                                                class="form-control @error('tanggal_selesai') is-invalid @enderror"
@@ -170,6 +169,18 @@
                                             </div>
                                         </div>
                                     @endif
+                                    <div class="col-lg-4 col-sm-4">
+                                        <label for="daya_listrik" class="form-label">Daya Listrik</label>
+                                        <select class="form-control" name="daya_listrik">
+                                            @if($peminjaman_admin->daya_listrik == 'Ya')
+                                                <option selected>Ya</option>
+                                                <option>Tidak</option>
+                                            @else
+                                                <option>Ya</option>
+                                                <option selected>Tidak</option>
+                                            @endif
+                                        </select>
+                                    </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="col-lg-6 col-sm-6">
