@@ -40,7 +40,7 @@
                                 <table class="table table-striped">
                                     <tr>
                                         <th>Nama Ruangan</th>
-                                        <th>Kategori</th>
+                                        <th>Wewenang</th>
                                         <th>Fasilitas</th>
                                         <th>Action</th>
                                     </tr>

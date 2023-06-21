@@ -87,13 +87,23 @@ class CetakSuratController extends Controller
     {
         $peminjamanId = $request->input('peminjaman_id');
         $peminjamanPdf = Peminjaman::where('id', $peminjamanId)->get();
-        $peminjamanPdf2 = Wewenang::where('id',9)->get();
-        $peminjamanPdf3 = User::where('id',13)->get();
-        if (User::where('id',13)) {
-            $pdf = PDF::loadView('pdf.buktipendaftaranBEM', compact('peminjamanPdf', 'peminjamanPdf2','peminjamanPdf3'));
+        $peminjamanPdf2 = Wewenang::where(function ($query) {
+            $query->where('jabatan', 'like', 'Pembantu Direktur III')
+                ->orWhere('jabatan', 'like', 'Pudir III');
+        })->get();
+        $peminjamanPdf3 = User::where(function ($query) {
+            $query->where('name', 'like', 'Badan Eksekutif Mahasiswa')
+                ->orWhere('name', 'like', 'BEM');
+        })->get();
+
+        $loggedInUserName = auth()->user()->name;
+
+        if ($loggedInUserName === 'Badan Eksekutif Mahasiswa' || $loggedInUserName === 'BEM') {
+            $pdf = PDF::loadView('pdf.buktipendaftaranBEM', compact('peminjamanPdf', 'peminjamanPdf2', 'peminjamanPdf3'));
         } else {
             $pdf = PDF::loadView('pdf.buktipendaftaran', compact('peminjamanPdf', 'peminjamanPdf2','peminjamanPdf3'));
         }
+
         return $pdf->stream();
     }
 

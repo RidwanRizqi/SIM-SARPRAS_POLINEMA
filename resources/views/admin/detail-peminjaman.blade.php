@@ -139,28 +139,32 @@
                                             </a>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-lg-3 col-sm-3">
-                                        <a href="#" data-toggle="modal"
-                                           data-target="#tolakModal{{$validasi->id}}">
-                                            <button style="min-width: 100px"
-                                                    class="badge bg-danger border-0 my-1 text-white w-100"
-                                                    type="button">
-                                                <i class="fas fa-user-times"></i> Tolak
-                                            </button>
-                                        </a>
+                                @if($validasi->status == 'Proses')
+                                    <div class="row mb-3">
+                                        <div class="col-lg-3 col-sm-3">
+                                            <a href="#" data-toggle="modal"
+                                               data-target="#tolakModal{{$validasi->id}}">
+                                                <button style="min-width: 100px"
+                                                        class="badge bg-danger border-0 my-1 text-white w-100"
+                                                        type="button">
+                                                    <i class="fas fa-user-times"></i> Tolak
+                                                </button>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-3">
+                                            <a href="#" data-toggle="modal"
+                                               data-target="#terimaModal{{$validasi->id}}">
+                                                <button style="min-width: 100px"
+                                                        class="badge bg-success border-0 my-1 text-white w-100"
+                                                        type="button">
+                                                    <i class="fas fa-user-cog"></i> Terima
+                                                </button>
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="col-lg-3 col-sm-3">
-                                        <a href="#" data-toggle="modal"
-                                           data-target="#terimaModal{{$validasi->id}}">
-                                            <button style="min-width: 100px"
-                                                    class="badge bg-success border-0 my-1 text-white w-100"
-                                                    type="button">
-                                                <i class="fas fa-user-cog"></i> Terima
-                                            </button>
-                                        </a>
-                                    </div>
-                                </div>
+
+                                @endif
+
                             </div>
                         </div>
                     </div>
